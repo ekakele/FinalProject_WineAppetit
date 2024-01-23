@@ -135,7 +135,7 @@ class WineItemCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Configure
     func configure(with wine: Wine) {
-        itemImageView.image = UIImage(named: "testWine") //TODO: - handle after adding VM
+        displayImage(for: wine)
         displayVintageYear(wine.vintageYear)
         titleLabel.text = wine.title
         categoryLabel.text = wine.categoriesList.first
@@ -191,6 +191,27 @@ class WineItemCollectionViewCell: UICollectionViewCell {
             vintageYearLabel.text = vintageYear
         } else {
             vintageYearLabel.isHidden = true
+        }
+    }
+    
+    private func displayImage(for wine: Wine) {
+        if let imageURL = wine.image, !imageURL.isEmpty {
+            loadAndCashImage(from: imageURL)
+        } else {
+            itemImageView.image = UIImage(named: "noImage")
+        }
+    }
+    
+    private func loadAndCashImage(from urlString: String) {
+        ImageLoader.shared.fetchImage(with: urlString) { [weak self] result in
+            switch result {
+            case .success(let image):
+                if let image = image {
+                    self?.itemImageView.image = image
+                }
+            case .failure(let error):
+                print("Error fetching images: \(error)")
+            }
         }
     }
 }
