@@ -28,14 +28,42 @@ class WineItemCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    private lazy var infoStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [titleLabel, categoryStackView, brandLabel])
-        stackView.axis = .vertical
-        stackView.distribution = .equalSpacing
-        stackView.alignment = .center
-        stackView.spacing = 0
-        return stackView
-    }()
+    private lazy var infoStackView = ShortInfoStackView(
+        arrangedSubviews: [titleLabel, categoryStackView, brandLabel],
+        stackAlignment: .center,
+        stackSpacing: 0
+    )
+    
+    private let titleLabel = CustomLabel(
+        textColor: .label,
+        font: .systemFont(ofSize: 14, weight: .bold),
+        numberOfLines: 1
+    )
+    
+    private lazy var categoryStackView = ShortInfoStackView(
+        arrangedSubviews: [categoryLabel, subcategoryLabel],
+        axis: .horizontal,
+        distribution: .equalCentering,
+        stackSpacing: 4
+    )
+    
+    private let categoryLabel = CustomLabel(
+        textColor: UIColor(red: 0.55, green: 0.07, blue: 0.18, alpha: 1.00),
+        font: .systemFont(ofSize: 12, weight: .regular),
+        numberOfLines: 1
+    )
+    
+    private let subcategoryLabel = CustomLabel(
+        textColor: UIColor(red: 0.55, green: 0.07, blue: 0.18, alpha: 1.00),
+        font: .systemFont(ofSize: 12, weight: .regular),
+        numberOfLines: 1
+    )
+    
+    private let brandLabel = CustomLabel(
+        textColor: .label,
+        font: .systemFont(ofSize: 12, weight: .regular),
+        numberOfLines: 1
+    )
     
     private let vintageYearLabel: UILabel = {
         let label = UILabel()
@@ -55,48 +83,6 @@ class WineItemCollectionViewCell: UICollectionViewCell {
         button.tintColor = .gray
         button.frame = CGRect(x: 130, y: 10, width: 18, height: 16)
         return button
-    }()
-    
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .left
-        label.numberOfLines = 1
-        label.font = .systemFont(ofSize: 14, weight: .bold)
-        label.textColor = .label
-        return label
-    }()
-    
-    private lazy var categoryStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [categoryLabel, subCategoryLabel])
-        stackView.axis = .horizontal
-        stackView.spacing = 4
-        stackView.distribution = .equalCentering
-        return stackView
-    }()
-    
-    private let categoryLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .left
-        label.font = .systemFont(ofSize: 12, weight: .regular)
-        label.textColor = UIColor(red: 0.55, green: 0.07, blue: 0.18, alpha: 1.00)
-        return label
-    }()
-    
-    private let subCategoryLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .left
-        label.font = .systemFont(ofSize: 12, weight: .regular)
-        label.textColor = UIColor(red: 0.55, green: 0.07, blue: 0.18, alpha: 1.00)
-        return label
-    }()
-    
-    private let brandLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .left
-        label.numberOfLines = 1
-        label.font = .systemFont(ofSize: 12, weight: .regular)
-        label.textColor = .label
-        return label
     }()
     
     private let shadeView: UIView = {
@@ -125,22 +111,22 @@ class WineItemCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         
         itemImageView.image = nil
-        vintageYearLabel.text = nil
-        addToFavoritesButton.tintColor = nil
         titleLabel.text = nil
         categoryLabel.text = nil
-        subCategoryLabel.text = nil
+        subcategoryLabel.text = nil
         brandLabel.text = nil
+        vintageYearLabel.text = nil
+        addToFavoritesButton.tintColor = nil
     }
     
     //MARK: - Configure
     func configure(with wine: Wine) {
         displayImage(for: wine)
-        displayVintageYear(wine.vintageYear)
         titleLabel.text = wine.title
         categoryLabel.text = wine.categoriesList.first
-        subCategoryLabel.text = wine.categoriesList[1]
+        subcategoryLabel.text = wine.categoriesList[1]
         brandLabel.text = wine.brand
+        displayVintageYear(wine.vintageYear)
     }
     
     //MARK: - Private Methods
