@@ -19,15 +19,22 @@ class WineListViewController: UIViewController {
     }()
     
     private var wines = [Wine]()
+    private let viewModel = WineListViewModel()
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupViewModel()
         setupUI()
     }
     
     //MARK: - Private Methods
+    private func setupViewModel() {
+        viewModel.delegate = self
+        viewModel.viewDidLoad()
+    }
+    
     private func setupUI() {
         setupBackground()
         addSubviews()
@@ -105,5 +112,24 @@ extension WineListViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 16, bottom: 32, right: 16)
+    }
+}
+
+//MARK: - WineListViewModelDelegate
+extension WineListViewController: WineListViewModelDelegate {
+    func winesFetched(_ wines: [Wine]) {
+        self.wines = wines
+        DispatchQueue.main.async {
+            self.wineCollectionView.reloadData()
+        }
+    }
+    
+    func showError(_ error: Error) {
+        print("error")
+    }
+    
+    func navigateToWineDetails(with id: String) {
+        print("no navigation yet")
+        //TODO: - handle after adding Details Page
     }
 }
