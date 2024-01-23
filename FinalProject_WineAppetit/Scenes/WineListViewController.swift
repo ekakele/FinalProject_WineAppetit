@@ -18,6 +18,7 @@ class WineListViewController: UIViewController {
         return collectionView
     }()
     
+    private let searchBar = CustomSearchBar(placeholder: "Search for a wine")
     private var wines = [Wine]()
     private let viewModel = WineListViewModel()
     
@@ -25,11 +26,17 @@ class WineListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupSearchBar()
         setupViewModel()
         setupUI()
     }
     
     //MARK: - Private Methods
+    private func setupSearchBar() {
+        searchBar.searchBarDelegate = self
+        navigationItem.searchController = searchBar
+    }
+    
     private func setupViewModel() {
         viewModel.delegate = self
         viewModel.viewDidLoad()
@@ -131,5 +138,13 @@ extension WineListViewController: WineListViewModelDelegate {
     func navigateToWineDetails(with id: String) {
         print("no navigation yet")
         //TODO: - handle after adding Details Page
+    }
+}
+
+//MARK: - CustomSearchBar
+extension WineListViewController: SearchBarDelegate {
+    func searchBarDidSearch(with text: String) {
+        //TODO: - ViewModel interaction for search
+        print(text)
     }
 }

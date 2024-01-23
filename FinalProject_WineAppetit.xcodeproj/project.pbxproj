@@ -16,6 +16,7 @@
 		B50550CB2B5FCA160040CA56 /* GenericNetworkManager in Frameworks */ = {isa = PBXBuildFile; productRef = B50550CA2B5FCA160040CA56 /* GenericNetworkManager */; };
 		B50550CD2B5FCC150040CA56 /* Wine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550CC2B5FCC150040CA56 /* Wine.swift */; };
 		B50550CF2B5FDABC0040CA56 /* WineListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550CE2B5FDABC0040CA56 /* WineListViewModel.swift */; };
+		B50550D22B5FE0840040CA56 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550D12B5FE0840040CA56 /* CustomSearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		B50550C72B5FC9910040CA56 /* WineItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		B50550CC2B5FCC150040CA56 /* Wine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wine.swift; sourceTree = "<group>"; };
 		B50550CE2B5FDABC0040CA56 /* WineListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineListViewModel.swift; sourceTree = "<group>"; };
+		B50550D12B5FE0840040CA56 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				B50550BE2B5E41930040CA56 /* NetworkManager */,
 				B50550BF2B5E419A0040CA56 /* Models */,
 				B50550C02B5E41BD0040CA56 /* Scenes */,
+				B50550D02B5FE04E0040CA56 /* Components */,
 				B50550BD2B5E417F0040CA56 /* Resources */,
 				B50550B62B5E412B0040CA56 /* Info.plist */,
 			);
@@ -129,6 +132,14 @@
 				B50550C72B5FC9910040CA56 /* WineItemCollectionViewCell.swift */,
 			);
 			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		B50550D02B5FE04E0040CA56 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B50550D12B5FE0840040CA56 /* CustomSearchBar.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +221,7 @@
 				B50550C82B5FC9910040CA56 /* WineItemCollectionViewCell.swift in Sources */,
 				B50550CD2B5FCC150040CA56 /* Wine.swift in Sources */,
 				B50550AD2B5E41290040CA56 /* WineListViewController.swift in Sources */,
+				B50550D22B5FE0840040CA56 /* CustomSearchBar.swift in Sources */,
 				B50550A92B5E41290040CA56 /* AppDelegate.swift in Sources */,
 				B50550AB2B5E41290040CA56 /* SceneDelegate.swift in Sources */,
 				B50550CF2B5FDABC0040CA56 /* WineListViewModel.swift in Sources */,
