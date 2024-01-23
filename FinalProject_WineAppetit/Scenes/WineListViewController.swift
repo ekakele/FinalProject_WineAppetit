@@ -26,12 +26,23 @@ class WineListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavigationBar()
         setupSearchBar()
         setupViewModel()
         setupUI()
     }
     
     //MARK: - Private Methods
+    private func setupNavigationBar() {
+        navigationItem.title = "Georgian Wines"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        if #available(iOS 17.0, *) {
+            navigationItem.largeTitleDisplayMode = .inline
+        } else {
+            navigationItem.largeTitleDisplayMode = .automatic
+        }
+    }
+    
     private func setupSearchBar() {
         searchBar.searchBarDelegate = self
         navigationItem.searchController = searchBar
