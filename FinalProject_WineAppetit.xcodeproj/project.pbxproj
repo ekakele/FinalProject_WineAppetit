@@ -15,6 +15,7 @@
 		B50550C82B5FC9910040CA56 /* WineItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550C72B5FC9910040CA56 /* WineItemCollectionViewCell.swift */; };
 		B50550CB2B5FCA160040CA56 /* GenericNetworkManager in Frameworks */ = {isa = PBXBuildFile; productRef = B50550CA2B5FCA160040CA56 /* GenericNetworkManager */; };
 		B50550CD2B5FCC150040CA56 /* Wine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550CC2B5FCC150040CA56 /* Wine.swift */; };
+		B50550CF2B5FDABC0040CA56 /* WineListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550CE2B5FDABC0040CA56 /* WineListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		B50550B62B5E412B0040CA56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B50550C72B5FC9910040CA56 /* WineItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		B50550CC2B5FCC150040CA56 /* Wine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wine.swift; sourceTree = "<group>"; };
+		B50550CE2B5FDABC0040CA56 /* WineListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			children = (
 				B50550C52B5FC90E0040CA56 /* List */,
 				B50550AC2B5E41290040CA56 /* WineListViewController.swift */,
+				B50550CE2B5FDABC0040CA56 /* WineListViewModel.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				B50550AD2B5E41290040CA56 /* WineListViewController.swift in Sources */,
 				B50550A92B5E41290040CA56 /* AppDelegate.swift in Sources */,
 				B50550AB2B5E41290040CA56 /* SceneDelegate.swift in Sources */,
+				B50550CF2B5FDABC0040CA56 /* WineListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
