@@ -14,6 +14,7 @@
 		B50550B52B5E412B0040CA56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50550B32B5E412B0040CA56 /* LaunchScreen.storyboard */; };
 		B50550C82B5FC9910040CA56 /* WineItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550C72B5FC9910040CA56 /* WineItemCollectionViewCell.swift */; };
 		B50550CB2B5FCA160040CA56 /* GenericNetworkManager in Frameworks */ = {isa = PBXBuildFile; productRef = B50550CA2B5FCA160040CA56 /* GenericNetworkManager */; };
+		B50550CD2B5FCC150040CA56 /* Wine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550CC2B5FCC150040CA56 /* Wine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		B50550B42B5E412B0040CA56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B50550B62B5E412B0040CA56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B50550C72B5FC9910040CA56 /* WineItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		B50550CC2B5FCC150040CA56 /* Wine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		B50550BF2B5E419A0040CA56 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B50550CC2B5FCC150040CA56 /* Wine.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B50550C82B5FC9910040CA56 /* WineItemCollectionViewCell.swift in Sources */,
+				B50550CD2B5FCC150040CA56 /* Wine.swift in Sources */,
 				B50550AD2B5E41290040CA56 /* ViewController.swift in Sources */,
 				B50550A92B5E41290040CA56 /* AppDelegate.swift in Sources */,
 				B50550AB2B5E41290040CA56 /* SceneDelegate.swift in Sources */,
