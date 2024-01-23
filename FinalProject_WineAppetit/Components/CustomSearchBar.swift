@@ -37,17 +37,14 @@ final class CustomSearchBar: UISearchController, UISearchResultsUpdating {
         searchResultsUpdater = self
         
         searchBar.placeholder = placeholder
-        hidesNavigationBarDuringPresentation = true
-        obscuresBackgroundDuringPresentation = true
-        
-        navigationItem.hidesSearchBarWhenScrolling = true
         definesPresentationContext = true
     }
     
     //MARK: - Methods
     func updateSearchResults(for searchController: UISearchController) {
         searchBarDelegate?.searchBarDidSearch(with: searchController.searchBar.text ?? "")
-        //TODO: - setup search functionality
+        guard let text = searchController.searchBar.text, !text.isEmpty else {
+            return
+        }
     }
-    
 }

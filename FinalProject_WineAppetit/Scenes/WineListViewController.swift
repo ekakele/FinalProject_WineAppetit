@@ -155,7 +155,6 @@ extension WineListViewController: WineListViewModelDelegate {
 //MARK: - CustomSearchBar
 extension WineListViewController: SearchBarDelegate {
     func searchBarDidSearch(with text: String) {
-        //TODO: - ViewModel interaction for search
-        print(text)
+        viewModel.searchWines(with: text)
     }
 }

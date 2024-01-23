@@ -22,15 +22,22 @@ final class WineListViewModel {
     
     // MARK: - ViewLifeCycle
     func viewDidLoad() {
-        fetchWines()
+        searchWines()
     }
     
     // MARK: - Methods
+    func searchWines(with query: String? = nil) {
+        fetchWines(with: query)
+    }
     
     // MARK: - Private Methods
-    private func fetchWines() {
+    private func fetchWines(with query: String?) {
         let endpoint = "api/wines?page=1"
-        let urlString = baseURL + endpoint
+        var queryString = ""
+        if let query = query, !query.isEmpty {
+            queryString = "&q=\(query)"
+        }
+        let urlString = baseURL + endpoint + queryString
         
         GenericNetworkManager.shared.fetchData(with: urlString) { [weak self] (result: Result<WineData, Error>) in
             switch result {
