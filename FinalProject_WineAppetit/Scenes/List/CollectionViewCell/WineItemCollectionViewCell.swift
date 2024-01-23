@@ -8,7 +8,6 @@
 import UIKit
 
 class WineItemCollectionViewCell: UICollectionViewCell {
-    
     //MARK: - Properties
     static let identifier = "ItemCollectionViewCell"
     
@@ -136,7 +135,7 @@ class WineItemCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Configure
     func configure(with wine: Wine) {
-        itemImageView.image = UIImage(named: "testWine")
+        itemImageView.image = UIImage(named: "testWine") //TODO: - handle after adding VM
         displayVintageYear(wine.vintageYear)
         titleLabel.text = wine.title
         categoryLabel.text = wine.categoriesList.first
@@ -147,9 +146,9 @@ class WineItemCollectionViewCell: UICollectionViewCell {
     //MARK: - Private Methods
     private func setupUI() {
         addSubviews()
-        setupCellStackConstraints()
-        setupImageConstraints()
         setupShadeConstraints()
+        setupImageConstraints()
+        setupCellStackConstraints()
     }
     
     private func addSubviews() {

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B50550A92B5E41290040CA56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550A82B5E41290040CA56 /* AppDelegate.swift */; };
 		B50550AB2B5E41290040CA56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550AA2B5E41290040CA56 /* SceneDelegate.swift */; };
-		B50550AD2B5E41290040CA56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550AC2B5E41290040CA56 /* ViewController.swift */; };
+		B50550AD2B5E41290040CA56 /* WineListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550AC2B5E41290040CA56 /* WineListViewController.swift */; };
 		B50550B22B5E412B0040CA56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B50550B12B5E412B0040CA56 /* Assets.xcassets */; };
 		B50550B52B5E412B0040CA56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50550B32B5E412B0040CA56 /* LaunchScreen.storyboard */; };
 		B50550C82B5FC9910040CA56 /* WineItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550C72B5FC9910040CA56 /* WineItemCollectionViewCell.swift */; };
@@ -21,7 +21,7 @@
 		B50550A52B5E41290040CA56 /* FinalProject_WineAppetit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject_WineAppetit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50550A82B5E41290040CA56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B50550AA2B5E41290040CA56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B50550AC2B5E41290040CA56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B50550AC2B5E41290040CA56 /* WineListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineListViewController.swift; sourceTree = "<group>"; };
 		B50550B12B5E412B0040CA56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B50550B42B5E412B0040CA56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B50550B62B5E412B0040CA56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				B50550C52B5FC90E0040CA56 /* List */,
-				B50550AC2B5E41290040CA56 /* ViewController.swift */,
+				B50550AC2B5E41290040CA56 /* WineListViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -206,7 +206,7 @@
 			files = (
 				B50550C82B5FC9910040CA56 /* WineItemCollectionViewCell.swift in Sources */,
 				B50550CD2B5FCC150040CA56 /* Wine.swift in Sources */,
-				B50550AD2B5E41290040CA56 /* ViewController.swift in Sources */,
+				B50550AD2B5E41290040CA56 /* WineListViewController.swift in Sources */,
 				B50550A92B5E41290040CA56 /* AppDelegate.swift in Sources */,
 				B50550AB2B5E41290040CA56 /* SceneDelegate.swift in Sources */,
 			);
