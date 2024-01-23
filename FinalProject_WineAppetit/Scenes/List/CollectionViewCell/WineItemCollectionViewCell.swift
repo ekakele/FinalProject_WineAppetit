@@ -17,6 +17,8 @@ class WineItemCollectionViewCell: UICollectionViewCell {
         stackView.distribution = .fill
         stackView.alignment = .center
         stackView.spacing = 1
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.layoutMargins = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
