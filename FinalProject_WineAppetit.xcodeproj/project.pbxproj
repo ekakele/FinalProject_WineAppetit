@@ -12,6 +12,8 @@
 		B50550AD2B5E41290040CA56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550AC2B5E41290040CA56 /* ViewController.swift */; };
 		B50550B22B5E412B0040CA56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B50550B12B5E412B0040CA56 /* Assets.xcassets */; };
 		B50550B52B5E412B0040CA56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50550B32B5E412B0040CA56 /* LaunchScreen.storyboard */; };
+		B50550C82B5FC9910040CA56 /* WineItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550C72B5FC9910040CA56 /* WineItemCollectionViewCell.swift */; };
+		B50550CB2B5FCA160040CA56 /* GenericNetworkManager in Frameworks */ = {isa = PBXBuildFile; productRef = B50550CA2B5FCA160040CA56 /* GenericNetworkManager */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,7 @@
 		B50550B12B5E412B0040CA56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B50550B42B5E412B0040CA56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B50550B62B5E412B0040CA56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B50550C72B5FC9910040CA56 /* WineItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineItemCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B50550CB2B5FCA160040CA56 /* GenericNetworkManager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,9 +103,26 @@
 		B50550C02B5E41BD0040CA56 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				B50550C52B5FC90E0040CA56 /* List */,
 				B50550AC2B5E41290040CA56 /* ViewController.swift */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		B50550C52B5FC90E0040CA56 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				B50550C62B5FC92B0040CA56 /* CollectionViewCell */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		B50550C62B5FC92B0040CA56 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B50550C72B5FC9910040CA56 /* WineItemCollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +141,9 @@
 			dependencies = (
 			);
 			name = FinalProject_WineAppetit;
+			packageProductDependencies = (
+				B50550CA2B5FCA160040CA56 /* GenericNetworkManager */,
+			);
 			productName = FinalProject_WineAppetit;
 			productReference = B50550A52B5E41290040CA56 /* FinalProject_WineAppetit.app */;
 			productType = "com.apple.product-type.application";
@@ -148,6 +172,9 @@
 				Base,
 			);
 			mainGroup = B505509C2B5E41290040CA56;
+			packageReferences = (
+				B50550C92B5FCA160040CA56 /* XCRemoteSwiftPackageReference "GenericNetworkManager" */,
+			);
 			productRefGroup = B50550A62B5E41290040CA56 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -174,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B50550C82B5FC9910040CA56 /* WineItemCollectionViewCell.swift in Sources */,
 				B50550AD2B5E41290040CA56 /* ViewController.swift in Sources */,
 				B50550A92B5E41290040CA56 /* AppDelegate.swift in Sources */,
 				B50550AB2B5E41290040CA56 /* SceneDelegate.swift in Sources */,
@@ -391,6 +419,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B50550C92B5FCA160040CA56 /* XCRemoteSwiftPackageReference "GenericNetworkManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ekakele/GenericNetworkManager";
+			requirement = {
+				kind = exactVersion;
+				version = 0.0.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B50550CA2B5FCA160040CA56 /* GenericNetworkManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B50550C92B5FCA160040CA56 /* XCRemoteSwiftPackageReference "GenericNetworkManager" */;
+			productName = GenericNetworkManager;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B505509D2B5E41290040CA56 /* Project object */;
 }
