@@ -19,6 +19,8 @@ class WineListViewController: UIViewController {
     }()
     
     private let searchBar = CustomSearchBar(placeholder: "Search for a wine")
+    private let activityIndicator = ActivityIndicator()
+    
     private var wines = [Wine]()
     private let viewModel = WineListViewModel()
     
@@ -54,10 +56,15 @@ class WineListViewController: UIViewController {
     }
     
     private func setupUI() {
+        setupActivityIndicator()
         setupBackground()
         addSubviews()
         setupWineCollectionView()
         setupWineCollectionViewConstraints()
+    }
+    
+    private func setupActivityIndicator() {
+        activityIndicator.frame = self.view.bounds
     }
     
     private func setupBackground() {
@@ -65,6 +72,7 @@ class WineListViewController: UIViewController {
     }
     
     private func addSubviews() {
+        view.addSubview(activityIndicator)
         view.addSubview(wineCollectionView)
     }
     
@@ -138,11 +146,15 @@ extension WineListViewController: WineListViewModelDelegate {
     func winesFetched(_ wines: [Wine]) {
         self.wines = wines
         DispatchQueue.main.async {
+            self.activityIndicator.hide()
             self.wineCollectionView.reloadData()
         }
     }
     
     func showError(_ error: Error) {
+        DispatchQueue.main.async {
+            self.activityIndicator.hide()
+        }
         print("error")
     }
     
