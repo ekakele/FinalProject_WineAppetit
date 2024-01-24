@@ -153,7 +153,7 @@ class WineItemCollectionViewCell: UICollectionViewCell {
     
     private func addSubviews() {
         addSubview(activityIndicator)
-        contentView.addSubview(cellStackView)
+        addSubview(cellStackView)
         
         cellStackView.addSubview(vintageYearLabel)
         cellStackView.addSubview(addToFavoritesButton)
