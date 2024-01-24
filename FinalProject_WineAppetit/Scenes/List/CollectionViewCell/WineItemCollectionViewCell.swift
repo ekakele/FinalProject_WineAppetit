@@ -10,6 +10,7 @@ import UIKit
 class WineItemCollectionViewCell: UICollectionViewCell {
     //MARK: - Properties
     static let identifier = "ItemCollectionViewCell"
+    private let activityIndicator = ActivityIndicator()
     
     private lazy var cellStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [itemImageView, infoStackView])
@@ -112,6 +113,8 @@ class WineItemCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
+        activityIndicator.show()
+        
         itemImageView.image = nil
         titleLabel.text = nil
         categoryLabel.text = nil
@@ -123,6 +126,9 @@ class WineItemCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Configure
     func configure(with wine: Wine) {
+        
+        activityIndicator.show()
+        
         displayImage(for: wine)
         titleLabel.text = wine.title
         categoryLabel.text = wine.categoriesList.first
@@ -133,13 +139,20 @@ class WineItemCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Private Methods
     private func setupUI() {
+        setupActivityIndicator()
         addSubviews()
         setupShadeConstraints()
         setupImageConstraints()
         setupCellStackConstraints()
     }
     
+    private func setupActivityIndicator() {
+        activityIndicator.frame = contentView.bounds
+        activityIndicator.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    }
+    
     private func addSubviews() {
+        addSubview(activityIndicator)
         contentView.addSubview(cellStackView)
         
         cellStackView.addSubview(vintageYearLabel)
@@ -195,9 +208,11 @@ class WineItemCollectionViewCell: UICollectionViewCell {
             switch result {
             case .success(let image):
                 if let image = image {
+                    self?.activityIndicator.hide()
                     self?.itemImageView.image = image
                 }
             case .failure(let error):
+                self?.activityIndicator.hide()
                 print("Error fetching images: \(error)")
             }
         }
