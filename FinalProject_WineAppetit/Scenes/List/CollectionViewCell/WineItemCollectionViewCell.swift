@@ -10,7 +10,6 @@ import UIKit
 class WineItemCollectionViewCell: UICollectionViewCell {
     //MARK: - Properties
     static let identifier = "ItemCollectionViewCell"
-    private let activityIndicator = ActivityIndicator()
     
     private lazy var cellStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [itemImageView, infoStackView])
@@ -98,6 +97,9 @@ class WineItemCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
+    private let activityIndicator = ActivityIndicator()
+    private var wine: Wine?
+
     //MARK: - Inits
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -126,6 +128,7 @@ class WineItemCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Configure
     func configure(with wine: Wine) {
+        self.wine = wine
         
         activityIndicator.show()
         
@@ -135,6 +138,8 @@ class WineItemCollectionViewCell: UICollectionViewCell {
         subcategoryLabel.text = wine.categoriesList[1]
         brandLabel.text = wine.brand
         displayVintageYear(wine.vintageYear)
+        
+        updateFavoriteButtonUI()
     }
     
     //MARK: - Private Methods
@@ -144,6 +149,7 @@ class WineItemCollectionViewCell: UICollectionViewCell {
         setupShadeConstraints()
         setupImageConstraints()
         setupCellStackConstraints()
+        setupButtonAction()
     }
     
     private func setupActivityIndicator() {
@@ -185,6 +191,31 @@ class WineItemCollectionViewCell: UICollectionViewCell {
             cellStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             cellStackView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+    }
+    
+    private func setupButtonAction() {
+        addToFavoritesButton.addAction(
+            UIAction(handler: { [weak self] _ in
+                self?.updateFavoriteButtonState()
+            }),
+            for: .touchUpInside
+        )
+    }
+    
+    private func updateFavoriteButtonState() {
+        guard let wineID = wine?.id else { return }
+        var isFaved = UserPreferencesManager.shared.checkIsWineFavorited(forKey: wineID)
+        isFaved.toggle()
+        UserPreferencesManager.shared.saveWineInFavorites(forKey: wineID, value: isFaved)
+        updateFavoriteButtonUI()
+    }
+    
+    private func updateFavoriteButtonUI() {
+        guard let wineID = wine?.id else { return }
+        let isFaved = UserPreferencesManager.shared.checkIsWineFavorited(forKey: wineID)
+        let heartImage = UIImage(systemName: isFaved ? "heart.fill" : "heart")
+        addToFavoritesButton.setImage(heartImage, for: .normal)
+        addToFavoritesButton.tintColor = isFaved ? Constants.AppColor.redFill : Constants.AppColor.grayStroke
     }
     
     private func displayVintageYear(_ vintageYear: String?) {
