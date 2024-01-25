@@ -35,6 +35,7 @@ struct Constants {
         static let categoryText = UIColor(hex: "#8B112E")
         static let shadeBackground = UIColor(hex: "#FF003D").withAlphaComponent(0.06).cgColor
         static let tagBackground = UIColor(hex: "#edede9")
-        static let favoriteButton = UIColor(hex: "#A51C30")
+        static let redFill = UIColor(hex: "#c0070b")
+        static let grayStroke = UIColor(hex: "#7f7f7f")
     }
 }
