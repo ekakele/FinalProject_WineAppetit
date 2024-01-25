@@ -9,19 +9,42 @@
 /* Begin PBXBuildFile section */
 		B50550A92B5E41290040CA56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550A82B5E41290040CA56 /* AppDelegate.swift */; };
 		B50550AB2B5E41290040CA56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550AA2B5E41290040CA56 /* SceneDelegate.swift */; };
-		B50550AD2B5E41290040CA56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550AC2B5E41290040CA56 /* ViewController.swift */; };
+		B50550AD2B5E41290040CA56 /* WineListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550AC2B5E41290040CA56 /* WineListViewController.swift */; };
 		B50550B22B5E412B0040CA56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B50550B12B5E412B0040CA56 /* Assets.xcassets */; };
 		B50550B52B5E412B0040CA56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B50550B32B5E412B0040CA56 /* LaunchScreen.storyboard */; };
+		B50550C82B5FC9910040CA56 /* WineItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550C72B5FC9910040CA56 /* WineItemCollectionViewCell.swift */; };
+		B50550CB2B5FCA160040CA56 /* GenericNetworkManager in Frameworks */ = {isa = PBXBuildFile; productRef = B50550CA2B5FCA160040CA56 /* GenericNetworkManager */; };
+		B50550CD2B5FCC150040CA56 /* Wine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550CC2B5FCC150040CA56 /* Wine.swift */; };
+		B50550CF2B5FDABC0040CA56 /* WineListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550CE2B5FDABC0040CA56 /* WineListViewModel.swift */; };
+		B50550D22B5FE0840040CA56 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550D12B5FE0840040CA56 /* CustomSearchBar.swift */; };
+		B50550D82B6013810040CA56 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550D72B6013810040CA56 /* AppConstants.swift */; };
+		B50550DE2B6039FC0040CA56 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550DD2B6039FC0040CA56 /* ImageLoader.swift */; };
+		B50550E02B6040610040CA56 /* ShortInfoStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550DF2B6040610040CA56 /* ShortInfoStackView.swift */; };
+		B50550E22B6040C00040CA56 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550E12B6040C00040CA56 /* CustomLabel.swift */; };
+		B5517D2C2B61775C004A4961 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5517D2B2B61775C004A4961 /* ActivityIndicator.swift */; };
+		B58E60502B622DD2000458BD /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E604F2B622DD2000458BD /* UIColor+Hex.swift */; };
+		B58E60562B62AF16000458BD /* UserPreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E60552B62AF16000458BD /* UserPreferencesManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B50550A52B5E41290040CA56 /* FinalProject_WineAppetit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject_WineAppetit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50550A82B5E41290040CA56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B50550AA2B5E41290040CA56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B50550AC2B5E41290040CA56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B50550AC2B5E41290040CA56 /* WineListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineListViewController.swift; sourceTree = "<group>"; };
 		B50550B12B5E412B0040CA56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B50550B42B5E412B0040CA56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B50550B62B5E412B0040CA56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B50550C72B5FC9910040CA56 /* WineItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		B50550CC2B5FCC150040CA56 /* Wine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wine.swift; sourceTree = "<group>"; };
+		B50550CE2B5FDABC0040CA56 /* WineListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineListViewModel.swift; sourceTree = "<group>"; };
+		B50550D12B5FE0840040CA56 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
+		B50550D72B6013810040CA56 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		B50550DD2B6039FC0040CA56 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		B50550DF2B6040610040CA56 /* ShortInfoStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortInfoStackView.swift; sourceTree = "<group>"; };
+		B50550E12B6040C00040CA56 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		B5517D2B2B61775C004A4961 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		B58E604F2B622DD2000458BD /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		B58E60552B62AF16000458BD /* UserPreferencesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferencesManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B50550CB2B5FCA160040CA56 /* GenericNetworkManager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +82,10 @@
 				B50550BE2B5E41930040CA56 /* NetworkManager */,
 				B50550BF2B5E419A0040CA56 /* Models */,
 				B50550C02B5E41BD0040CA56 /* Scenes */,
+				B50550D02B5FE04E0040CA56 /* Components */,
+				B50550DC2B60397D0040CA56 /* Utils */,
+				B58E604E2B622DB4000458BD /* Extensions */,
+				B50550D62B6013730040CA56 /* Constants */,
 				B50550BD2B5E417F0040CA56 /* Resources */,
 				B50550B62B5E412B0040CA56 /* Info.plist */,
 			);
@@ -92,6 +120,7 @@
 		B50550BF2B5E419A0040CA56 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B50550CC2B5FCC150040CA56 /* Wine.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -99,9 +128,63 @@
 		B50550C02B5E41BD0040CA56 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				B50550AC2B5E41290040CA56 /* ViewController.swift */,
+				B50550C52B5FC90E0040CA56 /* List */,
+				B50550AC2B5E41290040CA56 /* WineListViewController.swift */,
+				B50550CE2B5FDABC0040CA56 /* WineListViewModel.swift */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		B50550C52B5FC90E0040CA56 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				B50550C62B5FC92B0040CA56 /* CollectionViewCell */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		B50550C62B5FC92B0040CA56 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B50550C72B5FC9910040CA56 /* WineItemCollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		B50550D02B5FE04E0040CA56 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B50550D12B5FE0840040CA56 /* CustomSearchBar.swift */,
+				B50550DF2B6040610040CA56 /* ShortInfoStackView.swift */,
+				B50550E12B6040C00040CA56 /* CustomLabel.swift */,
+				B5517D2B2B61775C004A4961 /* ActivityIndicator.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B50550D62B6013730040CA56 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B50550D72B6013810040CA56 /* AppConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		B50550DC2B60397D0040CA56 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B50550DD2B6039FC0040CA56 /* ImageLoader.swift */,
+				B58E60552B62AF16000458BD /* UserPreferencesManager.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		B58E604E2B622DB4000458BD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B58E604F2B622DD2000458BD /* UIColor+Hex.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +203,9 @@
 			dependencies = (
 			);
 			name = FinalProject_WineAppetit;
+			packageProductDependencies = (
+				B50550CA2B5FCA160040CA56 /* GenericNetworkManager */,
+			);
 			productName = FinalProject_WineAppetit;
 			productReference = B50550A52B5E41290040CA56 /* FinalProject_WineAppetit.app */;
 			productType = "com.apple.product-type.application";
@@ -148,6 +234,9 @@
 				Base,
 			);
 			mainGroup = B505509C2B5E41290040CA56;
+			packageReferences = (
+				B50550C92B5FCA160040CA56 /* XCRemoteSwiftPackageReference "GenericNetworkManager" */,
+			);
 			productRefGroup = B50550A62B5E41290040CA56 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -174,9 +263,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B50550AD2B5E41290040CA56 /* ViewController.swift in Sources */,
+				B50550C82B5FC9910040CA56 /* WineItemCollectionViewCell.swift in Sources */,
+				B50550CD2B5FCC150040CA56 /* Wine.swift in Sources */,
+				B50550E22B6040C00040CA56 /* CustomLabel.swift in Sources */,
+				B58E60562B62AF16000458BD /* UserPreferencesManager.swift in Sources */,
+				B50550AD2B5E41290040CA56 /* WineListViewController.swift in Sources */,
+				B5517D2C2B61775C004A4961 /* ActivityIndicator.swift in Sources */,
+				B50550D82B6013810040CA56 /* AppConstants.swift in Sources */,
+				B50550D22B5FE0840040CA56 /* CustomSearchBar.swift in Sources */,
+				B50550DE2B6039FC0040CA56 /* ImageLoader.swift in Sources */,
+				B50550E02B6040610040CA56 /* ShortInfoStackView.swift in Sources */,
+				B58E60502B622DD2000458BD /* UIColor+Hex.swift in Sources */,
 				B50550A92B5E41290040CA56 /* AppDelegate.swift in Sources */,
 				B50550AB2B5E41290040CA56 /* SceneDelegate.swift in Sources */,
+				B50550CF2B5FDABC0040CA56 /* WineListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +491,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B50550C92B5FCA160040CA56 /* XCRemoteSwiftPackageReference "GenericNetworkManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ekakele/GenericNetworkManager";
+			requirement = {
+				kind = exactVersion;
+				version = 0.0.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B50550CA2B5FCA160040CA56 /* GenericNetworkManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B50550C92B5FCA160040CA56 /* XCRemoteSwiftPackageReference "GenericNetworkManager" */;
+			productName = GenericNetworkManager;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B505509D2B5E41290040CA56 /* Project object */;
 }

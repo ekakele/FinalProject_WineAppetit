@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "genericnetworkmanager",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ekakele/GenericNetworkManager",
+      "state" : {
+        "revision" : "0da9b57b8245da67f120b631a757e8343596d18f",
+        "version" : "0.0.5"
+      }
+    }
+  ],
+  "version" : 2
+}
