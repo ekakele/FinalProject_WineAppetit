@@ -39,7 +39,7 @@ class WineItemCollectionViewCell: UICollectionViewCell {
     
     private let titleLabel = CustomLabel(
         textColor: .label,
-        font: .systemFont(ofSize: 14, weight: .bold),
+        font: Constants.AppFont.secondaryTitle,
         numberOfLines: 1
     )
     
@@ -51,20 +51,20 @@ class WineItemCollectionViewCell: UICollectionViewCell {
     )
     
     private let categoryLabel = CustomLabel(
-        textColor: UIColor(red: 0.55, green: 0.07, blue: 0.18, alpha: 1.00),
+        textColor: Constants.AppColor.categoryText,
         font: .systemFont(ofSize: 12, weight: .regular),
         numberOfLines: 1
     )
     
     private let subcategoryLabel = CustomLabel(
-        textColor: UIColor(red: 0.55, green: 0.07, blue: 0.18, alpha: 1.00),
+        textColor: Constants.AppColor.categoryText,
         font: .systemFont(ofSize: 12, weight: .regular),
         numberOfLines: 1
     )
     
     private let brandLabel = CustomLabel(
         textColor: .label,
-        font: .systemFont(ofSize: 12, weight: .regular),
+        font: Constants.AppFont.secondaryInfo,
         numberOfLines: 1
     )
     
@@ -76,7 +76,7 @@ class WineItemCollectionViewCell: UICollectionViewCell {
         label.textAlignment = .center
         label.layer.cornerRadius = 5
         label.clipsToBounds = true
-        label.backgroundColor = .lightGray.withAlphaComponent(0.3)
+        label.backgroundColor = Constants.AppColor.tagBackground
         return label
     }()
     
@@ -90,7 +90,7 @@ class WineItemCollectionViewCell: UICollectionViewCell {
     
     private let shadeView: UIView = {
         let view = UIView()
-        view.layer.backgroundColor = UIColor(red: 1, green: 0, blue: 0.238, alpha: 0.06).cgColor
+        view.layer.backgroundColor = Constants.AppColor.shadeBackground
         view.layer.cornerRadius = 26
         view.widthAnchor.constraint(equalToConstant: 120).isActive = true
         view.heightAnchor.constraint(equalToConstant: 90).isActive = true
