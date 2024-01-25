@@ -18,6 +18,16 @@ class WineListViewController: UIViewController {
         return collectionView
     }()
     
+    private let noResultsLabel: UILabel = {
+        let label = UILabel()
+        label.text = "No results found"
+        label.textColor = .secondaryLabel
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.isHidden = true
+        return label
+    }()
+    
     private let searchBar = CustomSearchBar(placeholder: "Search for a wine")
     private let activityIndicator = ActivityIndicator()
     
@@ -60,6 +70,7 @@ class WineListViewController: UIViewController {
         setupBackground()
         addSubviews()
         setupWineCollectionView()
+        setupNoResultsLabelConstraints()
         setupWineCollectionViewConstraints()
     }
     
@@ -73,7 +84,15 @@ class WineListViewController: UIViewController {
     
     private func addSubviews() {
         view.addSubview(activityIndicator)
+        view.addSubview(noResultsLabel)
         view.addSubview(wineCollectionView)
+    }
+    
+    private func setupNoResultsLabelConstraints() {
+        NSLayoutConstraint.activate([
+            noResultsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            noResultsLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
     
     private func setupWineCollectionView() {
@@ -148,6 +167,7 @@ extension WineListViewController: WineListViewModelDelegate {
         DispatchQueue.main.async {
             self.activityIndicator.hide()
             self.wineCollectionView.reloadData()
+            self.noResultsLabel.isHidden = !wines.isEmpty
         }
     }
     
