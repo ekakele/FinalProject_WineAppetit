@@ -13,7 +13,7 @@ final class OrganolepticIconStackView: UIView {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.spacing = 10
-        stackView.distribution = .equalCentering
+        stackView.distribution = .fillEqually
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.layoutMargins = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         stackView.translatesAutoresizingMaskIntoConstraints = false

@@ -10,7 +10,8 @@ import UIKit
 class IconView: UIView {
     //MARK: - Inits
     init(
-        backgroundColor: UIColor = Constants.AppColor.iconBackground, cornerRadius: CGFloat = 14,
+        backgroundColor: UIColor = Constants.AppColor.iconBackground, 
+        cornerRadius: CGFloat = 14,
         height: CGFloat = 54,
         width: CGFloat = 100
     ) {
