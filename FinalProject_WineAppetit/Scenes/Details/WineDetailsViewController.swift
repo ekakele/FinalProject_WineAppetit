@@ -259,7 +259,7 @@ final class WineDetailsViewController: UIViewController {
     
     //TODO: - to be used after handling data
     //2 - დროებითი თვალსაჩინოებისთვის
-    func setupDetailsStackView() {
+    private func setupDetailsStackView() {
         createDescriptionStackView(title: "Technology:", detail: "Qvevri")
         createDescriptionStackView(title: "Grape:", detail: "Saperavi")
         createDescriptionStackView(title: "Origin:", detail: "Khashmi")
@@ -268,7 +268,7 @@ final class WineDetailsViewController: UIViewController {
     
     //TODO: - to be used after handling data
     //1
-    func createOrganolepticInfoLabel(text: String, addToStack stackView: UIStackView) {
+    private func createOrganolepticInfoLabel(text: String, addToStack stackView: UIStackView) {
         let label = UILabel()
         label.text = text
         label.numberOfLines = 4
@@ -292,7 +292,7 @@ final class WineDetailsViewController: UIViewController {
         createOrganolepticInfoLabel(text: "Cherry \nPlum", addToStack: organolepticLabelStackView)
     }
     
-    func temporaryConfiguration() {
+    private func temporaryConfiguration() {
         mainTitleLabel.text = "Title"
         categoryLabel.text = "Red"
         subcategoryLabel.text = "Dry"
