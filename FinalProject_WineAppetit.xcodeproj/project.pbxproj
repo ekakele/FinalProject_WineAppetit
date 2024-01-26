@@ -29,6 +29,7 @@
 		B58E60692B63B032000458BD /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E60682B63B032000458BD /* IconView.swift */; };
 		B58E606B2B63B441000458BD /* OrganolepticIconStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E606A2B63B441000458BD /* OrganolepticIconStackView.swift */; };
 		B58E60712B63C072000458BD /* WineDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E60702B63C072000458BD /* WineDetailsViewController.swift */; };
+		B58E60752B645B91000458BD /* WineDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E60742B645B91000458BD /* WineDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		B58E60682B63B032000458BD /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		B58E606A2B63B441000458BD /* OrganolepticIconStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganolepticIconStackView.swift; sourceTree = "<group>"; };
 		B58E60702B63C072000458BD /* WineDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineDetailsViewController.swift; sourceTree = "<group>"; };
+		B58E60742B645B91000458BD /* WineDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				B58E60702B63C072000458BD /* WineDetailsViewController.swift */,
+				B58E60742B645B91000458BD /* WineDetailsViewModel.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				B5517D2C2B61775C004A4961 /* ActivityIndicator.swift in Sources */,
 				B50550D82B6013810040CA56 /* AppConstants.swift in Sources */,
 				B50550D22B5FE0840040CA56 /* CustomSearchBar.swift in Sources */,
+				B58E60752B645B91000458BD /* WineDetailsViewModel.swift in Sources */,
 				B50550DE2B6039FC0040CA56 /* ImageLoader.swift in Sources */,
 				B50550E02B6040610040CA56 /* ShortInfoStackView.swift in Sources */,
 				B58E60692B63B032000458BD /* IconView.swift in Sources */,
