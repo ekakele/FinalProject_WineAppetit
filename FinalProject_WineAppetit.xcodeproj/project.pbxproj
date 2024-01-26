@@ -28,6 +28,7 @@
 		B58E60672B638D7F000458BD /* IconLabelStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E60662B638D7F000458BD /* IconLabelStackView.swift */; };
 		B58E60692B63B032000458BD /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E60682B63B032000458BD /* IconView.swift */; };
 		B58E606B2B63B441000458BD /* OrganolepticIconStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E606A2B63B441000458BD /* OrganolepticIconStackView.swift */; };
+		B58E60712B63C072000458BD /* WineDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E60702B63C072000458BD /* WineDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		B58E60662B638D7F000458BD /* IconLabelStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconLabelStackView.swift; sourceTree = "<group>"; };
 		B58E60682B63B032000458BD /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		B58E606A2B63B441000458BD /* OrganolepticIconStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganolepticIconStackView.swift; sourceTree = "<group>"; };
+		B58E60702B63C072000458BD /* WineDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 		B58E60572B62E853000458BD /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				B58E60702B63C072000458BD /* WineDetailsViewController.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				B50550A92B5E41290040CA56 /* AppDelegate.swift in Sources */,
 				B50550AB2B5E41290040CA56 /* SceneDelegate.swift in Sources */,
 				B50550CF2B5FDABC0040CA56 /* WineListViewModel.swift in Sources */,
+				B58E60712B63C072000458BD /* WineDetailsViewController.swift in Sources */,
 				B58E606B2B63B441000458BD /* OrganolepticIconStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
