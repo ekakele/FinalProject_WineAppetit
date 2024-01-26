@@ -38,6 +38,7 @@ struct Constants {
         
         static let shadeBackground = UIColor(hex: "#FF003D").withAlphaComponent(0.06).cgColor
         static let detailsBackground = UIColor(hex: "#FF003D").withAlphaComponent(0.1)
+        static let buttonBackground = UIColor(hex: "#FF003D").withAlphaComponent(0.2)
         static let iconBackground = UIColor(hex: "#8B112E").withAlphaComponent(0.9)
         static let tagBackground = UIColor(hex: "#edede9")
         

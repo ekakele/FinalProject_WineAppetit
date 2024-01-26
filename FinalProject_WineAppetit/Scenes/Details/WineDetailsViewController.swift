@@ -97,7 +97,7 @@ final class WineDetailsViewController: UIViewController {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = UIEdgeInsets(top: 20, left: 40, bottom: 80, right: 40)
+        stackView.layoutMargins = UIEdgeInsets(top: 20, left: 40, bottom: 0, right: 40)
         stackView.backgroundColor = Constants.AppColor.detailsBackground
         stackView.layer.cornerRadius = 50
         stackView.layer.masksToBounds = true
@@ -115,6 +115,16 @@ final class WineDetailsViewController: UIViewController {
     }()
     
     private let organolepticIconStackView = OrganolepticIconStackView()
+    
+    private let addButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Add to My Wine Library", for: .normal)
+        button.setTitleColor(.label, for: .normal)
+        button.backgroundColor = Constants.AppColor.buttonBackground
+        button.layer.cornerRadius = 26
+        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        return button
+    }()
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
@@ -155,16 +165,27 @@ final class WineDetailsViewController: UIViewController {
         
         lowerStackView.addArrangedSubview(organolepticIconStackView)
         lowerStackView.addArrangedSubview(organolepticLabelStackView)
+        lowerStackView.addArrangedSubview(addButton)
         
         view.addSubview(mainStackView)
     }
     
-    private func setupUpperLowerStackViewConstraints() {
+    private func setupButton() {
         NSLayoutConstraint.activate([
-            upperStackView.topAnchor.constraint(equalTo: mainStackView.topAnchor),
-            
+            addButton.leadingAnchor.constraint(equalTo: lowerStackView.leadingAnchor, constant: 20),
+            addButton.trailingAnchor.constraint(equalTo: lowerStackView.trailingAnchor, constant: -20),
+            addButton.bottomAnchor.constraint(equalTo: lowerStackView.bottomAnchor, constant: -50)
+        ])
+    }
+    
+    private func setupUpperLowerStackViewConstraints() {
+        lowerStackView.setCustomSpacing(20, after: organolepticLabelStackView)
+        
+        NSLayoutConstraint.activate([
             lowerStackView.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor, constant: 8),
-            lowerStackView.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor, constant: -8)
+            lowerStackView.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor, constant: -8),
+            
+            upperStackView.topAnchor.constraint(equalTo: mainStackView.topAnchor)
         ])
     }
     
