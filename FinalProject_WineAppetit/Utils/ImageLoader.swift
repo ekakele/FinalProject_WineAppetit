@@ -16,44 +16,23 @@ final class ImageLoader {
     private init() {}
     
     //MARK: - Methods
-    func fetchImage(with URLString: String, completion: @escaping (Result<UIImage?, Error>) -> Void) {
-        
+    func fetchImage(with URLString: String) async throws -> UIImage? {
         if let image = cache.object(forKey: NSString(string: URLString)) {
-            completion(.success(image))
-            return
+            return image
         }
         
         guard !URLString.isEmpty, let URL = URL(string: URLString) else {
-            return
+            throw NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
         }
         
-        URLSession.shared.dataTask(with: URL) { data, response, error in
-            if let error = error {
-                print("Error fetching image from URL: \(URLString), Error: \(error.localizedDescription)")
-                completion(.failure(error))
-                return
-            }
-            
-            guard let data = data else {
-                let noDataError = NSError(domain: "", code: -2, userInfo: [NSLocalizedDescriptionKey: "No data received"])
-                print("No data received for URL: \(URLString)")
-                completion(.failure(noDataError))
-                return
-            }
-            
-            DispatchQueue.main.async {
-                guard let image = UIImage(data: data) else {
-                    let imageConversionError = NSError(domain: "", code: -3, userInfo: [NSLocalizedDescriptionKey: "Error converting data to UIImage"])
-                    print("Error converting data to UIImage for URL: \(URLString)")
-                    completion(.failure(imageConversionError))
-                    return
-                }
-                
-                self.cache.setObject(image, forKey: NSString(string: URLString))
-                completion(.success(image))
-            }
-        }.resume()
+        let (data, _) = try await URLSession.shared.data(from: URL)
         
+        guard let image = UIImage(data: data) else {
+            throw NSError(domain: "", code: -3, userInfo: [NSLocalizedDescriptionKey: "Error converting data to UIImage"])
+        }
+        
+        self.cache.setObject(image, forKey: NSString(string: URLString))
+        return image
     }
 }
 
