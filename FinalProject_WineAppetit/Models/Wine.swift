@@ -31,7 +31,7 @@ struct Wine: Decodable {
     let brand: String?
     let region: String?
     let technology: String?
-    let volume: String
+    let volume: String?
     let alcohol: String?
     let aroma: [String]?
     let taste: [String]?

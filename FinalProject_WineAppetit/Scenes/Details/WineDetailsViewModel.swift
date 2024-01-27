@@ -8,16 +8,21 @@
 import UIKit
 import GenericNetworkManager
 
-protocol DetailsViewModelDelegate: AnyObject {
+protocol WineDetailsViewModelDelegate: AnyObject {
     func wineDetailsFetched(_ wine: Wine)
     func showError(_ error: Error)
     func wineImageFetched(_ image: UIImage)
 }
 
-final class MovieDetailsViewModel {
+protocol WineDetailsViewModel {
+    var delegate: WineDetailsViewModelDelegate? { get set }
+    func viewDidLoad()
+}
+
+final class DefaultWineDetailsViewModel: WineDetailsViewModel {
     // MARK: - Properties
     private var wineID: Int
-    weak var delegate: DetailsViewModelDelegate?
+    weak var delegate: WineDetailsViewModelDelegate?
     private let baseURL = Constants.API.wineApiBaseURL
     
     // MARK: - Init
