@@ -11,7 +11,7 @@ import GenericNetworkManager
 protocol WineListViewModelDelegate: AnyObject {
     func winesFetched(_ wines: [Wine])
     func showError(_ error: Error)
-    func navigateToWineDetails(with id: String)
+    func navigateToWineDetails(with wineID: Int)
 }
 
 final class WineListViewModel {
@@ -26,10 +26,15 @@ final class WineListViewModel {
     }
     
     // MARK: - Methods
+    func didSelectWine(at indexPath: IndexPath) {
+        if let wineID = wines?[indexPath.row].id {
+            delegate?.navigateToWineDetails(with: wineID)
+        }
+    }
+    
     func searchWines(with query: String? = nil) {
         fetchWines(with: query)
     }
-    
     // MARK: - Private Methods
     private func fetchWines(with query: String?) {
         let endpoint = "api/wines?page=1"

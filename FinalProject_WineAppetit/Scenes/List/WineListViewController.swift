@@ -134,7 +134,7 @@ extension WineListViewController: UICollectionViewDataSource {
 //MARK: - CollectionView Delegate
 extension WineListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //TODO: - handle after adding VM
+        viewModel.didSelectWine(at: indexPath)
     }
 }
 
@@ -178,9 +178,9 @@ extension WineListViewController: WineListViewModelDelegate {
         print("error")
     }
     
-    func navigateToWineDetails(with id: String) {
-        print("no navigation yet")
-        //TODO: - handle after adding Details Page
+    func navigateToWineDetails(with wineID: Int) {
+        let viewController = WineDetailsViewController(wineID: wineID)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
