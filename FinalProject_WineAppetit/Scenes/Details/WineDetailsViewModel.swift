@@ -38,11 +38,9 @@ final class DefaultWineDetailsViewModel: WineDetailsViewModel {
     
     // MARK: - Private Methods
     private func fetchWineDetails() {
-        print("Fetching details for wineID: \(wineID)")
         let endpoint = "api/wines/"
         let idString = String(wineID)
         let urlString = baseURL + endpoint + idString
-        print(urlString)
         
         GenericNetworkManager.shared.fetchData(with: urlString) { [weak self] (result: Result<WineDetailsData, Error>) in
             switch result {
