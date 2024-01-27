@@ -9,7 +9,7 @@ import UIKit
 import GenericNetworkManager
 
 protocol WineDetailsViewModelDelegate: AnyObject {
-    func wineDetailsFetched(_ wine: Wine)
+    func wineDetailsFetched(_ wine: WineDetails)
     func showError(_ error: Error)
     func wineImageFetched(_ image: UIImage)
 }
@@ -28,6 +28,7 @@ final class DefaultWineDetailsViewModel: WineDetailsViewModel {
     // MARK: - Init
     init(wineID: Int) {
         self.wineID = wineID
+        print(wineID)
     }
     
     // MARK: - ViewLifeCycle
@@ -36,19 +37,19 @@ final class DefaultWineDetailsViewModel: WineDetailsViewModel {
     }
     
     // MARK: - Private Methods
-    private func fetchWineDetails(with query: String? = nil) {
-        let endpoint = "api/wines?page=1" //TODO: - update
-        var queryString = ""
-        if let query = query, !query.isEmpty {
-            queryString = "&q=\(query)"
-        }
-        let urlString = baseURL + endpoint + queryString
+    private func fetchWineDetails() {
+        print("Fetching details for wineID: \(wineID)")
+        let endpoint = "api/wines/"
+        let idString = String(wineID)
+        let urlString = baseURL + endpoint + idString
+        print(urlString)
         
-        GenericNetworkManager.shared.fetchData(with: urlString) { [weak self] (result: Result<Wine, Error>) in
+        GenericNetworkManager.shared.fetchData(with: urlString) { [weak self] (result: Result<WineDetailsData, Error>) in
             switch result {
             case .success(let wine):
-                self?.wineID = wine.id
-                self?.delegate?.wineDetailsFetched(wine)
+                self?.wineID = wine.details.id
+                self?.delegate?.wineDetailsFetched(wine.details)
+                self?.loadImage(from: wine.details.image ?? "")
             case .failure(let error):
                 self?.delegate?.showError(error)
             }

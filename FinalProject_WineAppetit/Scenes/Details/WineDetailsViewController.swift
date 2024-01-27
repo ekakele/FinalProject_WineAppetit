@@ -24,14 +24,12 @@ final class WineDetailsViewController: UIViewController {
         stackView.distribution = .fillProportionally
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20) //bottom = space under bottle
-        //                        stackView.backgroundColor = .orange
+        stackView.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
         return stackView
     }()
     
     private let itemImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = Constants.AppDefaultImage.wineImage
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.heightAnchor.constraint(equalToConstant: 260).isActive = true
@@ -53,7 +51,8 @@ final class WineDetailsViewController: UIViewController {
     private lazy var categoryStackView = ShortInfoStackView(
         arrangedSubviews: [categoryLabel, subcategoryLabel],
         axis: .horizontal,
-        distribution: .equalCentering
+        distribution: .equalCentering,
+        stackSpacing: 6
     )
     
     private let categoryLabel = CustomLabel(
@@ -131,6 +130,7 @@ final class WineDetailsViewController: UIViewController {
     //MARK: - Inits
     init(wineID: Int) {
         viewModel = DefaultWineDetailsViewModel(wineID: wineID)
+        print("passing wineID: \(wineID)") 
         super.init(nibName: nil, bundle: nil)
         
         viewModel.delegate = self
@@ -144,6 +144,8 @@ final class WineDetailsViewController: UIViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        viewModel.viewDidLoad()
         
         setupNavigationBar()
         temporaryConfiguration()
@@ -265,11 +267,7 @@ final class WineDetailsViewController: UIViewController {
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(detailLabel)
         
-        lowerStackView.addArrangedSubview(stackView)
-        //        lowerStackView.addArrangedSubview(organolepticIconStackView)
-        //        lowerStackView.addArrangedSubview(organolepticLabelStackView)
-        //        lowerStackView.addArrangedSubview(addButton)
-        
+        lowerStackView.insertArrangedSubview(stackView, at: 0)
     }
     
     //TODO: - to be used after handling data
@@ -320,7 +318,7 @@ final class WineDetailsViewController: UIViewController {
 }
 
 extension WineDetailsViewController: WineDetailsViewModelDelegate {
-    func wineDetailsFetched(_ wine: Wine) {
+    func wineDetailsFetched(_ wine: WineDetails) {
         Task {
             //short info
             mainTitleLabel.text = wine.title
@@ -329,19 +327,19 @@ extension WineDetailsViewController: WineDetailsViewModelDelegate {
             brandLabel.text = wine.brand
             
             //infographics
-            createInfographicLabel(text: wine.volume ?? "", addToStack: volumeInfographicStackView)
-            createInfographicLabel(text: wine.alcohol ?? "", addToStack: degreeInfographicStackView)
-            createInfographicLabel(text: wine.vintageYear ?? "", addToStack: yearInfographicStackView)
+            createInfographicLabel(text: wine.volume ?? Constants.AppTextInfo.notApplicable, addToStack: volumeInfographicStackView)
+            createInfographicLabel(text: wine.alcohol ?? Constants.AppTextInfo.notApplicable, addToStack: degreeInfographicStackView)
+            createInfographicLabel(text: wine.vintageYear ?? Constants.AppTextInfo.notApplicable, addToStack: yearInfographicStackView)
             
             //description
-            createDescriptionStackView(title: "Technology:", detail: wine.technology ?? "")
-            createDescriptionStackView(title: "Grape:", detail: wine.grape ?? "")
-            createDescriptionStackView(title: "Region:", detail: wine.region ?? "")
+            createDescriptionStackView(title: "Technology:", detail: wine.technology ?? Constants.AppTextInfo.notApplicable)
+            createDescriptionStackView(title: "Grape:", detail: wine.grape ?? Constants.AppTextInfo.notApplicable)
+            createDescriptionStackView(title: "Region:", detail: wine.region ?? Constants.AppTextInfo.notApplicable)
             
             //organoleptic info
-            createOrganolepticInfoLabel(text: wine.color ?? "", addToStack: organolepticLabelStackView)
-            createOrganolepticInfoLabel(text: wine.aroma?.joined(separator: "\n") ?? "", addToStack: organolepticLabelStackView)
-            createOrganolepticInfoLabel(text: wine.taste?.joined(separator: "\n") ?? "", addToStack: organolepticLabelStackView)
+            createOrganolepticInfoLabel(text: wine.color ?? Constants.AppTextInfo.notApplicable, addToStack: organolepticLabelStackView)
+            createOrganolepticInfoLabel(text: wine.aroma?.joined(separator: "\n") ?? Constants.AppTextInfo.notApplicable, addToStack: organolepticLabelStackView)
+            createOrganolepticInfoLabel(text: wine.taste?.joined(separator: "\n") ?? Constants.AppTextInfo.notApplicable, addToStack: organolepticLabelStackView)
         }
     }
     

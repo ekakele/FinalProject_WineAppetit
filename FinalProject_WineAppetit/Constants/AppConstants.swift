@@ -20,12 +20,16 @@ struct Constants {
         static let noImage = UIImage(named: "noImage")
     }
     
+    struct AppTextInfo {
+        static let notApplicable = "N/A"
+    }
+    
     struct AppFont {
         static let primaryTitle = UIFont.systemFont(ofSize: 24, weight: .bold)
         static let primarySubtitle = UIFont.systemFont(ofSize: 18, weight: .bold)
         static let primaryInfo = UIFont.systemFont(ofSize: 20, weight: .regular)
         static let primarySubInfo = UIFont.systemFont(ofSize: 18, weight: .regular)
-        static let primaryIconText = UIFont.systemFont(ofSize: 16, weight: .regular)
+        static let primaryIconText = UIFont.systemFont(ofSize: 13, weight: .regular)
         
         static let secondaryTitle = UIFont.systemFont(ofSize: 14, weight: .bold)
         static let secondaryInfo = UIFont.systemFont(ofSize: 12, weight: .regular)
