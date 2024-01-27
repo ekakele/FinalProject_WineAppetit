@@ -21,7 +21,7 @@ struct Wine: Decodable {
     let id: Int
     let barcode: String
     let title: String
-    let description: String
+    let description: String?
     let price: String
     let image: String?
     let categoriesList: [String]
@@ -31,6 +31,10 @@ struct Wine: Decodable {
     let brand: String?
     let region: String?
     let technology: String?
+    let volume: String
+    let alcohol: String?
+    let aroma: [String]?
+    let taste: [String]?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -46,5 +50,9 @@ struct Wine: Decodable {
         case brand
         case region
         case technology
+        case volume
+        case alcohol
+        case aroma
+        case taste
     }
 }
