@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - WineData
+// MARK: - WineDetailsData
 struct WineDetailsData: Decodable {
     let details: WineDetails
     
@@ -16,7 +16,7 @@ struct WineDetailsData: Decodable {
     }
 }
 
-// MARK: - Datum
+// MARK: - WineDetails
 struct WineDetails: Decodable {
     let id: Int
     let barcode: String
