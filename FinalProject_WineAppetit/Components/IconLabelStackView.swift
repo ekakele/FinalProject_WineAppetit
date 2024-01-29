@@ -7,7 +7,7 @@
 
 import UIKit
 
-class IconLabelStackView: UIStackView {
+final class IconLabelStackView: UIStackView {
     //MARK: - Inits
     init() {
         super.init(frame: .zero)

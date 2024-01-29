@@ -8,7 +8,6 @@
 import UIKit
 
 struct Constants {
-    
     struct API {
         static let wineApiBaseURL = "https://api.openwine.space/"
         static let wineApiEndpoint = "api/wines?page=1"

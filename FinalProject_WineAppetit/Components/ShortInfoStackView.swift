@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ShortInfoStackView: UIStackView {
+final class ShortInfoStackView: UIStackView {
     //MARK: - Inits
     init(
         arrangedSubviews: [UIView],

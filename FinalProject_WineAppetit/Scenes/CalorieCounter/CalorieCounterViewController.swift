@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CalorieCounterViewController: UIViewController {
+final class CalorieCounterViewController: UIViewController {
     //MARK: - Properties
     let backgroundImage: UIImageView = {
         let imageView = UIImageView()

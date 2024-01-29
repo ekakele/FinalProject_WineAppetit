@@ -7,7 +7,7 @@
 
 import UIKit
 
-class IconButton: UIButton {
+final class IconButton: UIButton {
     //MARK: - Inits
     init(imageName: String, tintColor: UIColor? = nil) {
         super.init(frame: .zero)
