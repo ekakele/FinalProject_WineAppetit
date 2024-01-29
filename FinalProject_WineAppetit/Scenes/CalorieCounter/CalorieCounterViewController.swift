@@ -78,10 +78,6 @@ final class CalorieCounterViewController: UIViewController {
     private let decrementButton = IconButton(imageName: "minus")
     private let resetButton = IconButton(imageName: "arrow.counterclockwise")
     
-    private var glassNumber = 0
-    private var selectedWineTypeIndex = 0
-    private var selectedWineCategoryIndex = 0
-    
     private let viewModel = CalorieCounterViewModel()
     
     //MARK: - LifeCycle
@@ -167,8 +163,8 @@ final class CalorieCounterViewController: UIViewController {
     }
     
     private func selectedWineCalories() -> CalorieInfo? {
-        let selectedWineType = WineType.allCases[selectedWineTypeIndex]
-        return wineCalories[selectedWineType]?[selectedWineCategoryIndex]
+        let selectedWineType = WineType.allCases[viewModel.selectedWineTypeIndex]
+        return wineCalories[selectedWineType]?[viewModel.selectedWineCategoryIndex]
     }
     
     private func calculateCalories(glassNumber: Int, calorieInfo: CalorieInfo) -> Int {
@@ -260,7 +256,7 @@ extension CalorieCounterViewController: UIPickerViewDataSource {
         if component == 0 {
             return  WineType.allCases.count
         } else {
-            let selectedWineType = WineType.allCases[selectedWineTypeIndex]
+            let selectedWineType = WineType.allCases[viewModel.selectedWineTypeIndex]
             return wineCalories[selectedWineType]?.count ?? 0
         }
     }
@@ -272,7 +268,7 @@ extension CalorieCounterViewController: UIPickerViewDelegate {
         if component == 0 {
             return WineType.allCases[row].rawValue
         } else {
-            let selectedWineType = WineType.allCases[selectedWineTypeIndex]
+            let selectedWineType = WineType.allCases[viewModel.selectedWineTypeIndex]
             return wineCalories[selectedWineType]?[row].description ?? "Unknown Category"
         }
     }
