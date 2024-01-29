@@ -28,7 +28,6 @@ final class DefaultWineDetailsViewModel: WineDetailsViewModel {
     // MARK: - Init
     init(wineID: Int) {
         self.wineID = wineID
-        print(wineID)
     }
     
     // MARK: - ViewLifeCycle

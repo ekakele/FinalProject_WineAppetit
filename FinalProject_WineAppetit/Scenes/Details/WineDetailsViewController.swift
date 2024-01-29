@@ -130,7 +130,6 @@ final class WineDetailsViewController: UIViewController {
     //MARK: - Inits
     init(wineID: Int) {
         viewModel = DefaultWineDetailsViewModel(wineID: wineID)
-        print("passing wineID: \(wineID)")
         super.init(nibName: nil, bundle: nil)
         
         viewModel.delegate = self
@@ -227,10 +226,10 @@ final class WineDetailsViewController: UIViewController {
     
     private func createDescriptionStackView(title: String, detail: String) {
         let stackView = UIStackView()
-        stackView.spacing = 40 //spacing in the row between columns
+        stackView.spacing = 40
         stackView.alignment = .leading
         stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 12, right: 0) //padding of the column
+        stackView.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 12, right: 0)
         
         
         let titleLabel = UILabel()
