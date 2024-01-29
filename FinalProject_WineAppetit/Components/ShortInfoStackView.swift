@@ -21,8 +21,8 @@ class ShortInfoStackView: UIStackView {
         arrangedSubviews.forEach { self.addArrangedSubview($0) }
         self.axis = axis
         self.distribution = distribution
-        self.alignment = stackAlignment ?? .fill // Default alignment if nil is provided
-        self.spacing = stackSpacing ?? 0 // Default value
+        self.alignment = stackAlignment ?? .fill
+        self.spacing = stackSpacing ?? 0
     }
     
     required init(coder: NSCoder) {

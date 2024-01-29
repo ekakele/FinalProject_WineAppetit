@@ -99,7 +99,7 @@ class WineItemCollectionViewCell: UICollectionViewCell {
     
     private let activityIndicator = ActivityIndicator()
     private var wine: Wine?
-
+    
     //MARK: - Inits
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -235,16 +235,20 @@ class WineItemCollectionViewCell: UICollectionViewCell {
     }
     
     private func loadAndCashImage(from urlString: String) {
-        ImageLoader.shared.fetchImage(with: urlString) { [weak self] result in
-            switch result {
-            case .success(let image):
-                if let image = image {
-                    self?.activityIndicator.hide()
-                    self?.itemImageView.image = image
+        Task { [weak self] in
+            do {
+                let image = try await ImageLoader.shared.fetchImage(with: urlString)
+                DispatchQueue.main.async {
+                    if let image = image {
+                        self?.activityIndicator.hide()
+                        self?.itemImageView.image = image
+                    }
                 }
-            case .failure(let error):
-                self?.activityIndicator.hide()
-                print("Error fetching images: \(error)")
+            } catch {
+                DispatchQueue.main.async {
+                    self?.activityIndicator.hide()
+                    print("Error fetching images: \(error)")
+                }
             }
         }
     }
