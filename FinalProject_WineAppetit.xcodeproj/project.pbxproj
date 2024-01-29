@@ -31,6 +31,9 @@
 		B58E606B2B63B441000458BD /* OrganolepticIconStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E606A2B63B441000458BD /* OrganolepticIconStackView.swift */; };
 		B58E60712B63C072000458BD /* WineDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E60702B63C072000458BD /* WineDetailsViewController.swift */; };
 		B58E60752B645B91000458BD /* WineDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E60742B645B91000458BD /* WineDetailsViewModel.swift */; };
+		B5B05E9B2B67E36E00EFDDA1 /* CalorieCounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B05E9A2B67E36E00EFDDA1 /* CalorieCounterViewController.swift */; };
+		B5B05E9D2B67E38100EFDDA1 /* CalorieCounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B05E9C2B67E38100EFDDA1 /* CalorieCounterViewModel.swift */; };
+		B5B05E9F2B67E58000EFDDA1 /* WineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B05E9E2B67E58000EFDDA1 /* WineData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +62,9 @@
 		B58E606A2B63B441000458BD /* OrganolepticIconStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganolepticIconStackView.swift; sourceTree = "<group>"; };
 		B58E60702B63C072000458BD /* WineDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineDetailsViewController.swift; sourceTree = "<group>"; };
 		B58E60742B645B91000458BD /* WineDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineDetailsViewModel.swift; sourceTree = "<group>"; };
+		B5B05E9A2B67E36E00EFDDA1 /* CalorieCounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieCounterViewController.swift; sourceTree = "<group>"; };
+		B5B05E9C2B67E38100EFDDA1 /* CalorieCounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieCounterViewModel.swift; sourceTree = "<group>"; };
+		B5B05E9E2B67E58000EFDDA1 /* WineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +151,7 @@
 			children = (
 				B50550C52B5FC90E0040CA56 /* List */,
 				B58E60572B62E853000458BD /* Details */,
+				B5B05E992B67E34E00EFDDA1 /* CalorieCounter */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -186,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				B50550D72B6013810040CA56 /* AppConstants.swift */,
+				B5B05E9E2B67E58000EFDDA1 /* WineData.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -214,6 +222,15 @@
 				B58E60742B645B91000458BD /* WineDetailsViewModel.swift */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		B5B05E992B67E34E00EFDDA1 /* CalorieCounter */ = {
+			isa = PBXGroup;
+			children = (
+				B5B05E9A2B67E36E00EFDDA1 /* CalorieCounterViewController.swift */,
+				B5B05E9C2B67E38100EFDDA1 /* CalorieCounterViewModel.swift */,
+			);
+			path = CalorieCounter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,10 +326,13 @@
 				B58E60502B622DD2000458BD /* UIColor+Hex.swift in Sources */,
 				B50550A92B5E41290040CA56 /* AppDelegate.swift in Sources */,
 				B50550AB2B5E41290040CA56 /* SceneDelegate.swift in Sources */,
+				B5B05E9B2B67E36E00EFDDA1 /* CalorieCounterViewController.swift in Sources */,
 				B50550CF2B5FDABC0040CA56 /* WineListViewModel.swift in Sources */,
 				B5816D4A2B6518C000550FE9 /* WineDetails.swift in Sources */,
 				B58E60712B63C072000458BD /* WineDetailsViewController.swift in Sources */,
 				B58E606B2B63B441000458BD /* OrganolepticIconStackView.swift in Sources */,
+				B5B05E9F2B67E58000EFDDA1 /* WineData.swift in Sources */,
+				B5B05E9D2B67E38100EFDDA1 /* CalorieCounterViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
