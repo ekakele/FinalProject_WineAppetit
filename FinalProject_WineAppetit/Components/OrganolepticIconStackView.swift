@@ -20,9 +20,23 @@ final class OrganolepticIconStackView: UIView {
         return stackView
     }()
     
-    private let eyeIconImageView = InfographicIcon(systemName: "eye", tintColor: .white, height: 28, width: 28)
-    private let noseIconImageView = InfographicIcon(systemName: "nose", tintColor: .white, height: 28, width: 28)
-    private let mouthIconImageView = InfographicIcon(systemName: "mouth", tintColor: .white, height: 28, width: 28)
+    private let eyeIconImageView = InfographicIcon(
+        systemName: "eye",
+        tintColor: .white,
+        height: 28,
+        width: 28
+    )
+    private let noseIconImageView = InfographicIcon(
+        systemName: "nose",
+        tintColor: .white,
+        height: 28,
+        width: 28
+    )
+    private let mouthIconImageView = InfographicIcon(
+        systemName: "mouth",
+        tintColor: .white,
+        height: 28,
+        width: 28)
     
     private let colorIconView = IconView()
     private let aromaIconView = IconView()
