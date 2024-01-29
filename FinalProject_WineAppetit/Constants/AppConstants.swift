@@ -18,6 +18,8 @@ struct Constants {
     struct AppDefaultImage {
         static let wineImage = UIImage(named: "testWine")
         static let noImage = UIImage(named: "noImage")
+        static let calorieCounterBackground = UIImage(named: "wineGlasses")
+        
     }
     
     struct AppTextInfo {
@@ -50,9 +52,9 @@ struct Constants {
         static let grayStroke = UIColor(hex: "#7f7f7f")
         
         
-        static let redWine = UIColor(hex: "#800020").cgColor
-        static let whiteWine = UIColor(hex: "#EEEDC4").cgColor
-        static let roseWine = UIColor(hex: "#F4C4BB").cgColor
+        static let redWine = UIColor(hex: "#720026").cgColor
+        static let whiteWine = UIColor(hex: "#ffee32").cgColor
+        static let roseWine = UIColor(hex: "#ff477e").cgColor
         static let white = UIColor(hex: "#f8edeb").cgColor
         
         static let redForGradient: [CGColor] = [redWine, white]
