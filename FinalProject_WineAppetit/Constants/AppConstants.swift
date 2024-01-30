@@ -8,7 +8,6 @@
 import UIKit
 
 struct Constants {
-    
     struct API {
         static let wineApiBaseURL = "https://api.openwine.space/"
         static let wineApiEndpoint = "api/wines?page=1"
@@ -18,6 +17,8 @@ struct Constants {
     struct AppDefaultImage {
         static let wineImage = UIImage(named: "testWine")
         static let noImage = UIImage(named: "noImage")
+        static let calorieCounterBackground = UIImage(named: "wineGlasses")
+        
     }
     
     struct AppTextInfo {
@@ -38,6 +39,7 @@ struct Constants {
     }
     
     struct AppColor {
+        static let labelText = UIColor.label
         static let categoryText = UIColor(hex: "#8B112E")
         
         static let shadeBackground = UIColor(hex: "#FF003D").withAlphaComponent(0.06).cgColor
@@ -48,5 +50,15 @@ struct Constants {
         
         static let redFill = UIColor(hex: "#c0070b")
         static let grayStroke = UIColor(hex: "#7f7f7f")
+        
+        
+        static let redWine = UIColor(hex: "#800020").cgColor
+        static let whiteWine = UIColor(hex: "#FFBF00").cgColor
+        static let roseWine = UIColor(hex: "#9B0047").cgColor
+        static let white = UIColor(hex: "#F8EDEB").cgColor
+        
+        static let redForGradient: [CGColor] = [redWine, white]
+        static let whiteForGradient: [CGColor] = [whiteWine, white]
+        static let roseForBackground: [CGColor] = [roseWine,white]
     }
 }

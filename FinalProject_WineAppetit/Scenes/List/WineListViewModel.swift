@@ -18,7 +18,7 @@ final class WineListViewModel {
     // MARK: - Properties
     private var wines: [Wine]?
     weak var delegate: WineListViewModelDelegate?
-    private let baseURL = "https://api.openwine.space/"
+    private let baseURL = Constants.API.wineApiBaseURL
     
     // MARK: - ViewLifeCycle
     func viewDidLoad() {

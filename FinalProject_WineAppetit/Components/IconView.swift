@@ -7,7 +7,7 @@
 
 import UIKit
 
-class IconView: UIView {
+final class IconView: UIView {
     //MARK: - Inits
     init(
         backgroundColor: UIColor = Constants.AppColor.iconBackground, 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InfographicIcon: UIImageView {
+final class InfographicIcon: UIImageView {
     //MARK: - Inits
     init(
         systemName: String,
