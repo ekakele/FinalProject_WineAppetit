@@ -52,10 +52,10 @@ struct Constants {
         static let grayStroke = UIColor(hex: "#7f7f7f")
         
         
-        static let redWine = UIColor(hex: "#720026").cgColor
-        static let whiteWine = UIColor(hex: "#ffee32").cgColor
-        static let roseWine = UIColor(hex: "#ff477e").cgColor
-        static let white = UIColor(hex: "#f8edeb").cgColor
+        static let redWine = UIColor(hex: "#800020").cgColor
+        static let whiteWine = UIColor(hex: "#FFBF00").cgColor
+        static let roseWine = UIColor(hex: "#9B0047").cgColor
+        static let white = UIColor(hex: "#F8EDEB").cgColor
         
         static let redForGradient: [CGColor] = [redWine, white]
         static let whiteForGradient: [CGColor] = [whiteWine, white]
