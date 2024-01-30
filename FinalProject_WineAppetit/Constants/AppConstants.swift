@@ -39,6 +39,7 @@ struct Constants {
     }
     
     struct AppColor {
+        static let labelText = UIColor.label
         static let categoryText = UIColor(hex: "#8B112E")
         
         static let shadeBackground = UIColor(hex: "#FF003D").withAlphaComponent(0.06).cgColor

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WineItemCollectionViewCell: UICollectionViewCell {
+final class WineItemCollectionViewCell: UICollectionViewCell {
     //MARK: - Properties
     static let identifier = "ItemCollectionViewCell"
     
@@ -37,7 +37,7 @@ class WineItemCollectionViewCell: UICollectionViewCell {
     )
     
     private let titleLabel = CustomLabel(
-        textColor: .label,
+        textColor: Constants.AppColor.labelText,
         font: Constants.AppFont.secondaryTitle,
         numberOfLines: 1
     )
@@ -62,7 +62,7 @@ class WineItemCollectionViewCell: UICollectionViewCell {
     )
     
     private let brandLabel = CustomLabel(
-        textColor: .label,
+        textColor: Constants.AppColor.labelText,
         font: Constants.AppFont.secondaryInfo,
         numberOfLines: 1
     )
@@ -71,7 +71,7 @@ class WineItemCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.frame = CGRect(x: 14, y: 10, width: 36, height: 20)
         label.font = .systemFont(ofSize: 10, weight: .regular)
-        label.textColor = .label
+        label.textColor = Constants.AppColor.labelText
         label.textAlignment = .center
         label.layer.cornerRadius = 5
         label.clipsToBounds = true

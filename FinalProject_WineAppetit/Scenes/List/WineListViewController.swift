@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WineListViewController: UIViewController {
+final class WineListViewController: UIViewController {
     //MARK: - Properties
     private let wineCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
