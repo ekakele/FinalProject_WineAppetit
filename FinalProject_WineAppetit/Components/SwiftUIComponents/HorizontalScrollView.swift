@@ -33,6 +33,7 @@ struct HorizontalScrollView: View {
                 ItemCellView(image: wine.image ?? "")
             }
         }
+        .padding(.leading, 20)
     }
     
     private var backgroundImageView: some View {
