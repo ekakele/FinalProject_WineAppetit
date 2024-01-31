@@ -14,7 +14,10 @@ struct HorizontalScrollView: View {
     
     // MARK: - Body
     var body: some View {
-        wineHorizontalScrollView
+        ZStack {
+            backgroundImageView
+            wineHorizontalScrollView
+        }
     }
     
     // MARK: - Components
@@ -22,7 +25,6 @@ struct HorizontalScrollView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             wineHorizontalStackView
         }
-        .background(backgroundImageView)
     }
     
     private var wineHorizontalStackView: some View {
