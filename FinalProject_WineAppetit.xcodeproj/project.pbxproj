@@ -26,6 +26,7 @@
 		B56CED662B6AAB1E00F2F6EC /* MyWineLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56CED652B6AAB1E00F2F6EC /* MyWineLibraryView.swift */; };
 		B56CED682B6AAB4400F2F6EC /* MyWineLibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56CED672B6AAB4400F2F6EC /* MyWineLibraryViewModel.swift */; };
 		B56CED6C2B6AAC3900F2F6EC /* ShelfTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56CED6B2B6AAC3900F2F6EC /* ShelfTitleView.swift */; };
+		B56CED6E2B6AAE0400F2F6EC /* ItemCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56CED6D2B6AAE0400F2F6EC /* ItemCellView.swift */; };
 		B5816D4A2B6518C000550FE9 /* WineDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5816D492B6518C000550FE9 /* WineDetails.swift */; };
 		B58E60502B622DD2000458BD /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E604F2B622DD2000458BD /* UIColor+Hex.swift */; };
 		B58E60562B62AF16000458BD /* UserPreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E60552B62AF16000458BD /* UserPreferencesManager.swift */; };
@@ -62,6 +63,7 @@
 		B56CED652B6AAB1E00F2F6EC /* MyWineLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWineLibraryView.swift; sourceTree = "<group>"; };
 		B56CED672B6AAB4400F2F6EC /* MyWineLibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWineLibraryViewModel.swift; sourceTree = "<group>"; };
 		B56CED6B2B6AAC3900F2F6EC /* ShelfTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfTitleView.swift; sourceTree = "<group>"; };
+		B56CED6D2B6AAE0400F2F6EC /* ItemCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellView.swift; sourceTree = "<group>"; };
 		B5816D492B6518C000550FE9 /* WineDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineDetails.swift; sourceTree = "<group>"; };
 		B58E604F2B622DD2000458BD /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		B58E60552B62AF16000458BD /* UserPreferencesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferencesManager.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 		B56CED6A2B6AABFC00F2F6EC /* SwiftUIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				B56CED6D2B6AAE0400F2F6EC /* ItemCellView.swift */,
 				B56CED6B2B6AAC3900F2F6EC /* ShelfTitleView.swift */,
 			);
 			path = SwiftUIComponents;
@@ -369,6 +372,7 @@
 				B56CED6C2B6AAC3900F2F6EC /* ShelfTitleView.swift in Sources */,
 				B50550AB2B5E41290040CA56 /* SceneDelegate.swift in Sources */,
 				B56CED662B6AAB1E00F2F6EC /* MyWineLibraryView.swift in Sources */,
+				B56CED6E2B6AAE0400F2F6EC /* ItemCellView.swift in Sources */,
 				B5B05E9B2B67E36E00EFDDA1 /* CalorieCounterViewController.swift in Sources */,
 				B56CED682B6AAB4400F2F6EC /* MyWineLibraryViewModel.swift in Sources */,
 				B50550CF2B5FDABC0040CA56 /* WineListViewModel.swift in Sources */,
