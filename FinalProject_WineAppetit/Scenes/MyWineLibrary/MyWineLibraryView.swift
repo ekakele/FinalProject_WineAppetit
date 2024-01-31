@@ -24,7 +24,7 @@ struct MyWineLibraryView: View {
     }
     
     private func generateSectionStackView() -> some View {
-        VStack(alignment: .leading, spacing: 40) {
+        VStack(alignment: .leading, spacing: 34) {
             generateTitledSectionView(
                 title: "Red Wines",
                 filteredWines: viewModel.filteredWines(category: "red")

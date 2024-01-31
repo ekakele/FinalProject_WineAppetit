@@ -26,6 +26,7 @@ struct HorizontalScrollView: View {
         ScrollView(.horizontal, showsIndicators: false) {
             wineHorizontalStackView
         }
+        .frame(height: 150)
     }
     
     private var wineHorizontalStackView: some View {
