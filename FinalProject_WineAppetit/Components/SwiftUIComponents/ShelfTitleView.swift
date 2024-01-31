@@ -26,7 +26,7 @@ struct ShelfTitleView: View {
     private var titleView: some View {
         Text(title)
             .foregroundColor(Constants.AppColor.lightGreen)
-            .font(.title2)
+            .font(.system(size: 16))
             .padding(.horizontal, 10)
             .padding(.vertical, 6)
     }
@@ -40,10 +40,10 @@ struct ShelfTitleView: View {
     private var filledRectangleView: some View {
         RoundedRectangle(cornerRadius: 20)
             .fill(Constants.AppColor.darkGreen)
-            .frame(width: 160, height: 36)
+            .frame(width: 120, height: 36)
     }
 }
 
 #Preview {
-    ShelfTitleView(title: "Title")
+    ShelfTitleView(title: "White Wines")
 }
