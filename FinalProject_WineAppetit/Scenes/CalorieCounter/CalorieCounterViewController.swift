@@ -11,7 +11,7 @@ final class CalorieCounterViewController: UIViewController {
     //MARK: - Properties
     let backgroundImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = Constants.AppDefaultImage.calorieCounterBackground
+        imageView.image = Constants.AppUIImage.calorieCounterBackground
         imageView.contentMode = .scaleAspectFill
         imageView.layer.shadowColor = UIColor.black.cgColor
         imageView.layer.shadowOpacity = 0.1

@@ -34,11 +34,11 @@ extension WineType {
     var backgroundColors: [CGColor] {
         switch self {
         case .red:
-            return Constants.AppColor.redForGradient
+            return Constants.AppUIColor.redForGradient
         case .white:
-            return Constants.AppColor.whiteForGradient
+            return Constants.AppUIColor.whiteForGradient
         case .rose:
-            return Constants.AppColor.roseForBackground
+            return Constants.AppUIColor.roseForBackground
         }
     }
 }

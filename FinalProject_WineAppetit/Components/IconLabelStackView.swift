@@ -14,7 +14,7 @@ final class IconLabelStackView: UIStackView {
         self.axis = .vertical
         self.spacing = 2
         self.distribution = .fillEqually
-        self.backgroundColor = Constants.AppColor.tagBackground
+        self.backgroundColor = Constants.AppUIColor.tagBackground
         self.clipsToBounds = true
         self.layer.cornerRadius = 14
         self.isLayoutMarginsRelativeArrangement = true

@@ -6,26 +6,29 @@
 //
 
 import UIKit
+import SwiftUI
 
 struct Constants {
+    //MARK: - General
     struct API {
         static let wineApiBaseURL = "https://api.openwine.space/"
         static let wineApiEndpoint = "api/wines?page=1"
         static let wineApiKey = "" //TODO: - add key to API
     }
     
-    struct AppDefaultImage {
+    struct AppTextInfo {
+        static let notApplicable = "N/A"
+    }
+    
+    //MARK: - UIKit
+    struct AppUIImage {
         static let wineImage = UIImage(named: "testWine")
         static let noImage = UIImage(named: "noImage")
         static let calorieCounterBackground = UIImage(named: "wineGlasses")
         
     }
     
-    struct AppTextInfo {
-        static let notApplicable = "N/A"
-    }
-    
-    struct AppFont {
+    struct AppUIFont {
         static let primaryTitle = UIFont.systemFont(ofSize: 24, weight: .bold)
         static let primarySubtitle = UIFont.systemFont(ofSize: 18, weight: .bold)
         static let primaryInfo = UIFont.systemFont(ofSize: 20, weight: .regular)
@@ -38,7 +41,7 @@ struct Constants {
         static let secondaryTag = UIFont.systemFont(ofSize: 10, weight: .regular)
     }
     
-    struct AppColor {
+    struct AppUIColor {
         static let labelText = UIColor.label
         static let categoryText = UIColor(hex: "#8B112E")
         
@@ -51,7 +54,6 @@ struct Constants {
         static let redFill = UIColor(hex: "#c0070b")
         static let grayStroke = UIColor(hex: "#7f7f7f")
         
-        
         static let redWine = UIColor(hex: "#800020").cgColor
         static let whiteWine = UIColor(hex: "#FFBF00").cgColor
         static let roseWine = UIColor(hex: "#9B0047").cgColor
@@ -60,5 +62,12 @@ struct Constants {
         static let redForGradient: [CGColor] = [redWine, white]
         static let whiteForGradient: [CGColor] = [whiteWine, white]
         static let roseForBackground: [CGColor] = [roseWine,white]
+    }
+    
+    //MARK: - SwiftUI
+    struct AppColor {
+        static let greenBackground = Color(hex: 0x344E41)
+        static let darkGreen = Color(hex: 0x283618)
+        static let lightGreen = Color(hex: 0xcfe1b9)
     }
 }

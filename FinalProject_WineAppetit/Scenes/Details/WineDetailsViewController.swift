@@ -44,7 +44,7 @@ final class WineDetailsViewController: UIViewController {
     
     private let mainTitleLabel = CustomLabel(
         textColor: .label,
-        font: Constants.AppFont.primaryTitle,
+        font: Constants.AppUIFont.primaryTitle,
         numberOfLines: 3
     )
     
@@ -56,20 +56,20 @@ final class WineDetailsViewController: UIViewController {
     )
     
     private let categoryLabel = CustomLabel(
-        textColor: Constants.AppColor.categoryText,
-        font: Constants.AppFont.primaryInfo,
+        textColor: Constants.AppUIColor.categoryText,
+        font: Constants.AppUIFont.primaryInfo,
         numberOfLines: 1
     )
     
     private let subcategoryLabel = CustomLabel(
-        textColor: Constants.AppColor.categoryText,
-        font: Constants.AppFont.primaryInfo,
+        textColor: Constants.AppUIColor.categoryText,
+        font: Constants.AppUIFont.primaryInfo,
         numberOfLines: 1
     )
     
     private let brandLabel = CustomLabel(
         textColor: .label,
-        font: Constants.AppFont.primaryInfo,
+        font: Constants.AppUIFont.primaryInfo,
         numberOfLines: 1
     )
     
@@ -97,7 +97,7 @@ final class WineDetailsViewController: UIViewController {
         stackView.axis = .vertical
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.layoutMargins = UIEdgeInsets(top: 20, left: 40, bottom: 0, right: 40)
-        stackView.backgroundColor = Constants.AppColor.detailsBackground
+        stackView.backgroundColor = Constants.AppUIColor.detailsBackground
         stackView.layer.cornerRadius = 50
         stackView.layer.masksToBounds = true
         return stackView
@@ -119,7 +119,7 @@ final class WineDetailsViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Add to My Wine Library", for: .normal)
         button.setTitleColor(.label, for: .normal)
-        button.backgroundColor = Constants.AppColor.buttonBackground
+        button.backgroundColor = Constants.AppUIColor.buttonBackground
         button.layer.cornerRadius = 26
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
         return button
@@ -218,7 +218,7 @@ final class WineDetailsViewController: UIViewController {
         label.text = text
         label.numberOfLines = 1
         label.textColor = .label
-        label.font = Constants.AppFont.secondaryIconText
+        label.font = Constants.AppUIFont.secondaryIconText
         label.textAlignment = .center
         
         stackView.addArrangedSubview(label)
@@ -235,13 +235,13 @@ final class WineDetailsViewController: UIViewController {
         let titleLabel = UILabel()
         titleLabel.text = title
         titleLabel.textColor = .label
-        titleLabel.font = Constants.AppFont.primarySubtitle
+        titleLabel.font = Constants.AppUIFont.primarySubtitle
         titleLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
         
         let detailLabel = UILabel()
         detailLabel.text = detail
         detailLabel.textColor = .label
-        titleLabel.font = Constants.AppFont.primarySubInfo
+        titleLabel.font = Constants.AppUIFont.primarySubInfo
         detailLabel.numberOfLines = 2
         
         stackView.addArrangedSubview(titleLabel)
@@ -255,9 +255,9 @@ final class WineDetailsViewController: UIViewController {
         label.text = text
         label.numberOfLines = 4
         label.textColor = .white
-        label.font = Constants.AppFont.primaryIconText
+        label.font = Constants.AppUIFont.primaryIconText
         label.textAlignment = .center
-        label.backgroundColor = Constants.AppColor.iconBackground
+        label.backgroundColor = Constants.AppUIColor.iconBackground
         label.clipsToBounds = true
         label.layer.cornerRadius = 14
         label.heightAnchor.constraint(equalToConstant: 84).isActive = true
