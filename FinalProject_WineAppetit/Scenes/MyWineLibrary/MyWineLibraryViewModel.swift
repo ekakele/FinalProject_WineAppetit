@@ -30,9 +30,7 @@ final class MyWineLibraryViewModel: ObservableObject {
         let endpoint = "api/wines?page=1"
         let favoriteWineIDList = UserPreferencesManager.shared.getFavoriteWineList().map { String($0) }.joined(separator: ",")
         let queryString = "&ids=" + favoriteWineIDList
-        
         let urlString = baseURL + endpoint + queryString
-        print(urlString)
         
         GenericNetworkManager.shared.fetchData(with: urlString) { [weak self] (result: Result<WineData, Error>) in
             switch result {

@@ -41,7 +41,7 @@ struct MyWineLibraryView: View {
     }
     
     private func generateTitledSectionView(title: String, filteredWines: [Wine]) -> some View {
-        VStack(/*spacing: 14*/) {
+        VStack() {
             ShelfTitleView(title: title)
             Spacer()
             HorizontalScrollView(
@@ -56,7 +56,7 @@ struct MyWineLibraryView: View {
             Constants.AppColor.greenBackground
                 .edgesIgnoringSafeArea(.all)
             
-            Image("light")
+            Image("lighting")
                 .resizable()
                 .ignoresSafeArea(.all)
                 .opacity(0.5)

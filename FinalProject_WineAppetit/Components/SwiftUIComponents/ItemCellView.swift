@@ -34,12 +34,7 @@ struct ItemCellView: View {
                     .frame(height: 150, alignment: .center)
                     .shadow(color: Constants.AppColor.lightGreen, radius: 1)
             }, placeholder: {
-                //                ProgressView() TODO: - ბოლოს ეს დავტოვო
-                Image("testWine")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(height: isZoomed ? 350 : 150)
-                    .shadow(color: Constants.AppColor.lightGreen, radius: 1)
+                ProgressView()
             })
     }
 }

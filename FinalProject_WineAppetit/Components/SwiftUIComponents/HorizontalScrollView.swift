@@ -18,6 +18,7 @@ struct HorizontalScrollView: View {
             backgroundImageView
             wineHorizontalScrollView
         }
+        .padding(.horizontal, 8)
     }
     
     // MARK: - Components
