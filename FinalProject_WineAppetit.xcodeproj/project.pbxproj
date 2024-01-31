@@ -22,6 +22,7 @@
 		B50550E02B6040610040CA56 /* ShortInfoStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550DF2B6040610040CA56 /* ShortInfoStackView.swift */; };
 		B50550E22B6040C00040CA56 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550E12B6040C00040CA56 /* CustomLabel.swift */; };
 		B5517D2C2B61775C004A4961 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5517D2B2B61775C004A4961 /* ActivityIndicator.swift */; };
+		B56CED632B6AA84E00F2F6EC /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56CED622B6AA84E00F2F6EC /* Color+Hex.swift */; };
 		B5816D4A2B6518C000550FE9 /* WineDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5816D492B6518C000550FE9 /* WineDetails.swift */; };
 		B58E60502B622DD2000458BD /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E604F2B622DD2000458BD /* UIColor+Hex.swift */; };
 		B58E60562B62AF16000458BD /* UserPreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E60552B62AF16000458BD /* UserPreferencesManager.swift */; };
@@ -54,6 +55,7 @@
 		B50550DF2B6040610040CA56 /* ShortInfoStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortInfoStackView.swift; sourceTree = "<group>"; };
 		B50550E12B6040C00040CA56 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		B5517D2B2B61775C004A4961 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		B56CED622B6AA84E00F2F6EC /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		B5816D492B6518C000550FE9 /* WineDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineDetails.swift; sourceTree = "<group>"; };
 		B58E604F2B622DD2000458BD /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		B58E60552B62AF16000458BD /* UserPreferencesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferencesManager.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				B58E604F2B622DD2000458BD /* UIColor+Hex.swift */,
+				B56CED622B6AA84E00F2F6EC /* Color+Hex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				B50550D22B5FE0840040CA56 /* CustomSearchBar.swift in Sources */,
 				B58E60752B645B91000458BD /* WineDetailsViewModel.swift in Sources */,
 				B50550DE2B6039FC0040CA56 /* ImageLoader.swift in Sources */,
+				B56CED632B6AA84E00F2F6EC /* Color+Hex.swift in Sources */,
 				B50550E02B6040610040CA56 /* ShortInfoStackView.swift in Sources */,
 				B58E60692B63B032000458BD /* IconView.swift in Sources */,
 				B58E60502B622DD2000458BD /* UIColor+Hex.swift in Sources */,
