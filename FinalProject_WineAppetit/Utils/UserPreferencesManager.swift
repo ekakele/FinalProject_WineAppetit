@@ -11,17 +11,30 @@ final class UserPreferencesManager {
     //MARK: - Properties
     static let shared = UserPreferencesManager()
     let defaults = UserDefaults.standard
+    private let favoritedWineListKey = "favoriteWines"
     
     //MARK: - Methods
     func saveWineInFavorites(forKey wineID: Int, value: Bool) {
-        defaults.set(value, forKey: String(wineID))
+        var favorites = getFavoriteWineList()
+        if value {
+            if !favorites.contains(wineID) {
+                favorites.append(wineID)
+            }
+        } else {
+            favorites.removeAll { $0 == wineID }
+        }
+        defaults.set(favorites, forKey: favoritedWineListKey)
     }
     
     func checkIsWineFavorited(forKey wineID: Int) -> Bool {
-        if let isFaved = defaults.object(forKey: String(wineID)) as? Bool {
-            return isFaved
+        return getFavoriteWineList().contains(wineID)
+    }
+    
+    func getFavoriteWineList() -> [Int] {
+        if let favorites = defaults.array(forKey: favoritedWineListKey) as? [Int] {
+            return favorites
         } else {
-            return false
+            return []
         }
     }
 }
