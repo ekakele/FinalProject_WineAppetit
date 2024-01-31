@@ -28,8 +28,8 @@ final class MyWineLibraryViewModel: ObservableObject {
     // MARK: - Private Methods
     private func fetchWines() {
         let endpoint = "api/wines?page=1"
-        var favoriteWineIDList = UserPreferencesManager.shared.getFavoriteWineList().map { String($0) }.joined(separator: ",")
-        var queryString = "&ids=" + favoriteWineIDList
+        let favoriteWineIDList = UserPreferencesManager.shared.getFavoriteWineList().map { String($0) }.joined(separator: ",")
+        let queryString = "&ids=" + favoriteWineIDList
         
         let urlString = baseURL + endpoint + queryString
         print(urlString)
