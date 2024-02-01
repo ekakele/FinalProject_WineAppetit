@@ -10,17 +10,30 @@ import SwiftUI
 struct MyWineLibraryView: View {
     //MARK: - Properties
     @StateObject var viewModel: MyWineLibraryViewModel
+    @State private var isPresentingWineListView = false
     
     //MARK: - Body
     var body: some View {
-        ZStack {
+        ZStack(alignment: .bottomTrailing) {
             backgroundView
             
             ScrollView {
                 generateSectionStackView()
             }
             .padding(.top, 20)
+            
+            setupFloatingButtonView
         }
+    }
+    
+    private var setupFloatingButtonView: some View {
+        FloatingButtonView(
+            buttonIcon: "plus",
+            action: { isPresentingWineListView.toggle() }, isPresentingWineListView: $isPresentingWineListView
+        )
+        .sheet(isPresented: $isPresentingWineListView, content: {
+            WineListViewControllerRepresentableView()
+        })
     }
     
     private func generateSectionStackView() -> some View {
