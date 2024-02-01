@@ -19,6 +19,10 @@ final class MyWineLibraryViewModel: ObservableObject {
     }
     
     // MARK: - Methods
+    func refreshData() {
+        fetchWines()
+    }
+    
     func filteredWines(category: String) -> [Wine] {
         let category = category.uppercased()
         let filteredWines = favoritedWines.filter { $0.categoriesList[0] == category }

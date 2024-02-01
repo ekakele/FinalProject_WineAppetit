@@ -31,9 +31,11 @@ struct MyWineLibraryView: View {
             buttonIcon: "plus",
             action: { isPresentingWineListView.toggle() }, isPresentingWineListView: $isPresentingWineListView
         )
-        .sheet(isPresented: $isPresentingWineListView, content: {
-            WineListViewControllerRepresentableView()
-        })
+        .sheet(
+            isPresented: $isPresentingWineListView,
+            onDismiss: viewModel.refreshData,
+            content: { WineListViewControllerRepresentableView() }
+        )
     }
     
     private func generateSectionStackView() -> some View {
