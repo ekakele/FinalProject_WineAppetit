@@ -117,8 +117,8 @@ final class WineDetailsViewController: UIViewController {
     
     private let addButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Add to My Wine Library", for: .normal)
         button.setTitleColor(.label, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
         button.backgroundColor = Constants.AppUIColor.buttonBackground
         button.layer.cornerRadius = 26
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
@@ -126,6 +126,7 @@ final class WineDetailsViewController: UIViewController {
     }()
     
     private var viewModel: WineDetailsViewModel
+    private var result: Bool = false
     
     //MARK: - Inits
     init(wineID: Int) {
@@ -164,6 +165,7 @@ final class WineDetailsViewController: UIViewController {
     private func setupUI() {
         setupBackground()
         addSubviews()
+        setupButton()
         setupUpperLowerStackViewConstraints()
         setupMainStackViewConstraints()
     }
@@ -186,8 +188,8 @@ final class WineDetailsViewController: UIViewController {
     
     private func setupButton() {
         NSLayoutConstraint.activate([
-            addButton.leadingAnchor.constraint(equalTo: lowerStackView.leadingAnchor, constant: 20),
-            addButton.trailingAnchor.constraint(equalTo: lowerStackView.trailingAnchor, constant: -20),
+            addButton.leadingAnchor.constraint(equalTo: lowerStackView.leadingAnchor, constant: 30),
+            addButton.trailingAnchor.constraint(equalTo: lowerStackView.trailingAnchor, constant: -30),
             addButton.bottomAnchor.constraint(equalTo: lowerStackView.bottomAnchor, constant: -50)
         ])
     }
@@ -320,13 +322,30 @@ extension WineDetailsViewController: WineDetailsViewModelDelegate {
         }
     }
     
-    func showError(_ error: Error) {
-        print(error)
-    }
-    
     func wineImageFetched(_ image: UIImage) {
         Task {
             itemImageView.image = image
         }
+    }
+    
+    func wineCheckedInFavorites(_ result: Bool) {
+        Task {
+            self.result = result
+            if result {
+                self.addButton.setTitle(
+                    "Remove from Library",
+                    for: .normal
+                )
+            } else {
+                self.addButton.setTitle(
+                    "Add to Library",
+                    for: .normal
+                )
+            }
+        }
+    }
+    
+    func showError(_ error: Error) {
+        print(error)
     }
 }

@@ -10,8 +10,9 @@ import GenericNetworkManager
 
 protocol WineDetailsViewModelDelegate: AnyObject {
     func wineDetailsFetched(_ wine: WineDetails)
-    func showError(_ error: Error)
     func wineImageFetched(_ image: UIImage)
+    func wineCheckedInFavorites(_ result: Bool)
+    func showError(_ error: Error)
 }
 
 protocol WineDetailsViewModel {
@@ -33,6 +34,7 @@ final class DefaultWineDetailsViewModel: WineDetailsViewModel {
     // MARK: - ViewLifeCycle
     func viewDidLoad() {
         fetchWineDetails()
+        checkWineIsFavorited()
     }
     
     // MARK: - Private Methods
@@ -65,5 +67,10 @@ final class DefaultWineDetailsViewModel: WineDetailsViewModel {
                 print("Error loading image: \(error)")
             }
         }
+    }
+    
+    private func checkWineIsFavorited() {
+        let result = UserPreferencesManager.shared.checkIsWineFavorited(forKey: wineID)
+        self.delegate?.wineCheckedInFavorites(result)
     }
 }
