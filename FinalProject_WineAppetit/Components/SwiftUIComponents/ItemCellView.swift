@@ -10,14 +10,26 @@ import SwiftUI
 struct ItemCellView: View {
     // MARK: - Properties
     var image: String
-    @State private var isZoomed: Bool = false
+    var wineID: Int
+    @State private var isPresentingWineListView = false
     
     // MARK: - Body
     var body: some View {
         itemImageView
+            .onTapGesture {
+                isPresentingWineListView.toggle()
+            }
+            .sheet(isPresented: $isPresentingWineListView, content: {
+                wineDetailsRepresentableView
+            })
     }
     
     // MARK: - Components
+    private var wineDetailsRepresentableView: some View {
+        WineDetailsViewControllerRepresentableView(wineID: wineID)
+            .edgesIgnoringSafeArea(.all)
+    }
+    
     private var itemImageView: some View {
         fetchImage()
     }
@@ -40,5 +52,5 @@ struct ItemCellView: View {
 }
 
 #Preview {
-    ItemCellView(image: "testWine")
+    ItemCellView(image: "testWine", wineID: 6)
 }
