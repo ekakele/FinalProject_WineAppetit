@@ -10,7 +10,7 @@ import GenericNetworkManager
 
 final class MyWineLibraryViewModel: ObservableObject {
     // MARK: - Init
-    @Published var wines: [Wine] = []
+    @Published var favoritedWines: [Wine] = []
     private let baseURL = Constants.API.wineApiBaseURL
     
     // MARK: - Init
@@ -21,7 +21,7 @@ final class MyWineLibraryViewModel: ObservableObject {
     // MARK: - Methods
     func filteredWines(category: String) -> [Wine] {
         let category = category.uppercased()
-        let filteredWines = wines.filter { $0.categoriesList[0] == category }
+        let filteredWines = favoritedWines.filter { $0.categoriesList[0] == category }
         return filteredWines
     }
     
@@ -34,8 +34,8 @@ final class MyWineLibraryViewModel: ObservableObject {
         
         GenericNetworkManager.shared.fetchData(with: urlString) { [weak self] (result: Result<WineData, Error>) in
             switch result {
-            case .success(let wines):
-                self?.wines = wines.result
+            case .success(let favoritedWines):
+                self?.favoritedWines = favoritedWines.result
             case .failure(let error):
                 print(error)
             }

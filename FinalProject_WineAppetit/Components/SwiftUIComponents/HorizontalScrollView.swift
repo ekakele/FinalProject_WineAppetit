@@ -49,6 +49,6 @@ struct HorizontalScrollView: View {
 #Preview {
     HorizontalScrollView(
         viewModel: MyWineLibraryViewModel(),
-        filteredWines: MyWineLibraryViewModel().wines
+        filteredWines: MyWineLibraryViewModel().favoritedWines
     )
 }
