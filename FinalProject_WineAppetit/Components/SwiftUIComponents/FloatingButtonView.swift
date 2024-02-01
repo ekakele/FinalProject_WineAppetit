@@ -31,14 +31,13 @@ struct FloatingButtonView: View {
     private var buttonImageView: some View {
         Image(systemName: buttonIcon)
             .resizable()
-            .frame(width: 12, height: 12)
-            .font(.title.weight(.bold))
+            .frame(width: 16, height: 16)
+            .font(.largeTitle.weight(.bold))
             .padding()
             .background(Constants.AppColor.lightGreen)
-            .opacity(0.8)
             .foregroundColor(Constants.AppColor.greenBackground)
             .clipShape(Circle())
-            .shadow(color: Constants.AppColor.darkGreen, radius: 4, x: 0.1, y: 0.1)
+            .shadow(color: .black, radius: 4, x: 0.1, y: 0.1)
     }
 }
 
