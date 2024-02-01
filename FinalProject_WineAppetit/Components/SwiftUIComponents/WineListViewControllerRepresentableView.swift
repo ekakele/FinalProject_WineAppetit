@@ -16,14 +16,6 @@ struct WineListViewControllerRepresentableView: UIViewControllerRepresentable {
     
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
     }
-    
-    func makeCoordinator() -> Coordinator {
-        Coordinator()
-    }
-}
-
-// MARK: - Coordinator
-class Coordinator: NSObject {
 }
 
 #Preview {

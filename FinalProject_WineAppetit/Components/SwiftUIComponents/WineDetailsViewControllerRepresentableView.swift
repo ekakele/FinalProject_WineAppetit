@@ -19,16 +19,7 @@ struct WineDetailsViewControllerRepresentableView:  UIViewControllerRepresentabl
     
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
     }
-    
-    //MARK: - Coordinator
-    func makeCoordinator() -> Coordinator {
-        Coordinator()
-    }
 }
-
-//MARK: - Coordinator
-//    class Coordinator: NSObject {
-//    }
 
 #Preview {
     WineDetailsViewControllerRepresentableView(wineID: 14)
