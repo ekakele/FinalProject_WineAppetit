@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WineListViewControllerRepresentableView: UIViewControllerRepresentable {
+    
     func makeUIViewController(context: Context) -> UIViewController {
         let wineListViewController = WineListViewController()
         return UINavigationController(rootViewController: wineListViewController)
@@ -27,4 +28,5 @@ class Coordinator: NSObject {
 
 #Preview {
     WineListViewControllerRepresentableView()
+        .edgesIgnoringSafeArea(.all)
 }

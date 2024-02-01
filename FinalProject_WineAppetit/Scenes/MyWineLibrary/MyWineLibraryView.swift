@@ -34,8 +34,13 @@ struct MyWineLibraryView: View {
         .sheet(
             isPresented: $isPresentingWineListView,
             onDismiss: viewModel.refreshData,
-            content: { WineListViewControllerRepresentableView() }
+            content: { wineListRepresentableView }
         )
+    }
+    
+    private var wineListRepresentableView: some View {
+        WineListViewControllerRepresentableView()
+            .edgesIgnoringSafeArea(.all)
     }
     
     private func generateSectionStackView() -> some View {
