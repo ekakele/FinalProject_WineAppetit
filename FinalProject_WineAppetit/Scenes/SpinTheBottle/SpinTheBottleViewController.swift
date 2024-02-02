@@ -11,7 +11,7 @@ class SpinTheBottleViewController: UIViewController {
     //MARK: - Properties
     let backgroundImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = Constants.AppUIImage.tableclothBackground
+        imageView.image = Constants.AppUIImage.bottleBackground
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -30,6 +30,26 @@ class SpinTheBottleViewController: UIViewController {
         imageView.layer.shadowRadius = 5
         
         return imageView
+    }()
+    
+    let questionLabel: UILabel = {
+        let label = UILabel()
+        label.isHidden = true
+        label.textColor = .white
+        label.font = UIFont.systemFont(ofSize: 20, weight: .regular)
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let labelBackgroundView: UIVisualEffectView = {
+        let view = UIVisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))
+        view.layer.cornerRadius = 12
+        view.isHidden = true
+        view.layer.masksToBounds = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     private var lastRotation: CGFloat = 0.0
@@ -83,13 +103,30 @@ class SpinTheBottleViewController: UIViewController {
             
             if abs(self.angularVelocity) < minimumVelocity {
                 timer.invalidate()
+                presentRandomQuestion()
             }
+        }
+    }
+    
+    private func presentRandomQuestion() {
+        let randomIndex = Int.random(in: 0..<questionsArray.count)
+        let randomQuestion = questionsArray[randomIndex]
+        
+        questionLabel.text = randomQuestion
+        questionLabel.isHidden.toggle()
+        labelBackgroundView.isHidden.toggle()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            self.questionLabel.isHidden.toggle()
+            self.labelBackgroundView.isHidden.toggle()
         }
     }
     
     //MARK: - UI Setup
     private func setupUI() {
         addSubviews()
+        setupQuestionLabelConstraints()
+        setupLabelViewConstraints()
         setupBottleImageConstraints()
         setupBackgroundImageConstraints()
     }
@@ -97,7 +134,29 @@ class SpinTheBottleViewController: UIViewController {
     private func addSubviews() {
         view.addSubview(backgroundImage)
         view.sendSubviewToBack(backgroundImage)
+        
         view.addSubview(bottleImage)
+        
+        view.addSubview(labelBackgroundView)
+        labelBackgroundView.contentView.addSubview(questionLabel)
+    }
+    
+    private func setupQuestionLabelConstraints() {
+        NSLayoutConstraint.activate([
+            questionLabel.leadingAnchor.constraint(equalTo: labelBackgroundView.leadingAnchor, constant: 20),
+            questionLabel.trailingAnchor.constraint(equalTo: labelBackgroundView.trailingAnchor, constant: -20),
+            questionLabel.topAnchor.constraint(equalTo: labelBackgroundView.topAnchor, constant: 20),
+            questionLabel.bottomAnchor.constraint(equalTo: labelBackgroundView.bottomAnchor, constant: -20)
+        ])
+    }
+    
+    private func setupLabelViewConstraints() {
+        NSLayoutConstraint.activate([
+            questionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            questionLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 300),
+            questionLabel.widthAnchor.constraint(equalToConstant: 300),
+            questionLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 50)
+        ])
     }
     
     private func setupBottleImageConstraints() {
