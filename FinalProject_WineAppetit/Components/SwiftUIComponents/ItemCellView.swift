@@ -12,6 +12,7 @@ struct ItemCellView: View {
     var image: String
     var wineID: Int
     @State private var isPresentingWineListView = false
+    @ObservedObject var viewModel: MyWineLibraryViewModel
     
     // MARK: - Body
     var body: some View {
@@ -19,9 +20,11 @@ struct ItemCellView: View {
             .onTapGesture {
                 isPresentingWineListView.toggle()
             }
-            .sheet(isPresented: $isPresentingWineListView, content: {
-                wineDetailsRepresentableView
-            })
+            .sheet(
+                isPresented: $isPresentingWineListView,
+                onDismiss: viewModel.refreshData,
+                content: { wineDetailsRepresentableView }
+            )
     }
     
     // MARK: - Components
@@ -52,5 +55,5 @@ struct ItemCellView: View {
 }
 
 #Preview {
-    ItemCellView(image: "testWine", wineID: 6)
+    ItemCellView(image: "testWine", wineID: 6, viewModel: MyWineLibraryViewModel())
 }

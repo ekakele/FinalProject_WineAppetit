@@ -32,7 +32,7 @@ struct HorizontalScrollView: View {
     private var wineHorizontalStackView: some View {
         HStack(spacing: 0) {
             ForEach(filteredWines, id: \.id) { wine in
-                ItemCellView(image: wine.image ?? "", wineID: wine.id)
+                ItemCellView(image: wine.image ?? "", wineID: wine.id, viewModel: viewModel)
             }
         }
         .padding(.leading, 20)

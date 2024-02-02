@@ -11,13 +11,14 @@ import GenericNetworkManager
 protocol WineDetailsViewModelDelegate: AnyObject {
     func wineDetailsFetched(_ wine: WineDetails)
     func wineImageFetched(_ image: UIImage)
-    func wineCheckedInFavorites(_ result: Bool)
+    func wineCheckedInFavorites(_ isFavorited: Bool)
     func showError(_ error: Error)
 }
 
 protocol WineDetailsViewModel {
     var delegate: WineDetailsViewModelDelegate? { get set }
     func viewDidLoad()
+    func toggleFavoriteStatus()
 }
 
 final class DefaultWineDetailsViewModel: WineDetailsViewModel {
@@ -34,7 +35,14 @@ final class DefaultWineDetailsViewModel: WineDetailsViewModel {
     // MARK: - ViewLifeCycle
     func viewDidLoad() {
         fetchWineDetails()
-        checkWineIsFavorited()
+        checkIsWineFavorited()
+    }
+    
+    // MARK: - Methods
+    func toggleFavoriteStatus() {
+        let isFavorited = UserPreferencesManager.shared.checkIsWineFavorited(forKey: wineID)
+        UserPreferencesManager.shared.saveWineInFavorites(forKey: wineID, value: !isFavorited)
+        delegate?.wineCheckedInFavorites(!isFavorited)
     }
     
     // MARK: - Private Methods
@@ -69,8 +77,8 @@ final class DefaultWineDetailsViewModel: WineDetailsViewModel {
         }
     }
     
-    private func checkWineIsFavorited() {
-        let result = UserPreferencesManager.shared.checkIsWineFavorited(forKey: wineID)
-        self.delegate?.wineCheckedInFavorites(result)
+    private func checkIsWineFavorited() {
+        let isFavorited = UserPreferencesManager.shared.checkIsWineFavorited(forKey: wineID)
+        self.delegate?.wineCheckedInFavorites(isFavorited)
     }
 }

@@ -126,7 +126,7 @@ final class WineDetailsViewController: UIViewController {
     }()
     
     private var viewModel: WineDetailsViewModel
-    private var result: Bool = false
+    private var isFavorited: Bool = false
     
     //MARK: - Inits
     init(wineID: Int) {
@@ -148,6 +148,7 @@ final class WineDetailsViewController: UIViewController {
         viewModel.viewDidLoad()
         
         setupNavigationBar()
+        setupAddButtonAction()
         setupUI()
     }
     
@@ -160,6 +161,19 @@ final class WineDetailsViewController: UIViewController {
         } else {
             navigationItem.largeTitleDisplayMode = .automatic
         }
+    }
+    
+    private func setupAddButtonAction() {
+        addButton.addAction(
+            UIAction(handler: { [weak self] _ in
+                self?.toggleFavoriteStatus()
+            }),
+            for: .touchUpInside
+        )
+    }
+    
+    private func toggleFavoriteStatus() {
+        viewModel.toggleFavoriteStatus()
     }
     
     private func setupUI() {
@@ -328,20 +342,11 @@ extension WineDetailsViewController: WineDetailsViewModelDelegate {
         }
     }
     
-    func wineCheckedInFavorites(_ result: Bool) {
+    func wineCheckedInFavorites(_ isFavorited: Bool) {
         Task {
-            self.result = result
-            if result {
-                self.addButton.setTitle(
-                    "Remove from Library",
-                    for: .normal
-                )
-            } else {
-                self.addButton.setTitle(
-                    "Add to Library",
-                    for: .normal
-                )
-            }
+            self.isFavorited = isFavorited
+            let buttonTitle = isFavorited ? "Remove from Library" : "Add to Library"
+            self.addButton.setTitle(buttonTitle, for: .normal)
         }
     }
     
