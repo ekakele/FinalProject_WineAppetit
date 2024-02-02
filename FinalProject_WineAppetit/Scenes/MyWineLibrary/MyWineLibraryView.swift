@@ -32,6 +32,7 @@ struct MyWineLibraryView: View {
         }
     }
     
+    //MARK: - Components
     private var scrollingSectionAndButtonView: some View {
         ZStack(alignment: .bottomTrailing) {
             scrollingSectionsView

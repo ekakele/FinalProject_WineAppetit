@@ -13,8 +13,8 @@ struct WineDetailsViewControllerRepresentableView:  UIViewControllerRepresentabl
     
     //MARK: - Methods
     func makeUIViewController(context: Context) -> UIViewController {
-        let wineListViewController = WineDetailsViewController(wineID: wineID)
-        return UINavigationController(rootViewController: wineListViewController)
+        let viewController = WineDetailsViewController(wineID: wineID)
+        return UINavigationController(rootViewController: viewController)
     }
     
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
