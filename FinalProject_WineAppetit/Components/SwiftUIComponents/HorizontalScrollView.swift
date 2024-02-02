@@ -11,6 +11,7 @@ struct HorizontalScrollView: View {
     // MARK: - Properties
     @ObservedObject var viewModel: MyWineLibraryViewModel
     var filteredWines: [Wine]
+    @Binding var zoomedWineID: Int?
     
     // MARK: - Body
     var body: some View {
@@ -32,7 +33,12 @@ struct HorizontalScrollView: View {
     private var wineHorizontalStackView: some View {
         HStack(spacing: 0) {
             ForEach(filteredWines, id: \.id) { wine in
-                ItemCellView(image: wine.image ?? "", wineID: wine.id, viewModel: viewModel)
+                ItemCellView(
+                    image: wine.image ?? "",
+                    wineID: wine.id,
+                    viewModel: viewModel,
+                    zoomedWineID: $zoomedWineID
+                )
             }
         }
         .padding(.leading, 20)
@@ -49,6 +55,6 @@ struct HorizontalScrollView: View {
 #Preview {
     HorizontalScrollView(
         viewModel: MyWineLibraryViewModel(),
-        filteredWines: MyWineLibraryViewModel().favoritedWines
+        filteredWines: MyWineLibraryViewModel().favoritedWines, zoomedWineID: .constant(9)
     )
 }

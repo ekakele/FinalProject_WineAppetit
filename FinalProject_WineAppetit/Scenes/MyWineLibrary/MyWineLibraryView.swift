@@ -11,17 +11,30 @@ struct MyWineLibraryView: View {
     //MARK: - Properties
     @StateObject var viewModel: MyWineLibraryViewModel
     @State private var isPresentingWineListView = false
+    @State private var zoomedWineID: Int?
     
     //MARK: - Body
     var body: some View {
-        ZStack(alignment: .bottomTrailing) {
+        ZStack() {
             backgroundView
+                .onTapGesture {
+                    if zoomedWineID != nil {
+                        withAnimation(.spring) {
+                            zoomedWineID = nil
+                        }
+                    }
+                }
+                .allowsHitTesting(zoomedWineID != nil)
             
-            ScrollView {
-                generateSectionStackView()
-            }
-            .padding(.top, 20)
+            scrollingSectionAndButtonView
+                .allowsHitTesting(zoomedWineID == nil)
             
+        }
+    }
+    
+    private var scrollingSectionAndButtonView: some View {
+        ZStack(alignment: .bottomTrailing) {
+            scrollingSectionsView
             setupFloatingButtonView
         }
     }
@@ -41,6 +54,13 @@ struct MyWineLibraryView: View {
     private var wineListRepresentableView: some View {
         WineListViewControllerRepresentableView()
             .edgesIgnoringSafeArea(.all)
+    }
+    
+    private var scrollingSectionsView: some View {
+        ScrollView {
+            generateSectionStackView()
+        }
+        .padding(.top, 20)
     }
     
     private func generateSectionStackView() -> some View {
@@ -66,7 +86,8 @@ struct MyWineLibraryView: View {
             Spacer()
             HorizontalScrollView(
                 viewModel: viewModel,
-                filteredWines: filteredWines
+                filteredWines: filteredWines,
+                zoomedWineID: $zoomedWineID
             )
         }
     }
