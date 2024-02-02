@@ -21,7 +21,16 @@
 		B50550DE2B6039FC0040CA56 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550DD2B6039FC0040CA56 /* ImageLoader.swift */; };
 		B50550E02B6040610040CA56 /* ShortInfoStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550DF2B6040610040CA56 /* ShortInfoStackView.swift */; };
 		B50550E22B6040C00040CA56 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550E12B6040C00040CA56 /* CustomLabel.swift */; };
+		B531DB852B6B80BC00BDCDBA /* FloatingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531DB842B6B80BC00BDCDBA /* FloatingButtonView.swift */; };
+		B531DB892B6B9A9E00BDCDBA /* WineListViewControllerRepresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531DB882B6B9A9E00BDCDBA /* WineListViewControllerRepresentableView.swift */; };
+		B531DB8D2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531DB8C2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift */; };
 		B5517D2C2B61775C004A4961 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5517D2B2B61775C004A4961 /* ActivityIndicator.swift */; };
+		B56CED632B6AA84E00F2F6EC /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56CED622B6AA84E00F2F6EC /* Color+Hex.swift */; };
+		B56CED662B6AAB1E00F2F6EC /* MyWineLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56CED652B6AAB1E00F2F6EC /* MyWineLibraryView.swift */; };
+		B56CED682B6AAB4400F2F6EC /* MyWineLibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56CED672B6AAB4400F2F6EC /* MyWineLibraryViewModel.swift */; };
+		B56CED6C2B6AAC3900F2F6EC /* ShelfTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56CED6B2B6AAC3900F2F6EC /* ShelfTitleView.swift */; };
+		B56CED6E2B6AAE0400F2F6EC /* ItemCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56CED6D2B6AAE0400F2F6EC /* ItemCellView.swift */; };
+		B56CED722B6AB56700F2F6EC /* HorizontalScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56CED712B6AB56700F2F6EC /* HorizontalScrollView.swift */; };
 		B5816D4A2B6518C000550FE9 /* WineDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5816D492B6518C000550FE9 /* WineDetails.swift */; };
 		B58E60502B622DD2000458BD /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E604F2B622DD2000458BD /* UIColor+Hex.swift */; };
 		B58E60562B62AF16000458BD /* UserPreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E60552B62AF16000458BD /* UserPreferencesManager.swift */; };
@@ -53,7 +62,16 @@
 		B50550DD2B6039FC0040CA56 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		B50550DF2B6040610040CA56 /* ShortInfoStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortInfoStackView.swift; sourceTree = "<group>"; };
 		B50550E12B6040C00040CA56 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		B531DB842B6B80BC00BDCDBA /* FloatingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButtonView.swift; sourceTree = "<group>"; };
+		B531DB882B6B9A9E00BDCDBA /* WineListViewControllerRepresentableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineListViewControllerRepresentableView.swift; sourceTree = "<group>"; };
+		B531DB8C2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineDetailsViewControllerRepresentableView.swift; sourceTree = "<group>"; };
 		B5517D2B2B61775C004A4961 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		B56CED622B6AA84E00F2F6EC /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
+		B56CED652B6AAB1E00F2F6EC /* MyWineLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWineLibraryView.swift; sourceTree = "<group>"; };
+		B56CED672B6AAB4400F2F6EC /* MyWineLibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWineLibraryViewModel.swift; sourceTree = "<group>"; };
+		B56CED6B2B6AAC3900F2F6EC /* ShelfTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfTitleView.swift; sourceTree = "<group>"; };
+		B56CED6D2B6AAE0400F2F6EC /* ItemCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellView.swift; sourceTree = "<group>"; };
+		B56CED712B6AB56700F2F6EC /* HorizontalScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalScrollView.swift; sourceTree = "<group>"; };
 		B5816D492B6518C000550FE9 /* WineDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineDetails.swift; sourceTree = "<group>"; };
 		B58E604F2B622DD2000458BD /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		B58E60552B62AF16000458BD /* UserPreferencesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferencesManager.swift; sourceTree = "<group>"; };
@@ -153,6 +171,7 @@
 			children = (
 				B50550C52B5FC90E0040CA56 /* List */,
 				B58E60572B62E853000458BD /* Details */,
+				B56CED642B6AAAFB00F2F6EC /* MyWineLibrary */,
 				B5B05E992B67E34E00EFDDA1 /* CalorieCounter */,
 			);
 			path = Scenes;
@@ -179,15 +198,8 @@
 		B50550D02B5FE04E0040CA56 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				B5B05EA02B67E85500EFDDA1 /* IconButton.swift */,
-				B58E606A2B63B441000458BD /* OrganolepticIconStackView.swift */,
-				B58E60682B63B032000458BD /* IconView.swift */,
-				B58E60642B638CE7000458BD /* InfographicIcon.swift */,
-				B58E60662B638D7F000458BD /* IconLabelStackView.swift */,
-				B5517D2B2B61775C004A4961 /* ActivityIndicator.swift */,
-				B50550E12B6040C00040CA56 /* CustomLabel.swift */,
-				B50550DF2B6040610040CA56 /* ShortInfoStackView.swift */,
-				B50550D12B5FE0840040CA56 /* CustomSearchBar.swift */,
+				B56CED6A2B6AABFC00F2F6EC /* SwiftUIComponents */,
+				B56CED692B6AABEF00F2F6EC /* UIKitComponents */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -210,10 +222,49 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		B56CED642B6AAAFB00F2F6EC /* MyWineLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				B56CED652B6AAB1E00F2F6EC /* MyWineLibraryView.swift */,
+				B56CED672B6AAB4400F2F6EC /* MyWineLibraryViewModel.swift */,
+			);
+			path = MyWineLibrary;
+			sourceTree = "<group>";
+		};
+		B56CED692B6AABEF00F2F6EC /* UIKitComponents */ = {
+			isa = PBXGroup;
+			children = (
+				B5B05EA02B67E85500EFDDA1 /* IconButton.swift */,
+				B58E606A2B63B441000458BD /* OrganolepticIconStackView.swift */,
+				B58E60682B63B032000458BD /* IconView.swift */,
+				B58E60642B638CE7000458BD /* InfographicIcon.swift */,
+				B58E60662B638D7F000458BD /* IconLabelStackView.swift */,
+				B5517D2B2B61775C004A4961 /* ActivityIndicator.swift */,
+				B50550E12B6040C00040CA56 /* CustomLabel.swift */,
+				B50550DF2B6040610040CA56 /* ShortInfoStackView.swift */,
+				B50550D12B5FE0840040CA56 /* CustomSearchBar.swift */,
+			);
+			path = UIKitComponents;
+			sourceTree = "<group>";
+		};
+		B56CED6A2B6AABFC00F2F6EC /* SwiftUIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				B56CED712B6AB56700F2F6EC /* HorizontalScrollView.swift */,
+				B56CED6D2B6AAE0400F2F6EC /* ItemCellView.swift */,
+				B56CED6B2B6AAC3900F2F6EC /* ShelfTitleView.swift */,
+				B531DB842B6B80BC00BDCDBA /* FloatingButtonView.swift */,
+				B531DB882B6B9A9E00BDCDBA /* WineListViewControllerRepresentableView.swift */,
+				B531DB8C2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift */,
+			);
+			path = SwiftUIComponents;
+			sourceTree = "<group>";
+		};
 		B58E604E2B622DB4000458BD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				B58E604F2B622DD2000458BD /* UIColor+Hex.swift */,
+				B56CED622B6AA84E00F2F6EC /* Color+Hex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -325,15 +376,24 @@
 				B50550D22B5FE0840040CA56 /* CustomSearchBar.swift in Sources */,
 				B58E60752B645B91000458BD /* WineDetailsViewModel.swift in Sources */,
 				B50550DE2B6039FC0040CA56 /* ImageLoader.swift in Sources */,
+				B531DB892B6B9A9E00BDCDBA /* WineListViewControllerRepresentableView.swift in Sources */,
+				B56CED632B6AA84E00F2F6EC /* Color+Hex.swift in Sources */,
+				B531DB852B6B80BC00BDCDBA /* FloatingButtonView.swift in Sources */,
 				B50550E02B6040610040CA56 /* ShortInfoStackView.swift in Sources */,
 				B58E60692B63B032000458BD /* IconView.swift in Sources */,
 				B58E60502B622DD2000458BD /* UIColor+Hex.swift in Sources */,
+				B56CED722B6AB56700F2F6EC /* HorizontalScrollView.swift in Sources */,
 				B50550A92B5E41290040CA56 /* AppDelegate.swift in Sources */,
+				B56CED6C2B6AAC3900F2F6EC /* ShelfTitleView.swift in Sources */,
 				B50550AB2B5E41290040CA56 /* SceneDelegate.swift in Sources */,
+				B56CED662B6AAB1E00F2F6EC /* MyWineLibraryView.swift in Sources */,
+				B56CED6E2B6AAE0400F2F6EC /* ItemCellView.swift in Sources */,
 				B5B05E9B2B67E36E00EFDDA1 /* CalorieCounterViewController.swift in Sources */,
+				B56CED682B6AAB4400F2F6EC /* MyWineLibraryViewModel.swift in Sources */,
 				B50550CF2B5FDABC0040CA56 /* WineListViewModel.swift in Sources */,
 				B5816D4A2B6518C000550FE9 /* WineDetails.swift in Sources */,
 				B58E60712B63C072000458BD /* WineDetailsViewController.swift in Sources */,
+				B531DB8D2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift in Sources */,
 				B58E606B2B63B441000458BD /* OrganolepticIconStackView.swift in Sources */,
 				B5B05E9F2B67E58000EFDDA1 /* WineData.swift in Sources */,
 				B5B05E9D2B67E38100EFDDA1 /* CalorieCounterViewModel.swift in Sources */,

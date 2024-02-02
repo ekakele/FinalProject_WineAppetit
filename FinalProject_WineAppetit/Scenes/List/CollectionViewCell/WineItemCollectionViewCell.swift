@@ -37,8 +37,8 @@ final class WineItemCollectionViewCell: UICollectionViewCell {
     )
     
     private let titleLabel = CustomLabel(
-        textColor: Constants.AppColor.labelText,
-        font: Constants.AppFont.secondaryTitle,
+        textColor: Constants.AppUIColor.labelText,
+        font: Constants.AppUIFont.secondaryTitle,
         numberOfLines: 1
     )
     
@@ -50,20 +50,20 @@ final class WineItemCollectionViewCell: UICollectionViewCell {
     )
     
     private let categoryLabel = CustomLabel(
-        textColor: Constants.AppColor.categoryText,
+        textColor: Constants.AppUIColor.categoryText,
         font: .systemFont(ofSize: 12, weight: .regular),
         numberOfLines: 1
     )
     
     private let subcategoryLabel = CustomLabel(
-        textColor: Constants.AppColor.categoryText,
+        textColor: Constants.AppUIColor.categoryText,
         font: .systemFont(ofSize: 12, weight: .regular),
         numberOfLines: 1
     )
     
     private let brandLabel = CustomLabel(
-        textColor: Constants.AppColor.labelText,
-        font: Constants.AppFont.secondaryInfo,
+        textColor: Constants.AppUIColor.labelText,
+        font: Constants.AppUIFont.secondaryInfo,
         numberOfLines: 1
     )
     
@@ -71,11 +71,11 @@ final class WineItemCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.frame = CGRect(x: 14, y: 10, width: 36, height: 20)
         label.font = .systemFont(ofSize: 10, weight: .regular)
-        label.textColor = Constants.AppColor.labelText
+        label.textColor = Constants.AppUIColor.labelText
         label.textAlignment = .center
         label.layer.cornerRadius = 5
         label.clipsToBounds = true
-        label.backgroundColor = Constants.AppColor.tagBackground
+        label.backgroundColor = Constants.AppUIColor.tagBackground
         return label
     }()
     
@@ -89,7 +89,7 @@ final class WineItemCollectionViewCell: UICollectionViewCell {
     
     private let shadeView: UIView = {
         let view = UIView()
-        view.layer.backgroundColor = Constants.AppColor.shadeBackground
+        view.layer.backgroundColor = Constants.AppUIColor.shadeBackground
         view.layer.cornerRadius = 26
         view.widthAnchor.constraint(equalToConstant: 120).isActive = true
         view.heightAnchor.constraint(equalToConstant: 90).isActive = true
@@ -215,7 +215,7 @@ final class WineItemCollectionViewCell: UICollectionViewCell {
         let isFaved = UserPreferencesManager.shared.checkIsWineFavorited(forKey: wineID)
         let heartImage = UIImage(systemName: isFaved ? "heart.fill" : "heart")
         addToFavoritesButton.setImage(heartImage, for: .normal)
-        addToFavoritesButton.tintColor = isFaved ? Constants.AppColor.redFill : Constants.AppColor.grayStroke
+        addToFavoritesButton.tintColor = isFaved ? Constants.AppUIColor.redFill : Constants.AppUIColor.grayStroke
     }
     
     private func displayVintageYear(_ vintageYear: String?) {
