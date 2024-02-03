@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class SpinTheBottleViewController: UIViewController {
     //MARK: - Properties
@@ -54,6 +55,7 @@ class SpinTheBottleViewController: UIViewController {
     
     private var lastRotation: CGFloat = 0.0
     private var angularVelocity: CGFloat = 0.0
+    private var player: AVAudioPlayer!
     private var remainingQuestions = questionsArray
     
     //MARK: - LifeCycle
@@ -106,6 +108,7 @@ class SpinTheBottleViewController: UIViewController {
             if abs(self.angularVelocity) < minimumVelocity {
                 timer.invalidate()
                 presentRandomQuestion()
+                playSound()
             }
         }
     }
@@ -131,6 +134,12 @@ class SpinTheBottleViewController: UIViewController {
     private func showLabelText() {
         questionLabel.isHidden = false
         labelBackgroundView.isHidden = false
+    }
+    
+    private func playSound() {
+        let url = Bundle.main.url(forResource: "popSound", withExtension: "mp3")
+        player = try! AVAudioPlayer(contentsOf: url!)
+        player.play()
     }
     
     private func setupUI() {
