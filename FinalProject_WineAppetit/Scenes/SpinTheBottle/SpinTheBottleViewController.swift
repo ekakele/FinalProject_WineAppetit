@@ -36,7 +36,7 @@ class SpinTheBottleViewController: UIViewController {
         let label = UILabel()
         label.isHidden = true
         label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 20, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .light)
         label.textAlignment = .center
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -54,6 +54,7 @@ class SpinTheBottleViewController: UIViewController {
     
     private var lastRotation: CGFloat = 0.0
     private var angularVelocity: CGFloat = 0.0
+    private var remainingQuestions = questionsArray
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
@@ -79,6 +80,7 @@ class SpinTheBottleViewController: UIViewController {
         switch gesture.state {
         case .began:
             lastRotation = currentAngle
+            hideLabelText()
         case .changed:
             let angleDifference = currentAngle - lastRotation
             angularVelocity = angleDifference
@@ -109,17 +111,27 @@ class SpinTheBottleViewController: UIViewController {
     }
     
     private func presentRandomQuestion() {
-        let randomIndex = Int.random(in: 0..<questionsArray.count)
-        let randomQuestion = questionsArray[randomIndex]
+        
+        if remainingQuestions.isEmpty {
+            remainingQuestions = questionsArray
+        }
+        
+        let randomIndex = Int.random(in: 0..<remainingQuestions.count)
+        let randomQuestion = remainingQuestions[randomIndex]
+        let removedQuestion = remainingQuestions.remove(at: randomIndex)
         
         questionLabel.text = randomQuestion
-        questionLabel.isHidden.toggle()
-        labelBackgroundView.isHidden.toggle()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-            self.questionLabel.isHidden.toggle()
-            self.labelBackgroundView.isHidden.toggle()
-        }
+        showLabelText()
+    }
+    
+    func hideLabelText() {
+        questionLabel.isHidden = true
+        labelBackgroundView.isHidden = true
+    }
+    
+    func showLabelText() {
+        questionLabel.isHidden = false
+        labelBackgroundView.isHidden = false
     }
     
     //MARK: - UI Setup
