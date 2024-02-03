@@ -53,20 +53,23 @@ class SpinTheBottleViewController: UIViewController {
         return view
     }()
     
-    private var lastRotation: CGFloat = 0.0
-    private var angularVelocity: CGFloat = 0.0
+    private let viewModel = SpinTheBottleViewModel()
     private var player: AVAudioPlayer!
-    private var remainingQuestions = questionsArray
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupViewModel()
         setupBottlePanGestureRecognizer()
         setupUI()
     }
     
     //MARK: - Private Methods
+    private func setupViewModel() {
+        viewModel.delegate = self
+    }
+    
     private func setupBottlePanGestureRecognizer() {
         bottleImage.isUserInteractionEnabled = true
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handleBottlePanGesture(_:)))
@@ -76,54 +79,9 @@ class SpinTheBottleViewController: UIViewController {
     @objc private func handleBottlePanGesture(_ gesture: UIPanGestureRecognizer) {
         let touchPoint = gesture.location(in: view)
         let centerPoint = bottleImage.center
+        let state = gesture.state
         
-        let currentAngle = atan2(touchPoint.y - centerPoint.y, touchPoint.x - centerPoint.x)
-        
-        switch gesture.state {
-        case .began:
-            lastRotation = currentAngle
-            hideLabelText()
-        case .changed:
-            let angleDifference = currentAngle - lastRotation
-            angularVelocity = angleDifference
-            bottleImage.transform = bottleImage.transform.rotated(by: angleDifference)
-            lastRotation = currentAngle
-        case .ended, .cancelled:
-            decelerateBottleRotation()
-        default:
-            break
-        }
-    }
-    
-    private func decelerateBottleRotation() {
-        let decelerationRate = CGFloat(0.95)
-        let minimumVelocity = CGFloat(0.01)
-        
-        Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true) { [weak self] timer in
-            guard let self = self else { return }
-            
-            self.angularVelocity *= decelerationRate
-            self.bottleImage.transform = self.bottleImage.transform.rotated(by: self.angularVelocity)
-            
-            if abs(self.angularVelocity) < minimumVelocity {
-                timer.invalidate()
-                presentRandomQuestion()
-                playSound()
-            }
-        }
-    }
-    
-    private func presentRandomQuestion() {
-        if remainingQuestions.isEmpty {
-            remainingQuestions = questionsArray
-        }
-        
-        let randomIndex = Int.random(in: 0..<remainingQuestions.count)
-        let randomQuestion = remainingQuestions[randomIndex]
-        remainingQuestions.remove(at: randomIndex)
-        
-        questionLabel.text = randomQuestion
-        showLabelText()
+        viewModel.handleBottlePanGesture(touchPoint: touchPoint, centerPoint: centerPoint, state: state)
     }
     
     private func hideLabelText() {
@@ -192,5 +150,25 @@ class SpinTheBottleViewController: UIViewController {
             backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+}
+
+// MARK: - SpinTheBottleViewModelDelegate
+extension SpinTheBottleViewController: SpinTheBottleViewModelDelegate {
+    func didUpdateBottleRotation(_ rotation: CGFloat) {
+        bottleImage.transform = bottleImage.transform.rotated(by: rotation)
+    }
+    
+    func didEndBottleRotation() {
+        playSound()
+    }
+    
+    func didUpdateQuestion(_ question: String) {
+        questionLabel.text = question
+    }
+    
+    func shouldShowLabel(_ show: Bool) {
+        questionLabel.isHidden = !show
+        labelBackgroundView.isHidden = !show
     }
 }
