@@ -120,7 +120,7 @@ class SpinTheBottleViewController: UIViewController {
         
         let randomIndex = Int.random(in: 0..<remainingQuestions.count)
         let randomQuestion = remainingQuestions[randomIndex]
-        let removedQuestion = remainingQuestions.remove(at: randomIndex)
+        remainingQuestions.remove(at: randomIndex)
         
         questionLabel.text = randomQuestion
         showLabelText()
