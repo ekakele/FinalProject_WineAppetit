@@ -63,6 +63,9 @@ struct Constants {
         static let redForGradient: [CGColor] = [redWine, white]
         static let whiteForGradient: [CGColor] = [whiteWine, white]
         static let roseForBackground: [CGColor] = [roseWine,white]
+        
+        static let lightGreen = UIColor(hex: "#cfe1b9")
+        static let darkGreen = UIColor(hex: "#283618")
     }
     
     //MARK: - SwiftUI

@@ -1,5 +1,5 @@
 //
-//   SpinTheBottleViewModel.swift
+//  SpinTheBottleViewModel.swift
 //  FinalProject_WineAppetit
 //
 //  Created by Eka Kelenjeridze on 03.02.24.
@@ -15,7 +15,7 @@ protocol SpinTheBottleViewModelDelegate: AnyObject {
     func shouldShowLabel(_ show: Bool)
 }
 
-final class  SpinTheBottleViewModel {
+final class SpinTheBottleViewModel {
     //MARK: - Properties
     private var lastRotation: CGFloat = 0.0
     private var angularVelocity: CGFloat = 0.0
