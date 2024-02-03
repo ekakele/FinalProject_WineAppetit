@@ -111,7 +111,6 @@ class SpinTheBottleViewController: UIViewController {
     }
     
     private func presentRandomQuestion() {
-        
         if remainingQuestions.isEmpty {
             remainingQuestions = questionsArray
         }
@@ -124,17 +123,16 @@ class SpinTheBottleViewController: UIViewController {
         showLabelText()
     }
     
-    func hideLabelText() {
+    private func hideLabelText() {
         questionLabel.isHidden = true
         labelBackgroundView.isHidden = true
     }
     
-    func showLabelText() {
+    private func showLabelText() {
         questionLabel.isHidden = false
         labelBackgroundView.isHidden = false
     }
     
-    //MARK: - UI Setup
     private func setupUI() {
         addSubviews()
         setupQuestionLabelConstraints()
