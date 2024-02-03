@@ -21,6 +21,8 @@
 		B50550DE2B6039FC0040CA56 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550DD2B6039FC0040CA56 /* ImageLoader.swift */; };
 		B50550E02B6040610040CA56 /* ShortInfoStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550DF2B6040610040CA56 /* ShortInfoStackView.swift */; };
 		B50550E22B6040C00040CA56 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550E12B6040C00040CA56 /* CustomLabel.swift */; };
+		B51764822B6D8CB9000DF5E8 /* SpinTheBottleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51764812B6D8CB9000DF5E8 /* SpinTheBottleViewController.swift */; };
+		B51764842B6DB553000DF5E8 /* SpinTheBottleGameQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51764832B6DB553000DF5E8 /* SpinTheBottleGameQuestions.swift */; };
 		B531DB852B6B80BC00BDCDBA /* FloatingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531DB842B6B80BC00BDCDBA /* FloatingButtonView.swift */; };
 		B531DB892B6B9A9E00BDCDBA /* WineListViewControllerRepresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531DB882B6B9A9E00BDCDBA /* WineListViewControllerRepresentableView.swift */; };
 		B531DB8D2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531DB8C2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift */; };
@@ -40,6 +42,8 @@
 		B58E606B2B63B441000458BD /* OrganolepticIconStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E606A2B63B441000458BD /* OrganolepticIconStackView.swift */; };
 		B58E60712B63C072000458BD /* WineDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E60702B63C072000458BD /* WineDetailsViewController.swift */; };
 		B58E60752B645B91000458BD /* WineDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58E60742B645B91000458BD /* WineDetailsViewModel.swift */; };
+		B58EDED62B6E34CC0063D46D /* popSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B58EDED52B6E34CB0063D46D /* popSound.mp3 */; };
+		B58EDED82B6EA1DF0063D46D /*  SpinTheBottleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58EDED72B6EA1DF0063D46D /*  SpinTheBottleViewModel.swift */; };
 		B5B05E9B2B67E36E00EFDDA1 /* CalorieCounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B05E9A2B67E36E00EFDDA1 /* CalorieCounterViewController.swift */; };
 		B5B05E9D2B67E38100EFDDA1 /* CalorieCounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B05E9C2B67E38100EFDDA1 /* CalorieCounterViewModel.swift */; };
 		B5B05E9F2B67E58000EFDDA1 /* WineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B05E9E2B67E58000EFDDA1 /* WineData.swift */; };
@@ -62,6 +66,8 @@
 		B50550DD2B6039FC0040CA56 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		B50550DF2B6040610040CA56 /* ShortInfoStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortInfoStackView.swift; sourceTree = "<group>"; };
 		B50550E12B6040C00040CA56 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		B51764812B6D8CB9000DF5E8 /* SpinTheBottleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinTheBottleViewController.swift; sourceTree = "<group>"; };
+		B51764832B6DB553000DF5E8 /* SpinTheBottleGameQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinTheBottleGameQuestions.swift; sourceTree = "<group>"; };
 		B531DB842B6B80BC00BDCDBA /* FloatingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButtonView.swift; sourceTree = "<group>"; };
 		B531DB882B6B9A9E00BDCDBA /* WineListViewControllerRepresentableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineListViewControllerRepresentableView.swift; sourceTree = "<group>"; };
 		B531DB8C2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineDetailsViewControllerRepresentableView.swift; sourceTree = "<group>"; };
@@ -81,6 +87,8 @@
 		B58E606A2B63B441000458BD /* OrganolepticIconStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganolepticIconStackView.swift; sourceTree = "<group>"; };
 		B58E60702B63C072000458BD /* WineDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineDetailsViewController.swift; sourceTree = "<group>"; };
 		B58E60742B645B91000458BD /* WineDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineDetailsViewModel.swift; sourceTree = "<group>"; };
+		B58EDED52B6E34CB0063D46D /* popSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = popSound.mp3; sourceTree = "<group>"; };
+		B58EDED72B6EA1DF0063D46D /*  SpinTheBottleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " SpinTheBottleViewModel.swift"; sourceTree = "<group>"; };
 		B5B05E9A2B67E36E00EFDDA1 /* CalorieCounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieCounterViewController.swift; sourceTree = "<group>"; };
 		B5B05E9C2B67E38100EFDDA1 /* CalorieCounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieCounterViewModel.swift; sourceTree = "<group>"; };
 		B5B05E9E2B67E58000EFDDA1 /* WineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineData.swift; sourceTree = "<group>"; };
@@ -145,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				B50550B12B5E412B0040CA56 /* Assets.xcassets */,
+				B58EDED52B6E34CB0063D46D /* popSound.mp3 */,
 				B50550B32B5E412B0040CA56 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
@@ -173,6 +182,7 @@
 				B58E60572B62E853000458BD /* Details */,
 				B56CED642B6AAAFB00F2F6EC /* MyWineLibrary */,
 				B5B05E992B67E34E00EFDDA1 /* CalorieCounter */,
+				B51764802B6D8C6C000DF5E8 /* SpinTheBottle */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -209,6 +219,7 @@
 			children = (
 				B50550D72B6013810040CA56 /* AppConstants.swift */,
 				B5B05E9E2B67E58000EFDDA1 /* WineData.swift */,
+				B51764832B6DB553000DF5E8 /* SpinTheBottleGameQuestions.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -220,6 +231,15 @@
 				B58E60552B62AF16000458BD /* UserPreferencesManager.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		B51764802B6D8C6C000DF5E8 /* SpinTheBottle */ = {
+			isa = PBXGroup;
+			children = (
+				B51764812B6D8CB9000DF5E8 /* SpinTheBottleViewController.swift */,
+				B58EDED72B6EA1DF0063D46D /*  SpinTheBottleViewModel.swift */,
+			);
+			path = SpinTheBottle;
 			sourceTree = "<group>";
 		};
 		B56CED642B6AAAFB00F2F6EC /* MyWineLibrary */ = {
@@ -353,6 +373,7 @@
 			files = (
 				B50550B52B5E412B0040CA56 /* LaunchScreen.storyboard in Resources */,
 				B50550B22B5E412B0040CA56 /* Assets.xcassets in Resources */,
+				B58EDED62B6E34CC0063D46D /* popSound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,11 +409,14 @@
 				B50550AB2B5E41290040CA56 /* SceneDelegate.swift in Sources */,
 				B56CED662B6AAB1E00F2F6EC /* MyWineLibraryView.swift in Sources */,
 				B56CED6E2B6AAE0400F2F6EC /* ItemCellView.swift in Sources */,
+				B51764822B6D8CB9000DF5E8 /* SpinTheBottleViewController.swift in Sources */,
 				B5B05E9B2B67E36E00EFDDA1 /* CalorieCounterViewController.swift in Sources */,
 				B56CED682B6AAB4400F2F6EC /* MyWineLibraryViewModel.swift in Sources */,
 				B50550CF2B5FDABC0040CA56 /* WineListViewModel.swift in Sources */,
 				B5816D4A2B6518C000550FE9 /* WineDetails.swift in Sources */,
+				B51764842B6DB553000DF5E8 /* SpinTheBottleGameQuestions.swift in Sources */,
 				B58E60712B63C072000458BD /* WineDetailsViewController.swift in Sources */,
+				B58EDED82B6EA1DF0063D46D /*  SpinTheBottleViewModel.swift in Sources */,
 				B531DB8D2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift in Sources */,
 				B58E606B2B63B441000458BD /* OrganolepticIconStackView.swift in Sources */,
 				B5B05E9F2B67E58000EFDDA1 /* WineData.swift in Sources */,

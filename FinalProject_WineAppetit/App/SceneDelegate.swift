@@ -16,10 +16,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let hostingController = UIHostingController(rootView: MyWineLibraryView(viewModel: MyWineLibraryViewModel()))
+//        let hostingController = UIHostingController(rootView: MyWineLibraryView(viewModel: MyWineLibraryViewModel()))
         
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = UINavigationController(rootViewController: hostingController)
+        window?.rootViewController = UINavigationController(rootViewController: SpinTheBottleViewController())
         window?.makeKeyAndVisible()
 
     }
