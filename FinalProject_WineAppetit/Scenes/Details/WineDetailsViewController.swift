@@ -134,6 +134,7 @@ final class WineDetailsViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         
         viewModel.delegate = self
+        hidesBottomBarWhenPushed = true
     }
     
     required init?(coder: NSCoder) {
