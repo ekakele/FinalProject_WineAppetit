@@ -130,7 +130,7 @@ class SpinTheBottleViewController: UIViewController {
     private func setupLabelViewConstraints() {
         NSLayoutConstraint.activate([
             questionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            questionLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 300),
+            questionLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 260),
             questionLabel.widthAnchor.constraint(equalToConstant: 300),
             questionLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 50)
         ])
