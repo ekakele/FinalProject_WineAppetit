@@ -23,6 +23,7 @@ final class ShortInfoStackView: UIStackView {
         self.distribution = distribution
         self.alignment = stackAlignment ?? .fill
         self.spacing = stackSpacing ?? 0
+        self.translatesAutoresizingMaskIntoConstraints = false
     }
     
     required init(coder: NSCoder) {
