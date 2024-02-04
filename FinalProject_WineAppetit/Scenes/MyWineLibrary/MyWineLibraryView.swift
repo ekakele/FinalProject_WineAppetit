@@ -27,15 +27,15 @@ struct MyWineLibraryView: View {
                 .allowsHitTesting(zoomedWineID != nil)
             
             scrollingSectionAndButtonView
+                .padding(.top, 10)
                 .allowsHitTesting(zoomedWineID == nil)
-            
         }
     }
     
     //MARK: - Components
     private var scrollingSectionAndButtonView: some View {
         ZStack(alignment: .bottomTrailing) {
-            scrollingSectionsView
+            generateSectionStackView()
             setupFloatingButtonView
         }
     }
@@ -57,15 +57,8 @@ struct MyWineLibraryView: View {
             .edgesIgnoringSafeArea(.all)
     }
     
-    private var scrollingSectionsView: some View {
-        ScrollView {
-            generateSectionStackView()
-        }
-        .padding(.top, 20)
-    }
-    
     private func generateSectionStackView() -> some View {
-        VStack(alignment: .leading, spacing: 34) {
+        VStack(spacing: 0) {
             generateTitledSectionView(
                 title: "Red Wines",
                 filteredWines: viewModel.filteredWines(category: "red")
@@ -78,18 +71,19 @@ struct MyWineLibraryView: View {
                 title: "Rose Wines",
                 filteredWines: viewModel.filteredWines(category: "rose")
             )
+            Spacer()
         }
     }
     
     private func generateTitledSectionView(title: String, filteredWines: [Wine]) -> some View {
         VStack() {
             ShelfTitleView(title: title)
-            Spacer()
             HorizontalScrollView(
                 viewModel: viewModel,
                 filteredWines: filteredWines,
                 zoomedWineID: $zoomedWineID
             )
+            Spacer()
         }
     }
     
