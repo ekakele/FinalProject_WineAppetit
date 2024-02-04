@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-class TabBarController: UITabBarController {
+final class TabBarController: UITabBarController {
     // MARK: - Properties
     private let wineListViewController = WineListViewController()
     private let calorieCounterViewController = CalorieCounterViewController()
@@ -70,9 +70,9 @@ class TabBarController: UITabBarController {
         viewController.tabBarItem.image = icon
         return viewController
     }
-    
 }
 
+// MARK: - UITabBarControllerDelegate
 extension TabBarController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         updateTabBarBackground(for: viewController)
