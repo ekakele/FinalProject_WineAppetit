@@ -8,7 +8,7 @@
 import UIKit
 
 final class WineItemCollectionViewCell: UICollectionViewCell {
-    //MARK: - Properties
+    // MARK: - Properties
     static let identifier = "ItemCollectionViewCell"
     
     private lazy var cellStackView: UIStackView = {
@@ -100,7 +100,7 @@ final class WineItemCollectionViewCell: UICollectionViewCell {
     private let activityIndicator = ActivityIndicator()
     private var wine: Wine?
     
-    //MARK: - Inits
+    // MARK: - Inits
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -111,7 +111,7 @@ final class WineItemCollectionViewCell: UICollectionViewCell {
         super.init(coder: coder)
     }
     
-    //MARK: - LifeCycle
+    // MARK: - LifeCycle
     override func prepareForReuse() {
         super.prepareForReuse()
         
@@ -126,7 +126,7 @@ final class WineItemCollectionViewCell: UICollectionViewCell {
         addToFavoritesButton.tintColor = nil
     }
     
-    //MARK: - Configure
+    // MARK: - Configure
     func configure(with wine: Wine) {
         self.wine = wine
         
@@ -142,7 +142,7 @@ final class WineItemCollectionViewCell: UICollectionViewCell {
         updateFavoriteButtonUI()
     }
     
-    //MARK: - Private Methods
+    // MARK: - Private Methods
     private func setupUI() {
         setupActivityIndicator()
         addSubviews()

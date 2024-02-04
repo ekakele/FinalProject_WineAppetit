@@ -8,12 +8,12 @@
 import Foundation
 
 final class UserPreferencesManager {
-    //MARK: - Properties
+    // MARK: - Properties
     static let shared = UserPreferencesManager()
     let defaults = UserDefaults.standard
     private let favoritedWineListKey = "favoriteWines"
     
-    //MARK: - Methods
+    // MARK: - Methods
     func saveWineInFavorites(forKey wineID: Int, value: Bool) {
         var favorites = getFavoriteWineList()
         if value {

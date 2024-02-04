@@ -12,16 +12,16 @@ protocol SearchBarDelegate: AnyObject {
 }
 
 final class CustomSearchBar: UISearchController, UISearchResultsUpdating {
-    //MARK: - Properties
+    // MARK: - Properties
     weak var searchBarDelegate: SearchBarDelegate?
     
-    //MARK: - LifeCycle
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchBar()
     }
     
-    //MARK: - Inits
+    // MARK: - Inits
     init(placeholder: String? = "Search") {
         super.init(nibName: nil, bundle: nil)
         setupSearchBar(placeholder: placeholder)
@@ -31,7 +31,7 @@ final class CustomSearchBar: UISearchController, UISearchResultsUpdating {
         super.init(coder: coder)
     }
     
-    //MARK: - Private Methods
+    // MARK: - Private Methods
     private func setupSearchBar(placeholder: String? = "Search") {
         navigationItem.searchController = self
         searchResultsUpdater = self
@@ -40,7 +40,7 @@ final class CustomSearchBar: UISearchController, UISearchResultsUpdating {
         definesPresentationContext = true
     }
     
-    //MARK: - Methods
+    // MARK: - Methods
     func updateSearchResults(for searchController: UISearchController) {
         searchBarDelegate?.searchBarDidSearch(with: searchController.searchBar.text ?? "")
         guard let text = searchController.searchBar.text, !text.isEmpty else {

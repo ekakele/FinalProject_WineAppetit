@@ -8,14 +8,14 @@
 import UIKit
 
 final class ImageLoader {
-    //MARK: - Properties
+    // MARK: - Properties
     static let shared = ImageLoader()
     private let cache = NSCache<NSString, UIImage>()
     
-    //MARK: - Inits
+    // MARK: - Inits
     private init() {}
     
-    //MARK: - Methods
+    // MARK: - Methods
     func fetchImage(with URLString: String) async throws -> UIImage? {
         if let image = cache.object(forKey: NSString(string: URLString)) {
             return image

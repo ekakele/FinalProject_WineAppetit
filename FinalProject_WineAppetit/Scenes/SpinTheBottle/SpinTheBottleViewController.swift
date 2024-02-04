@@ -9,7 +9,7 @@ import UIKit
 import AVFoundation
 
 class SpinTheBottleViewController: UIViewController {
-    //MARK: - Properties
+    // MARK: - Properties
     let backgroundImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = Constants.AppUIImage.bottleBackground
@@ -56,7 +56,7 @@ class SpinTheBottleViewController: UIViewController {
     private let viewModel = SpinTheBottleViewModel()
     private var player: AVAudioPlayer!
     
-    //MARK: - LifeCycle
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,7 +65,7 @@ class SpinTheBottleViewController: UIViewController {
         setupUI()
     }
     
-    //MARK: - Private Methods
+    // MARK: - Private Methods
     private func setupViewModel() {
         viewModel.delegate = self
     }
@@ -130,7 +130,7 @@ class SpinTheBottleViewController: UIViewController {
     private func setupLabelViewConstraints() {
         NSLayoutConstraint.activate([
             questionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            questionLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 300),
+            questionLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 260),
             questionLabel.widthAnchor.constraint(equalToConstant: 300),
             questionLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 50)
         ])

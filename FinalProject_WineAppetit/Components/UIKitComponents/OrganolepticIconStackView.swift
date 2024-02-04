@@ -8,7 +8,7 @@
 import UIKit
 
 final class OrganolepticIconStackView: UIView {
-    //MARK: - Properties
+    // MARK: - Properties
     private let IconStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
@@ -45,7 +45,7 @@ final class OrganolepticIconStackView: UIView {
     private let aromaIconView = IconView()
     private let tasteIconView = IconView()
     
-    //MARK: - Inits
+    // MARK: - Inits
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -56,7 +56,7 @@ final class OrganolepticIconStackView: UIView {
         super.init(coder: coder)
     }
     
-    //MARK: - Private Methods
+    // MARK: - Private Methods
     private func setupUI() {
         addSubviews()
         setupIconStackViewConstraints()

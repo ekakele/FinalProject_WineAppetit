@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct ShelfTitleView: View {
-    //MARK: - Properties
+    // MARK: - Properties
     var title: String
     
-    //MARK: - Body
+    // MARK: - Body
     var body: some View {
         overlayLayersView
     }
     
-    //MARK: - Components
+    // MARK: - Components
     private var overlayLayersView: some View {
         filledRectangleView
             .overlay(rectangleStrokeView)

@@ -1,5 +1,5 @@
 //
-//   SpinTheBottleViewModel.swift
+//  SpinTheBottleViewModel.swift
 //  FinalProject_WineAppetit
 //
 //  Created by Eka Kelenjeridze on 03.02.24.
@@ -15,14 +15,14 @@ protocol SpinTheBottleViewModelDelegate: AnyObject {
     func shouldShowLabel(_ show: Bool)
 }
 
-final class  SpinTheBottleViewModel {
-    //MARK: - Properties
+final class SpinTheBottleViewModel {
+    // MARK: - Properties
     private var lastRotation: CGFloat = 0.0
     private var angularVelocity: CGFloat = 0.0
     private var remainingQuestions: [String] = questionsArray
     weak var delegate: SpinTheBottleViewModelDelegate?
     
-    //MARK: - Methods
+    // MARK: - Methods
     func handleBottlePanGesture(touchPoint: CGPoint, centerPoint: CGPoint, state: UIGestureRecognizer.State) {
         let currentAngle = atan2(touchPoint.y - centerPoint.y, touchPoint.x - centerPoint.x)
         
@@ -42,7 +42,7 @@ final class  SpinTheBottleViewModel {
         }
     }
     
-    //MARK: - Private Methods
+    // MARK: - Private Methods
     private func decelerateBottleRotation() {
         let decelerationRate = CGFloat(0.95)
         let minimumVelocity = CGFloat(0.01)

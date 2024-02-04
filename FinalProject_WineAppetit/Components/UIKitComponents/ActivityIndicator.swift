@@ -8,10 +8,10 @@
 import UIKit
 
 final class ActivityIndicator: UIView {
-    //MARK: - Properties
+    // MARK: - Properties
     private let activityIndicator = UIActivityIndicatorView(style: .large)
     
-    //MARK: - Inits
+    // MARK: - Inits
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupUI()
@@ -21,7 +21,7 @@ final class ActivityIndicator: UIView {
         super.init(coder: coder)
     }
     
-    //MARK: - Private Methods
+    // MARK: - Private Methods
     private func setupUI() {
         setupBackground()
         addSubviews()
@@ -43,7 +43,7 @@ final class ActivityIndicator: UIView {
         activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     }
     
-    //MARK: - Methods
+    // MARK: - Methods
     func show() {
         superview?.bringSubviewToFront(self)
         isHidden = false

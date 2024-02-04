@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ItemCellView: View {
-    //MARK: - Properties
+    // MARK: - Properties
     var image: String
     var wineID: Int
     @State private var isPresentingWineListView = false
@@ -18,7 +18,7 @@ struct ItemCellView: View {
         zoomedWineID == wineID
     }
     
-    //MARK: - Body
+    // MARK: - Body
     var body: some View {
         itemImageView
             .onTapGesture {
@@ -36,7 +36,7 @@ struct ItemCellView: View {
             }
     }
     
-    //MARK: - Components
+    // MARK: - Components
     private var wineDetailsRepresentableView: some View {
         WineDetailsViewControllerRepresentableView(wineID: wineID)
             .edgesIgnoringSafeArea(.all)

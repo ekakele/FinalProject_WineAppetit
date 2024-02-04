@@ -8,7 +8,7 @@
 import UIKit
 
 final class CalorieCounterViewController: UIViewController {
-    //MARK: - Properties
+    // MARK: - Properties
     let backgroundImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = Constants.AppUIImage.calorieCounterBackground
@@ -69,7 +69,7 @@ final class CalorieCounterViewController: UIViewController {
     
     private let winePickerView: UIPickerView = {
         let pickerView = UIPickerView()
-        pickerView.heightAnchor.constraint(equalToConstant: 140).isActive = true
+        pickerView.heightAnchor.constraint(equalToConstant: 130).isActive = true
         pickerView.translatesAutoresizingMaskIntoConstraints = false
         return pickerView
     }()
@@ -80,7 +80,7 @@ final class CalorieCounterViewController: UIViewController {
     
     private let viewModel = CalorieCounterViewModel()
     
-    //MARK: - LifeCycle
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -90,7 +90,7 @@ final class CalorieCounterViewController: UIViewController {
         setupUI()
     }
     
-    //MARK: - Private Methods
+    // MARK: - Private Methods
     private func setupViewModel() {
         viewModel.delegate = self
     }
@@ -171,7 +171,7 @@ final class CalorieCounterViewController: UIViewController {
         return glassNumber * calorieInfo.calories
     }
     
-    //MARK: - UI Setup
+    // MARK: - UI Setup
     private func setupUI() {
         setupBackground()
         addSubviews()
@@ -236,17 +236,17 @@ final class CalorieCounterViewController: UIViewController {
     
     private func setupMainStackViewConstraints() {
         NSLayoutConstraint.activate([
-            mainStackView.topAnchor.constraint(equalTo: view.centerYAnchor, constant: 130),
-            mainStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            mainStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            mainStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            mainStackView.topAnchor.constraint(equalTo: view.centerYAnchor, constant: 94),
+            mainStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            mainStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            mainStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10)
         ])
     }
 }
 
 
 //1 glass = 148ml
-//MARK: - UIPickerView DataSource
+// MARK: - UIPickerView DataSource
 extension CalorieCounterViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         2
@@ -262,7 +262,7 @@ extension CalorieCounterViewController: UIPickerViewDataSource {
     }
 }
 
-//MARK: - UIPickerView Delegate
+// MARK: - UIPickerView Delegate
 extension CalorieCounterViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if component == 0 {

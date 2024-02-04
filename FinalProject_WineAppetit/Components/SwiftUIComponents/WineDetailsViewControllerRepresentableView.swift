@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct WineDetailsViewControllerRepresentableView:  UIViewControllerRepresentable {
-    //MARK: - Properties
+    // MARK: - Properties
     var wineID: Int
     
-    //MARK: - Methods
+    // MARK: - Methods
     func makeUIViewController(context: Context) -> UIViewController {
         let viewController = WineDetailsViewController(wineID: wineID)
         return UINavigationController(rootViewController: viewController)

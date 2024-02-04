@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct HorizontalScrollView: View {
-    //MARK: - Properties
+    // MARK: - Properties
     @ObservedObject var viewModel: MyWineLibraryViewModel
     var filteredWines: [Wine]
     @Binding var zoomedWineID: Int?
     
-    //MARK: - Body
+    // MARK: - Body
     var body: some View {
         ZStack {
             backgroundImageView
@@ -22,7 +22,7 @@ struct HorizontalScrollView: View {
         .padding(.horizontal, 8)
     }
     
-    //MARK: - Components
+    // MARK: - Components
     private var wineHorizontalScrollView: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             wineHorizontalStackView

@@ -8,7 +8,7 @@
 import UIKit
 
 final class IconLabelStackView: UIStackView {
-    //MARK: - Inits
+    // MARK: - Inits
     init() {
         super.init(frame: .zero)
         self.axis = .vertical

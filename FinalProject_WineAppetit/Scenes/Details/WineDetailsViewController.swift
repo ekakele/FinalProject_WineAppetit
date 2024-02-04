@@ -8,7 +8,7 @@
 import UIKit
 
 final class WineDetailsViewController: UIViewController {
-    //MARK: - Properties
+    // MARK: - Properties
     private lazy var mainStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [upperStackView, lowerStackView])
         stackView.axis = .vertical
@@ -128,12 +128,13 @@ final class WineDetailsViewController: UIViewController {
     private var viewModel: WineDetailsViewModel
     private var isFavorited: Bool = false
     
-    //MARK: - Inits
+    // MARK: - Inits
     init(wineID: Int) {
         viewModel = DefaultWineDetailsViewModel(wineID: wineID)
         super.init(nibName: nil, bundle: nil)
         
         viewModel.delegate = self
+        hidesBottomBarWhenPushed = true
     }
     
     required init?(coder: NSCoder) {
@@ -141,7 +142,7 @@ final class WineDetailsViewController: UIViewController {
     }
     
     
-    //MARK: - LifeCycle
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -152,7 +153,7 @@ final class WineDetailsViewController: UIViewController {
         setupUI()
     }
     
-    //MARK: - Private Methods
+    // MARK: - Private Methods
     private func setupNavigationBar() {
         navigationItem.title = "Wine Details"
         navigationController?.navigationBar.prefersLargeTitles = true
