@@ -42,7 +42,7 @@ class TabBarController: UITabBarController {
         let myWineLibraryTab =  createTabBarItem(
             viewController: myWineLibraryHostingController,
             title: "My Wine Library",
-            icon: UIImage(systemName: "heart")
+            icon: UIImage(systemName: "books.vertical.fill")
         )
         
         let calorieCounterTab =  createTabBarItem(
@@ -87,7 +87,7 @@ extension TabBarController: UITabBarControllerDelegate {
             tabBar.backgroundColor = .clear
             tabBar.isTranslucent = true
             tabBar.tintColor = Constants.AppUIColor.redFill
-            tabBar.unselectedItemTintColor = Constants.AppUIColor.categoryText.withAlphaComponent(0.6)
+            tabBar.unselectedItemTintColor = Constants.AppUIColor.burgundy.withAlphaComponent(0.5)
         } else {
             tabBar.backgroundColor = .clear
             tabBar.isTranslucent = true
