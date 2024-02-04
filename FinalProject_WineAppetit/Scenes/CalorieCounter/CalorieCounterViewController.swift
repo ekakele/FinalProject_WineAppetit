@@ -69,7 +69,7 @@ final class CalorieCounterViewController: UIViewController {
     
     private let winePickerView: UIPickerView = {
         let pickerView = UIPickerView()
-        pickerView.heightAnchor.constraint(equalToConstant: 140).isActive = true
+        pickerView.heightAnchor.constraint(equalToConstant: 130).isActive = true
         pickerView.translatesAutoresizingMaskIntoConstraints = false
         return pickerView
     }()
@@ -236,9 +236,9 @@ final class CalorieCounterViewController: UIViewController {
     
     private func setupMainStackViewConstraints() {
         NSLayoutConstraint.activate([
-            mainStackView.topAnchor.constraint(equalTo: view.centerYAnchor, constant: 130),
-            mainStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            mainStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            mainStackView.topAnchor.constraint(equalTo: view.centerYAnchor, constant: 120),
+            mainStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            mainStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
             mainStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
