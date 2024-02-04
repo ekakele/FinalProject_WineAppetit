@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct FloatingButtonView: View {
-    //MARK: - Properties
+    // MARK: - Properties
     var buttonIcon: String
     var action: () -> Void
     @Binding var isPresentingWineListView: Bool
     
-    //MARK: - Body
+    // MARK: - Body
     var body: some View {
         buttonView
     }
     
-    //MARK: - Components
+    // MARK: - Components
     private var buttonView: some View {
         Button {
             action()

@@ -9,7 +9,7 @@ import UIKit
 import SwiftUI
 
 struct Constants {
-    //MARK: - General
+    // MARK: - General
     struct API {
         static let wineApiBaseURL = "https://api.openwine.space/"
         static let wineApiEndpoint = "api/wines?page=1"
@@ -20,7 +20,7 @@ struct Constants {
         static let notApplicable = "N/A"
     }
     
-    //MARK: - UIKit
+    // MARK: - UIKit
     struct AppUIImage {
         static let wineImage = UIImage(named: "testWine")
         static let noImage = UIImage(named: "noImage")
@@ -68,9 +68,8 @@ struct Constants {
         static let darkGreen = UIColor(hex: "#132a13")
         static let burgundy = UIColor(hex: "#540804")
     }
-//    5c7a13
     
-    //MARK: - SwiftUI
+    // MARK: - SwiftUI
     struct AppColor {
         static let greenBackground = Color(hex: 0x344E41)
         static let darkGreen = Color(hex: 0x283618)

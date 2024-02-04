@@ -9,16 +9,16 @@ import Foundation
 import GenericNetworkManager
 
 final class MyWineLibraryViewModel: ObservableObject {
-    //MARK: - Init
+    // MARK: - Init
     @Published var favoritedWines: [Wine] = []
     private let baseURL = Constants.API.wineApiBaseURL
     
-    //MARK: - Init
+    // MARK: - Init
     init() {
         fetchWines()
     }
     
-    //MARK: - Methods
+    // MARK: - Methods
     func refreshData() {
         fetchWines()
     }
@@ -29,7 +29,7 @@ final class MyWineLibraryViewModel: ObservableObject {
         return filteredWines
     }
     
-    //MARK: - Private Methods
+    // MARK: - Private Methods
     private func fetchWines() {
         let endpoint = "api/wines?page=1"
         let favoriteWineIDList = UserPreferencesManager.shared.getFavoriteWineList().map { String($0) }.joined(separator: ",")

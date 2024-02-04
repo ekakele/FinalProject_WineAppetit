@@ -8,7 +8,7 @@
 import UIKit
 
 final class ShortInfoStackView: UIStackView {
-    //MARK: - Inits
+    // MARK: - Inits
     init(
         arrangedSubviews: [UIView],
         axis: NSLayoutConstraint.Axis = .vertical,

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WineListViewControllerRepresentableView: UIViewControllerRepresentable {
-    //MARK: - Methods
+    // MARK: - Methods
     func makeUIViewController(context: Context) -> UIViewController {
         let viewController = WineListViewController()
         return UINavigationController(rootViewController: viewController)

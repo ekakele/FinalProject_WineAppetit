@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct MyWineLibraryView: View {
-    //MARK: - Properties
+    // MARK: - Properties
     @StateObject var viewModel: MyWineLibraryViewModel
     @State private var isPresentingWineListView = false
     @State private var zoomedWineID: Int?
     
-    //MARK: - Body
+    // MARK: - Body
     var body: some View {
         ZStack() {
             backgroundView
@@ -32,7 +32,7 @@ struct MyWineLibraryView: View {
         }
     }
     
-    //MARK: - Components
+    // MARK: - Components
     private var scrollingSectionAndButtonView: some View {
         ZStack(alignment: .bottomTrailing) {
             generateSectionStackView()

@@ -8,7 +8,7 @@
 import UIKit
 
 final class CustomLabel: UILabel {
-    //MARK: - Inits
+    // MARK: - Inits
     init(
         textColor: UIColor,
         font: UIFont,

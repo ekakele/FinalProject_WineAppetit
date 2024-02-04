@@ -8,7 +8,7 @@
 import UIKit
 
 final class IconView: UIView {
-    //MARK: - Inits
+    // MARK: - Inits
     init(
         backgroundColor: UIColor = Constants.AppUIColor.iconBackground, 
         cornerRadius: CGFloat = 14,

@@ -39,5 +39,4 @@ let questionsArray = [
     "Dare: Speak in a foreign accent until your next turn",
     "Truth: When did you last push yourself out of your comfort zone",
     "Dare: Call someone and speak only in song lyrics"
-    
 ]

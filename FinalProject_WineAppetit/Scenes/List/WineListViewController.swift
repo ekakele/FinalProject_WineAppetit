@@ -8,7 +8,7 @@
 import UIKit
 
 final class WineListViewController: UIViewController {
-    //MARK: - Properties
+    // MARK: - Properties
     private let wineCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -34,7 +34,7 @@ final class WineListViewController: UIViewController {
     private var wines = [Wine]()
     private let viewModel = WineListViewModel()
     
-    //MARK: - LifeCycle
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,7 +44,7 @@ final class WineListViewController: UIViewController {
         setupUI()
     }
     
-    //MARK: - Private Methods
+    // MARK: - Private Methods
     private func setupNavigationBar() {
         navigationItem.title = "Georgian Wines"
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -115,7 +115,7 @@ final class WineListViewController: UIViewController {
     }
 }
 
-//MARK: - CollectionView DataSource
+// MARK: - CollectionView DataSource
 extension WineListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return wines.count
@@ -131,14 +131,14 @@ extension WineListViewController: UICollectionViewDataSource {
     }
 }
 
-//MARK: - CollectionView Delegate
+// MARK: - CollectionView Delegate
 extension WineListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.didSelectWine(at: indexPath)
     }
 }
 
-//MARK: - CollectionView DelegateFlowLayout
+// MARK: - CollectionView DelegateFlowLayout
 extension WineListViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -160,7 +160,7 @@ extension WineListViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-//MARK: - WineListViewModelDelegate
+// MARK: - WineListViewModelDelegate
 extension WineListViewController: WineListViewModelDelegate {
     func winesFetched(_ wines: [Wine]) {
         self.wines = wines
@@ -184,7 +184,7 @@ extension WineListViewController: WineListViewModelDelegate {
     }
 }
 
-//MARK: - CustomSearchBar
+// MARK: - CustomSearchBar
 extension WineListViewController: SearchBarDelegate {
     func searchBarDidSearch(with text: String) {
         viewModel.searchWines(with: text)

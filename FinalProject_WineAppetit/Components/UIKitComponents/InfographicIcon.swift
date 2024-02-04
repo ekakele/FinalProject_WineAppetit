@@ -8,7 +8,7 @@
 import UIKit
 
 final class InfographicIcon: UIImageView {
-    //MARK: - Inits
+    // MARK: - Inits
     init(
         systemName: String,
         tintColor: UIColor = .gray,

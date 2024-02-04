@@ -9,13 +9,13 @@ import UIKit
 import SwiftUI
 
 class TabBarController: UITabBarController {
-    //MARK: - Properties
+    // MARK: - Properties
     private let wineListViewController = WineListViewController()
     private let calorieCounterViewController = CalorieCounterViewController()
     private let spinTheBottleViewController = SpinTheBottleViewController()
     private let myWineLibraryView = MyWineLibraryView(viewModel: MyWineLibraryViewModel())
     
-    //MARK: - Lifecycle
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
@@ -24,7 +24,7 @@ class TabBarController: UITabBarController {
         setupTabBar()
     }
     
-    //MARK: - Private Methods
+    // MARK: - Private Methods
     private func setupTabBarInitialUI() {
         tabBar.backgroundColor = .systemBackground
         tabBar.tintColor = Constants.AppUIColor.redFill
