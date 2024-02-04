@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WineRandomizerViewController: UIViewController, UIGestureRecognizerDelegate {
+class WineRandomizerViewController: UIViewController {
     // MARK: - Properties
     private lazy var mainStackView = ShortInfoStackView(
         arrangedSubviews: [infoStackView, winePickerView, randomizerButton],
@@ -68,11 +68,6 @@ class WineRandomizerViewController: UIViewController, UIGestureRecognizerDelegat
         setupButtonAction()
     }
     
-    // MARK: - Methods
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return true
-    }
-    
     // MARK: - Private Methods
     private func setupPickerViewTapRecognizer() {
         pickerViewTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(pickerViewTapped(_:)))
@@ -111,14 +106,7 @@ class WineRandomizerViewController: UIViewController, UIGestureRecognizerDelegat
         )
     }
     
-    private func setupWinePickerView() {
-        winePickerView.delegate = self
-        winePickerView.dataSource = self
-        winePickerView.addGestureRecognizer(pickerViewTapRecognizer)
-    }
-    
-    //TODO: - take out to VM
-    func spinSlots() {
+    private func spinSlots() {
         let maxRow = max(wines.count - 1, 0)
         let randomRow = Int.random(in: 0...maxRow)
         winePickerView.selectRow(randomRow, inComponent: 0, animated: true)
@@ -128,6 +116,12 @@ class WineRandomizerViewController: UIViewController, UIGestureRecognizerDelegat
             titleLabel.text = selectedWine.title
             brandLabel.text = selectedWine.brand
         }
+    }
+    
+    private func setupWinePickerView() {
+        winePickerView.delegate = self
+        winePickerView.dataSource = self
+        winePickerView.addGestureRecognizer(pickerViewTapRecognizer)
     }
     
     private func setupUI() {
@@ -199,7 +193,7 @@ extension WineRandomizerViewController: UIPickerViewDataSource {
         return imageView
     }
     
-    //TODO: - take in Body
+    //TODO: - take out as reusable component
     private func displayImage(for wine: Wine, in imageView: UIImageView) {
         if let imageURL = wine.image, !imageURL.isEmpty {
             loadAndCashImage(from: imageURL, for: imageView)
@@ -207,8 +201,7 @@ extension WineRandomizerViewController: UIPickerViewDataSource {
             imageView.image = UIImage(named: "noImage")
         }
     }
-    
-    //TODO: - take out to VM
+    //TODO: - take out as reusable component
     private func loadAndCashImage(from urlString: String, for imageView: UIImageView) {
         Task { [weak self] in
             do {
@@ -226,6 +219,13 @@ extension WineRandomizerViewController: UIPickerViewDataSource {
                 }
             }
         }
+    }
+}
+
+// MARK: - UIGestureRecognizerDelegate
+extension WineRandomizerViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }
 
