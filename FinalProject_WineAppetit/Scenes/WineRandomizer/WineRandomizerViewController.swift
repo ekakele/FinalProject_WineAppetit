@@ -13,7 +13,7 @@ class WineRandomizerViewController: UIViewController {
         arrangedSubviews: [infoStackView, winePickerView, randomizerButton],
         axis: .vertical,
         distribution: .fill,
-        stackSpacing: 8
+        stackSpacing: 10
     )
     
     private lazy var infoStackView = ShortInfoStackView(
@@ -39,6 +39,7 @@ class WineRandomizerViewController: UIViewController {
         let pickerView = UIPickerView()
         pickerView.layer.cornerRadius = 10
         pickerView.isUserInteractionEnabled = true
+//        pickerView.backgroundColor = .orange.withAlphaComponent(0.5)
         return pickerView
     }()
     
@@ -46,9 +47,9 @@ class WineRandomizerViewController: UIViewController {
         let button = UIButton()
         button.titleLabel?.textColor = .white
         button.setTitle("Randomize", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 30, weight: .bold)
+        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
         button.layer.cornerRadius = 18
-        button.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
         button.backgroundColor = .red
         return button
     }()
@@ -142,7 +143,8 @@ class WineRandomizerViewController: UIViewController {
     
     private func setupButtonConstraints() {
         NSLayoutConstraint.activate([
-            randomizerButton.bottomAnchor.constraint(equalTo: mainStackView.bottomAnchor, constant: -50)
+            randomizerButton.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor, constant: 100),
+            randomizerButton.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor, constant: -100)
         ])
     }
     
@@ -155,7 +157,7 @@ class WineRandomizerViewController: UIViewController {
             mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            mainStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            mainStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40),
         ])
     }
 }
