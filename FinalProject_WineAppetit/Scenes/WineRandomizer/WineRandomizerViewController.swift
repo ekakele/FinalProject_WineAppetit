@@ -60,7 +60,7 @@ class WineRandomizerViewController: UIViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         setupPickerViewTapRecognizer()
         setupViewModel()
         setupWinePickerView()
@@ -114,7 +114,7 @@ class WineRandomizerViewController: UIViewController {
         if maxRow >= 0 {
             let selectedWine = wines[randomRow]
             titleLabel.text = selectedWine.title
-            brandLabel.text = selectedWine.brand
+            brandLabel.text = "Produced by \(selectedWine.brand ?? "N/A")"
         }
     }
     
