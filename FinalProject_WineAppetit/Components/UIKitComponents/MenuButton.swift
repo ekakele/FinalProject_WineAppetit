@@ -11,15 +11,17 @@ class MenuButton: UIButton {
     // MARK: - Inits
     init(
         title: String,
-        titleColor: UIColor,
-        cornerRadius: CGFloat,
-        height: CGFloat,
-        backgroundColor: UIColor
+        titleColor: UIColor = .label,
+        fontSize: CGFloat = 14,
+        cornerRadius: CGFloat = 8,
+        height: CGFloat = 40,
+        backgroundColor: UIColor = .systemPink.withAlphaComponent(0.3)
     ) {
         super.init(frame: .zero)
         
         self.setTitle(title, for: .normal)
         self.setTitleColor(titleColor, for: .normal)
+        self.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
         self.layer.cornerRadius = cornerRadius
         self.heightAnchor.constraint(equalToConstant: height).isActive = true
         self.backgroundColor = backgroundColor

@@ -10,10 +10,22 @@ import UIKit
 class WineRandomizerViewController: UIViewController {
     // MARK: - Properties
     private lazy var mainStackView = ShortInfoStackView(
-        arrangedSubviews: [infoStackView, winePickerView, randomizerButton],
-        distribution: .fill,
+        arrangedSubviews: [menuStackView, infoStackView, winePickerView, randomizerButton],
+        distribution: .fillProportionally,
         stackSpacing: 10
     )
+    
+    private lazy var menuStackView = ShortInfoStackView(
+        arrangedSubviews: [wineColorButton, sweetnessLevelButton, technologyButton, regionButton],
+        axis: .horizontal,
+        distribution: .fillEqually,
+        stackSpacing: 8
+    )
+    
+    private let wineColorButton = MenuButton(title: "Color")
+    private let sweetnessLevelButton = MenuButton(title: "Sweetness")
+    private let technologyButton = MenuButton(title: "Technology")
+    private let regionButton = MenuButton(title: "Region")
     
     private lazy var infoStackView = ShortInfoStackView(
         arrangedSubviews: [titleLabel, brandLabel],
@@ -130,6 +142,7 @@ class WineRandomizerViewController: UIViewController {
     private func setupUI() {
         setupBackground()
         addSubviews()
+        setupMenuButtonConstraints()
         setupButtonConstraints()
         setupInfoStackView()
         setupMainStackViewConstraints()
@@ -141,6 +154,14 @@ class WineRandomizerViewController: UIViewController {
     
     private func addSubviews() {
         view.addSubview(mainStackView)
+    }
+    
+    private func setupMenuButtonConstraints() {
+        NSLayoutConstraint.activate([
+            menuStackView.topAnchor.constraint(equalTo: mainStackView.topAnchor),
+            menuStackView.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor),
+            menuStackView.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor)
+        ])
     }
     
     private func setupButtonConstraints() {
