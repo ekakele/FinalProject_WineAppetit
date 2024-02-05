@@ -11,10 +11,11 @@ import SwiftUI
 final class TabBarController: UITabBarController {
     // MARK: - Properties
     private let wineListViewController = WineListViewController()
+    private let wineRandomizerViewController = WineRandomizerViewController()
     private let calorieCounterViewController = CalorieCounterViewController()
     private let spinTheBottleViewController = SpinTheBottleViewController()
     private let myWineLibraryView = MyWineLibraryView(viewModel: MyWineLibraryViewModel())
-    
+ 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,12 @@ final class TabBarController: UITabBarController {
             icon: UIImage(systemName: "list.dash")
         )
         
+        let wineRandomizerTab =  createTabBarItem(
+            viewController: wineRandomizerViewController,
+            title: "Randomizer",
+            icon: UIImage(systemName: "arcade.stick.and.arrow.up.and.arrow.down")
+        )
+        
         let myWineLibraryHostingController = UIHostingController(rootView: myWineLibraryView)
         let myWineLibraryTab =  createTabBarItem(
             viewController: myWineLibraryHostingController,
@@ -59,6 +66,7 @@ final class TabBarController: UITabBarController {
         
         self.setViewControllers([
             wineListTab,
+            wineRandomizerTab,
             myWineLibraryTab,
             calorieCounterTab,
             spinTheBottleTab
@@ -79,7 +87,10 @@ extension TabBarController: UITabBarControllerDelegate {
     }
     
     private func updateTabBarBackground(for viewController: UIViewController) {
-        if viewController == wineListViewController || viewController is UINavigationController && (viewController as! UINavigationController).viewControllers.first is WineListViewController {
+        if viewController == wineListViewController ||
+               viewController is UINavigationController && (viewController as! UINavigationController).viewControllers.first is WineListViewController ||
+               viewController == wineRandomizerViewController ||
+               viewController is UINavigationController && (viewController as! UINavigationController).viewControllers.first is WineRandomizerViewController {
             tabBar.backgroundColor = .systemBackground
             tabBar.tintColor = Constants.AppUIColor.redFill
             tabBar.unselectedItemTintColor = nil
