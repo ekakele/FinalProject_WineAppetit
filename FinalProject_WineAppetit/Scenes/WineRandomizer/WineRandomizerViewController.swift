@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WineRandomizerViewController: UIViewController {
+final class WineRandomizerViewController: UIViewController {
     // MARK: - Properties
     private lazy var mainStackView = ShortInfoStackView(
         arrangedSubviews: [menuStackView, infoStackView, winePickerView, randomizerButton],
@@ -49,7 +49,7 @@ class WineRandomizerViewController: UIViewController {
         let pickerView = UIPickerView()
         pickerView.layer.cornerRadius = 10
         pickerView.isUserInteractionEnabled = true
-//        pickerView.backgroundColor = .orange.withAlphaComponent(0.5)
+        //        pickerView.backgroundColor = .orange.withAlphaComponent(0.5)
         return pickerView
     }()
     
@@ -75,10 +75,11 @@ class WineRandomizerViewController: UIViewController {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         setupPickerViewTapRecognizer()
         setupViewModel()
         setupWinePickerView()
+        setupMenus()
         setupUI()
         setupButtonAction()
     }
@@ -115,13 +116,13 @@ class WineRandomizerViewController: UIViewController {
     private func setupButtonAction() {
         randomizerButton.addAction(
             UIAction(handler: { [weak self] _ in
-                self?.spinSlots()
+                self?.randomizeWineSelection()
             }),
             for: .touchUpInside
         )
     }
     
-    private func spinSlots() {
+    private func randomizeWineSelection() {
         let maxRow = max(wines.count - 1, 0)
         let randomRow = Int.random(in: 0...maxRow)
         winePickerView.selectRow(randomRow, inComponent: 0, animated: true)
@@ -137,6 +138,40 @@ class WineRandomizerViewController: UIViewController {
         winePickerView.delegate = self
         winePickerView.dataSource = self
         winePickerView.addGestureRecognizer(pickerViewTapRecognizer)
+    }
+    
+    private func setupMenus() {
+        wineColorButton.menu = createMenu(
+            for: WineType.self,
+            updatingButton: wineColorButton
+        )
+        
+        sweetnessLevelButton.menu = createMenu(
+            for: WineCategory.self,
+            updatingButton: sweetnessLevelButton
+        )
+        
+        technologyButton.menu = createMenu(
+            for: WineTechnology.self,
+            updatingButton: technologyButton
+        )
+        
+        regionButton.menu = createMenu(
+            for: WineRegion.self,
+            updatingButton: regionButton
+        )
+    }
+    
+    private func createMenu<T: DropdownOption>(for type: T.Type, updatingButton button: UIButton) -> UIMenu {
+        var actions: [UIAction] = []
+        for value in type.allCases {
+            let action = UIAction(title: value.rawValue) { action in
+                button.setTitle(value.rawValue, for: .normal)
+                print(value.rawValue)
+            }
+            actions.append(action)
+        }
+        return UIMenu(title: "", children: actions)
     }
     
     private func setupUI() {

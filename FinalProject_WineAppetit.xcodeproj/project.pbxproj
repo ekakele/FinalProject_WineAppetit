@@ -216,8 +216,8 @@
 		B50550D02B5FE04E0040CA56 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				B56CED6A2B6AABFC00F2F6EC /* SwiftUIComponents */,
 				B56CED692B6AABEF00F2F6EC /* UIKitComponents */,
+				B56CED6A2B6AABFC00F2F6EC /* SwiftUIComponents */,
 			);
 			path = Components;
 			sourceTree = "<group>";
