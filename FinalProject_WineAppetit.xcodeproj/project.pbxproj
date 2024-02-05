@@ -50,6 +50,7 @@
 		B5B05E9D2B67E38100EFDDA1 /* CalorieCounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B05E9C2B67E38100EFDDA1 /* CalorieCounterViewModel.swift */; };
 		B5B05E9F2B67E58000EFDDA1 /* WineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B05E9E2B67E58000EFDDA1 /* WineData.swift */; };
 		B5B05EA12B67E85500EFDDA1 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B05EA02B67E85500EFDDA1 /* IconButton.swift */; };
+		B5B17D532B713E9800734CB0 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B17D522B713E9800734CB0 /* MenuButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,7 @@
 		B5B05E9C2B67E38100EFDDA1 /* CalorieCounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieCounterViewModel.swift; sourceTree = "<group>"; };
 		B5B05E9E2B67E58000EFDDA1 /* WineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineData.swift; sourceTree = "<group>"; };
 		B5B05EA02B67E85500EFDDA1 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
+		B5B17D522B713E9800734CB0 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +270,7 @@
 		B56CED692B6AABEF00F2F6EC /* UIKitComponents */ = {
 			isa = PBXGroup;
 			children = (
+				B5B17D522B713E9800734CB0 /* MenuButton.swift */,
 				B5B05EA02B67E85500EFDDA1 /* IconButton.swift */,
 				B58E606A2B63B441000458BD /* OrganolepticIconStackView.swift */,
 				B58E60682B63B032000458BD /* IconView.swift */,
@@ -418,6 +421,7 @@
 				B5517D2C2B61775C004A4961 /* ActivityIndicator.swift in Sources */,
 				B50550D82B6013810040CA56 /* AppConstants.swift in Sources */,
 				B50550D22B5FE0840040CA56 /* CustomSearchBar.swift in Sources */,
+				B5B17D532B713E9800734CB0 /* MenuButton.swift in Sources */,
 				B58E60752B645B91000458BD /* WineDetailsViewModel.swift in Sources */,
 				B50550DE2B6039FC0040CA56 /* ImageLoader.swift in Sources */,
 				B531DB892B6B9A9E00BDCDBA /* WineListViewControllerRepresentableView.swift in Sources */,

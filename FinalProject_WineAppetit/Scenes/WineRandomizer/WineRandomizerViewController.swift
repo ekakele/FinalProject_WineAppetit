@@ -50,7 +50,11 @@ class WineRandomizerViewController: UIViewController {
         button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
         button.layer.cornerRadius = 18
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        button.backgroundColor = .red
+        button.backgroundColor = .red.withAlphaComponent(0.6)
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 0.5
+        button.layer.shadowOffset = CGSize(width: 0, height: 4)
+        button.layer.shadowRadius = 4
         return button
     }()
     
