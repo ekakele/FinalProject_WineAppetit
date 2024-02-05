@@ -39,8 +39,9 @@ final class TabBarController: UITabBarController {
             icon: UIImage(systemName: "list.dash")
         )
         
+        let wineRandomizerNavigationController = UINavigationController(rootViewController: wineRandomizerViewController)
         let wineRandomizerTab =  createTabBarItem(
-            viewController: wineRandomizerViewController,
+            viewController: wineRandomizerNavigationController,
             title: "Randomizer",
             icon: UIImage(systemName: "arcade.stick.and.arrow.up.and.arrow.down")
         )
