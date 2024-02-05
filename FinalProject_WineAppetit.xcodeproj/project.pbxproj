@@ -27,7 +27,6 @@
 		B531DB892B6B9A9E00BDCDBA /* WineListViewControllerRepresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531DB882B6B9A9E00BDCDBA /* WineListViewControllerRepresentableView.swift */; };
 		B531DB8D2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531DB8C2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift */; };
 		B53B28D02B6FC350006CC480 /* WineRandomizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53B28CF2B6FC350006CC480 /* WineRandomizerViewController.swift */; };
-		B53B28D62B7050FD006CC480 /* WineRandomizerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53B28D52B7050FD006CC480 /* WineRandomizerViewModel.swift */; };
 		B5517D2C2B61775C004A4961 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5517D2B2B61775C004A4961 /* ActivityIndicator.swift */; };
 		B56CED632B6AA84E00F2F6EC /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56CED622B6AA84E00F2F6EC /* Color+Hex.swift */; };
 		B56CED662B6AAB1E00F2F6EC /* MyWineLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56CED652B6AAB1E00F2F6EC /* MyWineLibraryView.swift */; };
@@ -75,7 +74,6 @@
 		B531DB882B6B9A9E00BDCDBA /* WineListViewControllerRepresentableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineListViewControllerRepresentableView.swift; sourceTree = "<group>"; };
 		B531DB8C2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineDetailsViewControllerRepresentableView.swift; sourceTree = "<group>"; };
 		B53B28CF2B6FC350006CC480 /* WineRandomizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineRandomizerViewController.swift; sourceTree = "<group>"; };
-		B53B28D52B7050FD006CC480 /* WineRandomizerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineRandomizerViewModel.swift; sourceTree = "<group>"; };
 		B5517D2B2B61775C004A4961 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		B56CED622B6AA84E00F2F6EC /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		B56CED652B6AAB1E00F2F6EC /* MyWineLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWineLibraryView.swift; sourceTree = "<group>"; };
@@ -254,7 +252,6 @@
 			isa = PBXGroup;
 			children = (
 				B53B28CF2B6FC350006CC480 /* WineRandomizerViewController.swift */,
-				B53B28D52B7050FD006CC480 /* WineRandomizerViewModel.swift */,
 			);
 			path = WineRandomizer;
 			sourceTree = "<group>";
@@ -443,7 +440,6 @@
 				B5816D4A2B6518C000550FE9 /* WineDetails.swift in Sources */,
 				B51764842B6DB553000DF5E8 /* SpinTheBottleGameQuestions.swift in Sources */,
 				B58E60712B63C072000458BD /* WineDetailsViewController.swift in Sources */,
-				B53B28D62B7050FD006CC480 /* WineRandomizerViewModel.swift in Sources */,
 				B58EDED82B6EA1DF0063D46D /* SpinTheBottleViewModel.swift in Sources */,
 				B531DB8D2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift in Sources */,
 				B58E606B2B63B441000458BD /* OrganolepticIconStackView.swift in Sources */,
