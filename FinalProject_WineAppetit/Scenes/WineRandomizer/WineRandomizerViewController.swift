@@ -18,7 +18,6 @@ class WineRandomizerViewController: UIViewController {
     private lazy var infoStackView = ShortInfoStackView(
         arrangedSubviews: [titleLabel, brandLabel],
         distribution: .fill,
-        stackAlignment: .center,
         stackSpacing: 6
     )
     
