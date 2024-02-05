@@ -16,7 +16,43 @@ final class ImageLoader {
     private init() {}
     
     // MARK: - Methods
-    func fetchImage(with URLString: String) async throws -> UIImage? {
+    func displayImage(
+        from imageURL: String?,
+        in imageView: UIImageView,
+        indicator: ActivityIndicator? = nil,
+        fallbackImageName: String = "noImage"
+    ) {
+        if let imageURL = imageURL, !imageURL.isEmpty {
+            loadImage(from: imageURL, for: imageView, indicator: indicator)
+        } else {
+            imageView.image = UIImage(named: fallbackImageName)
+        }
+    }
+    
+    func loadImage(
+        from urlString: String,
+        for imageView: UIImageView,
+        indicator: ActivityIndicator? = nil
+    ) {
+        indicator?.show()
+        Task {
+            do {
+                let image = try await ImageLoader.shared.fetchAndCacheImage(with: urlString)
+                await MainActor.run {
+                    indicator?.hide()
+                    imageView.image = image
+                }
+            } catch {
+                await MainActor.run {
+                    indicator?.hide()
+                    imageView.image = UIImage(named: "noImage")
+                    print("Error fetching images: \(error)")
+                }
+            }
+        }
+    }
+    
+    func fetchAndCacheImage(with URLString: String) async throws -> UIImage? {
         if let image = cache.object(forKey: NSString(string: URLString)) {
             return image
         }

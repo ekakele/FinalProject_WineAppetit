@@ -189,36 +189,8 @@ extension WineRandomizerViewController: UIPickerViewDataSource {
             imageView.clipsToBounds = true
         }
         let wine = wines[row]
-        displayImage(for: wine, in: imageView)
+        ImageLoader.shared.displayImage(from: wine.image, in: imageView)
         return imageView
-    }
-    
-    //TODO: - take out as reusable component
-    private func displayImage(for wine: Wine, in imageView: UIImageView) {
-        if let imageURL = wine.image, !imageURL.isEmpty {
-            loadAndCashImage(from: imageURL, for: imageView)
-        } else {
-            imageView.image = UIImage(named: "noImage")
-        }
-    }
-    //TODO: - take out as reusable component
-    private func loadAndCashImage(from urlString: String, for imageView: UIImageView) {
-        Task { [weak self] in
-            do {
-                let image = try await ImageLoader.shared.fetchImage(with: urlString)
-                DispatchQueue.main.async {
-                    guard self != nil else { return }
-                    if let image = image {
-                        imageView.image = image
-                    }
-                }
-            } catch {
-                DispatchQueue.main.async {
-                    guard self != nil else { return }
-                    print("Error fetching images: \(error)")
-                }
-            }
-        }
     }
 }
 
