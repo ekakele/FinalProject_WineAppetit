@@ -83,7 +83,7 @@ final class WineRandomizerViewController: UIViewController {
         button.layer.shadowRadius = 4
         return button
     }()
-    
+        
     private var selectedWineColor: String?
     private var selectedSweetnessLevel: String?
     private var selectedTechnology: String?
@@ -97,6 +97,7 @@ final class WineRandomizerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavigationTitle()
         setupPickerViewTapRecognizer()
         setupViewModel()
         setupWinePickerView()
@@ -107,6 +108,16 @@ final class WineRandomizerViewController: UIViewController {
     }
     
     // MARK: - Private Methods
+    private func setupNavigationTitle() {
+        navigationItem.title = "Random Wine Select"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        if #available(iOS 17.0, *) {
+            navigationItem.largeTitleDisplayMode = .inline
+        } else {
+            navigationItem.largeTitleDisplayMode = .automatic
+        }
+    }
+    
     private func setupPickerViewTapRecognizer() {
         pickerViewTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(pickerViewTapped(_:)))
         pickerViewTapRecognizer.delegate = self
