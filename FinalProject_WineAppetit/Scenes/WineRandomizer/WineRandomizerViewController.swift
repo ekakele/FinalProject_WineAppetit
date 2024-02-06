@@ -158,7 +158,7 @@ final class WineRandomizerViewController: UIViewController {
         selectedRegion = nil
         regionButton.setTitle("Region", for: .normal)
     }
-
+    
     private func setupRandomizeButtonAction() {
         randomizeButton.addAction(
             UIAction(handler: { [weak self] _ in
@@ -345,6 +345,12 @@ extension WineRandomizerViewController: WineRandomizerViewModelDelegate {
     }
     
     private func randomizeWineSelection() {
+        guard !wines.isEmpty else {
+            titleLabel.text = "No wines found"
+            brandLabel.text = "for the selected filter criteria"
+            return
+        }
+        
         let maxRow = max(wines.count - 1, 0)
         let randomRow = Int.random(in: 0...maxRow)
         winePickerView.selectRow(randomRow, inComponent: 0, animated: true)
