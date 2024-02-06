@@ -10,12 +10,17 @@ import UIKit
 final class WineRandomizerViewController: UIViewController {
     // MARK: - Properties
     private lazy var mainStackView = ShortInfoStackView(
-        arrangedSubviews: [menuStackView, infoStackView, winePickerView, randomizerButton],
+        arrangedSubviews: [filterStackView, infoStackView, winePickerView, randomizeButton],
         distribution: .fillProportionally,
         stackSpacing: 10
     )
     
-    private lazy var menuStackView = ShortInfoStackView(
+    private lazy var filterStackView = ShortInfoStackView(
+        arrangedSubviews: [menuButtonsStackView, resetButton],
+        stackSpacing: 4
+    )
+    
+    private lazy var menuButtonsStackView = ShortInfoStackView(
         arrangedSubviews: [wineColorButton, sweetnessLevelButton, technologyButton, regionButton],
         axis: .horizontal,
         distribution: .fillEqually,
@@ -26,6 +31,17 @@ final class WineRandomizerViewController: UIViewController {
     private let sweetnessLevelButton = MenuButton(title: "Sweetness")
     private let technologyButton = MenuButton(title: "Technology")
     private let regionButton = MenuButton(title: "Region")
+    
+    private let resetButton: UIButton = {
+        let button = UIButton()
+        button.titleLabel?.textColor = .white
+        button.setTitle("Reset Filter", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .regular)
+        button.layer.cornerRadius = 12
+        button.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        button.backgroundColor = .red.withAlphaComponent(0.6)
+        return button
+    }()
     
     private lazy var infoStackView = ShortInfoStackView(
         arrangedSubviews: [titleLabel, brandLabel],
@@ -53,7 +69,7 @@ final class WineRandomizerViewController: UIViewController {
         return pickerView
     }()
     
-    private let randomizerButton: UIButton = {
+    private let randomizeButton: UIButton = {
         let button = UIButton()
         button.titleLabel?.textColor = .white
         button.setTitle("Randomize", for: .normal)
@@ -86,7 +102,8 @@ final class WineRandomizerViewController: UIViewController {
         setupWinePickerView()
         setupMenus()
         setupUI()
-        setupButtonAction()
+        setupResetButtonAction()
+        setupRandomizeButtonAction()
     }
     
     // MARK: - Private Methods
@@ -118,8 +135,32 @@ final class WineRandomizerViewController: UIViewController {
         viewModel.viewDidLoad()
     }
     
-    private func setupButtonAction() {
-        randomizerButton.addAction(
+    private func setupResetButtonAction() {
+        resetButton.addAction(
+            UIAction(handler: { [weak self] _ in
+                self?.resetFilters()
+                print("resetted")
+            }),
+            for: .touchUpInside
+        )
+    }
+    
+    private func resetFilters() {
+        selectedWineColor = nil
+        wineColorButton.setTitle("Color", for: .normal)
+        
+        selectedSweetnessLevel = nil
+        sweetnessLevelButton.setTitle("Sweetness", for: .normal)
+        
+        selectedTechnology = nil
+        technologyButton.setTitle("Technology", for: .normal)
+        
+        selectedRegion = nil
+        regionButton.setTitle("Region", for: .normal)
+    }
+
+    private func setupRandomizeButtonAction() {
+        randomizeButton.addAction(
             UIAction(handler: { [weak self] _ in
                 self?.filterWines()
             }),
@@ -169,9 +210,7 @@ final class WineRandomizerViewController: UIViewController {
         for value in type.allCases {
             let action = UIAction(title: value.rawValue) { [weak self] action in
                 button.setTitle(value.rawValue, for: .normal)
-                print(value.rawValue)
                 
-                // Update the corresponding property based on the button
                 switch button {
                 case self?.wineColorButton:
                     self?.selectedWineColor = value.rawValue
@@ -193,6 +232,7 @@ final class WineRandomizerViewController: UIViewController {
     private func setupUI() {
         setupBackground()
         addSubviews()
+        setupResetButtonConstraints()
         setupMenuButtonConstraints()
         setupButtonConstraints()
         setupInfoStackView()
@@ -207,18 +247,26 @@ final class WineRandomizerViewController: UIViewController {
         view.addSubview(mainStackView)
     }
     
+    private func setupResetButtonConstraints() {
+        NSLayoutConstraint.activate([
+            resetButton.topAnchor.constraint(equalTo: menuButtonsStackView.bottomAnchor),
+            resetButton.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor, constant: 100),
+            resetButton.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor, constant: -100)
+        ])
+    }
+    
     private func setupMenuButtonConstraints() {
         NSLayoutConstraint.activate([
-            menuStackView.topAnchor.constraint(equalTo: mainStackView.topAnchor),
-            menuStackView.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor),
-            menuStackView.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor)
+            menuButtonsStackView.topAnchor.constraint(equalTo: mainStackView.topAnchor),
+            menuButtonsStackView.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor),
+            menuButtonsStackView.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor)
         ])
     }
     
     private func setupButtonConstraints() {
         NSLayoutConstraint.activate([
-            randomizerButton.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor, constant: 100),
-            randomizerButton.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor, constant: -100)
+            randomizeButton.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor, constant: 100),
+            randomizeButton.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor, constant: -100)
         ])
     }
     
