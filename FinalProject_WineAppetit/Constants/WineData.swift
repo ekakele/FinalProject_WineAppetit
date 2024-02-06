@@ -33,10 +33,8 @@ enum WineCategory: String, DropdownOption {
 
 enum WineTechnology: String, DropdownOption {
     case classic = "Classic"
-    case classicOakBarrel = "Classic/Oak Barrel"
     case petnat = "Petnat"
     case qvevri = "Qvevri"
-    case qvevriOakBarrel = "Qvevri/Oak"
     case sparkling = "Sparkling"
 }
 
@@ -48,6 +46,7 @@ enum WineRegion: String, DropdownOption {
     case lechkhumi = "Lechkhumi"
     case racha = "Racha"
     case samegrelo = "Samegrelo"
+    case guria = "Guria"
 }
 
 // MARK: - Extension

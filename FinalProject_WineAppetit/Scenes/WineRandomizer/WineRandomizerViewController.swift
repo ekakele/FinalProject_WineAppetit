@@ -68,7 +68,12 @@ final class WineRandomizerViewController: UIViewController {
         return button
     }()
     
-    private let viewModel = WineListViewModel()
+    private var selectedWineColor: String?
+    private var selectedSweetnessLevel: String?
+    private var selectedTechnology: String?
+    private var selectedRegion: String?
+    
+    private let viewModel = WineRandomizerViewModel()
     private var wines: [Wine] = []
     private var pickerViewTapRecognizer = UITapGestureRecognizer()
     
@@ -116,22 +121,19 @@ final class WineRandomizerViewController: UIViewController {
     private func setupButtonAction() {
         randomizerButton.addAction(
             UIAction(handler: { [weak self] _ in
-                self?.randomizeWineSelection()
+                self?.filterWines()
             }),
             for: .touchUpInside
         )
     }
     
-    private func randomizeWineSelection() {
-        let maxRow = max(wines.count - 1, 0)
-        let randomRow = Int.random(in: 0...maxRow)
-        winePickerView.selectRow(randomRow, inComponent: 0, animated: true)
-        
-        if maxRow >= 0 {
-            let selectedWine = wines[randomRow]
-            titleLabel.text = selectedWine.title
-            brandLabel.text = "Produced by \(selectedWine.brand ?? "N/A")"
-        }
+    private func filterWines() {
+        viewModel.filterWines(
+            with: selectedWineColor,
+            subCategory: selectedSweetnessLevel,
+            technology: selectedTechnology,
+            region: selectedRegion
+        )
     }
     
     private func setupWinePickerView() {
@@ -165,9 +167,23 @@ final class WineRandomizerViewController: UIViewController {
     private func createMenu<T: DropdownOption>(for type: T.Type, updatingButton button: UIButton) -> UIMenu {
         var actions: [UIAction] = []
         for value in type.allCases {
-            let action = UIAction(title: value.rawValue) { action in
+            let action = UIAction(title: value.rawValue) { [weak self] action in
                 button.setTitle(value.rawValue, for: .normal)
                 print(value.rawValue)
+                
+                // Update the corresponding property based on the button
+                switch button {
+                case self?.wineColorButton:
+                    self?.selectedWineColor = value.rawValue
+                case self?.sweetnessLevelButton:
+                    self?.selectedSweetnessLevel = value.rawValue
+                case self?.technologyButton:
+                    self?.selectedTechnology = value.rawValue
+                case self?.regionButton:
+                    self?.selectedRegion = value.rawValue
+                default:
+                    break
+                }
             }
             actions.append(action)
         }
@@ -261,21 +277,34 @@ extension WineRandomizerViewController: UIGestureRecognizerDelegate {
     }
 }
 
-// MARK: - WineListViewModelDelegate
-extension WineRandomizerViewController: WineListViewModelDelegate {
-    func winesFetched(_ wines: [Wine]) {
+// MARK: - WineRandomizerViewModelDelegate
+extension WineRandomizerViewController: WineRandomizerViewModelDelegate {
+    func didFetchWines(_ wines: [Wine]) {
         self.wines = wines
         DispatchQueue.main.async {
             self.winePickerView.reloadAllComponents()
+            self.randomizeWineSelection()
         }
     }
     
-    func showError(_ error: Error) {
+    func didFailWithError(_ error: Error) {
         print(error)
     }
     
     func navigateToWineDetails(with wineID: Int) {
         let viewController = WineDetailsViewController(wineID: wineID)
         navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    private func randomizeWineSelection() {
+        let maxRow = max(wines.count - 1, 0)
+        let randomRow = Int.random(in: 0...maxRow)
+        winePickerView.selectRow(randomRow, inComponent: 0, animated: true)
+        
+        if maxRow >= 0 {
+            let selectedWine = wines[randomRow]
+            titleLabel.text = selectedWine.title
+            brandLabel.text = "Produced by \(selectedWine.brand ?? "N/A")"
+        }
     }
 }
