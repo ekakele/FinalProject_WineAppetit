@@ -25,6 +25,7 @@
 		B51764842B6DB553000DF5E8 /* SpinTheBottleGameQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51764832B6DB553000DF5E8 /* SpinTheBottleGameQuestions.swift */; };
 		B5304D0C2B779EC200932B45 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5304D0B2B779EC200932B45 /* Onboarding.swift */; };
 		B5304D0E2B779F4F00932B45 /* OnboardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5304D0D2B779F4F00932B45 /* OnboardingData.swift */; };
+		B5304D102B77A11100932B45 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5304D0F2B77A11100932B45 /* OnboardingViewModel.swift */; };
 		B531DB852B6B80BC00BDCDBA /* FloatingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531DB842B6B80BC00BDCDBA /* FloatingButtonView.swift */; };
 		B531DB892B6B9A9E00BDCDBA /* WineListViewControllerRepresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531DB882B6B9A9E00BDCDBA /* WineListViewControllerRepresentableView.swift */; };
 		B531DB8D2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531DB8C2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift */; };
@@ -76,6 +77,7 @@
 		B51764832B6DB553000DF5E8 /* SpinTheBottleGameQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinTheBottleGameQuestions.swift; sourceTree = "<group>"; };
 		B5304D0B2B779EC200932B45 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		B5304D0D2B779F4F00932B45 /* OnboardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingData.swift; sourceTree = "<group>"; };
+		B5304D0F2B77A11100932B45 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		B531DB842B6B80BC00BDCDBA /* FloatingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButtonView.swift; sourceTree = "<group>"; };
 		B531DB882B6B9A9E00BDCDBA /* WineListViewControllerRepresentableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineListViewControllerRepresentableView.swift; sourceTree = "<group>"; };
 		B531DB8C2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineDetailsViewControllerRepresentableView.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 		B5BCAFFC2B779388002A1FB8 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				B5304D0F2B77A11100932B45 /* OnboardingViewModel.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				B56CED632B6AA84E00F2F6EC /* Color+Hex.swift in Sources */,
 				B531DB852B6B80BC00BDCDBA /* FloatingButtonView.swift in Sources */,
 				B50550E02B6040610040CA56 /* ShortInfoStackView.swift in Sources */,
+				B5304D102B77A11100932B45 /* OnboardingViewModel.swift in Sources */,
 				B53F4D0C2B720C390032AED5 /* WineRandomizerViewModel.swift in Sources */,
 				B58E60692B63B032000458BD /* IconView.swift in Sources */,
 				B58E60502B622DD2000458BD /* UIColor+Hex.swift in Sources */,
