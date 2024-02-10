@@ -58,5 +58,5 @@ struct OnboardingPageView: View {
 }
 
 #Preview {
-    OnboardingPageView(page: Onboarding(imageName: "onboarding6", title: "Title", description: "This is description text."))
+    OnboardingPageView(page: Onboarding(imageName: "onboardingSix", title: "Title", description: "This is description text."))
 }
