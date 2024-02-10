@@ -26,6 +26,8 @@
 		B5304D0C2B779EC200932B45 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5304D0B2B779EC200932B45 /* Onboarding.swift */; };
 		B5304D0E2B779F4F00932B45 /* OnboardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5304D0D2B779F4F00932B45 /* OnboardingData.swift */; };
 		B5304D102B77A11100932B45 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5304D0F2B77A11100932B45 /* OnboardingViewModel.swift */; };
+		B5304D122B77A4A600932B45 /* View+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5304D112B77A4A600932B45 /* View+CornerRadius.swift */; };
+		B5304D142B77A4E400932B45 /* CornerRadiusStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5304D132B77A4E400932B45 /* CornerRadiusStyle.swift */; };
 		B531DB852B6B80BC00BDCDBA /* FloatingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531DB842B6B80BC00BDCDBA /* FloatingButtonView.swift */; };
 		B531DB892B6B9A9E00BDCDBA /* WineListViewControllerRepresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531DB882B6B9A9E00BDCDBA /* WineListViewControllerRepresentableView.swift */; };
 		B531DB8D2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531DB8C2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift */; };
@@ -78,6 +80,8 @@
 		B5304D0B2B779EC200932B45 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		B5304D0D2B779F4F00932B45 /* OnboardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingData.swift; sourceTree = "<group>"; };
 		B5304D0F2B77A11100932B45 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		B5304D112B77A4A600932B45 /* View+CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+CornerRadius.swift"; sourceTree = "<group>"; };
+		B5304D132B77A4E400932B45 /* CornerRadiusStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyle.swift; sourceTree = "<group>"; };
 		B531DB842B6B80BC00BDCDBA /* FloatingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButtonView.swift; sourceTree = "<group>"; };
 		B531DB882B6B9A9E00BDCDBA /* WineListViewControllerRepresentableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineListViewControllerRepresentableView.swift; sourceTree = "<group>"; };
 		B531DB8C2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineDetailsViewControllerRepresentableView.swift; sourceTree = "<group>"; };
@@ -248,6 +252,7 @@
 			children = (
 				B50550DD2B6039FC0040CA56 /* ImageLoader.swift */,
 				B58E60552B62AF16000458BD /* UserPreferencesManager.swift */,
+				B5304D132B77A4E400932B45 /* CornerRadiusStyle.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 			children = (
 				B58E604F2B622DD2000458BD /* UIColor+Hex.swift */,
 				B56CED622B6AA84E00F2F6EC /* Color+Hex.swift */,
+				B5304D112B77A4A600932B45 /* View+CornerRadius.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -433,6 +439,7 @@
 				B50550CD2B5FCC150040CA56 /* Wine.swift in Sources */,
 				B53B28D02B6FC350006CC480 /* WineRandomizerViewController.swift in Sources */,
 				B58E60652B638CE7000458BD /* InfographicIcon.swift in Sources */,
+				B5304D142B77A4E400932B45 /* CornerRadiusStyle.swift in Sources */,
 				B5B05EA12B67E85500EFDDA1 /* IconButton.swift in Sources */,
 				B50550E22B6040C00040CA56 /* CustomLabel.swift in Sources */,
 				B58E60562B62AF16000458BD /* UserPreferencesManager.swift in Sources */,
@@ -453,6 +460,7 @@
 				B58E60692B63B032000458BD /* IconView.swift in Sources */,
 				B58E60502B622DD2000458BD /* UIColor+Hex.swift in Sources */,
 				B56CED722B6AB56700F2F6EC /* HorizontalScrollView.swift in Sources */,
+				B5304D122B77A4A600932B45 /* View+CornerRadius.swift in Sources */,
 				B50550A92B5E41290040CA56 /* AppDelegate.swift in Sources */,
 				B5304D0C2B779EC200932B45 /* Onboarding.swift in Sources */,
 				B56CED6C2B6AAC3900F2F6EC /* ShelfTitleView.swift in Sources */,
