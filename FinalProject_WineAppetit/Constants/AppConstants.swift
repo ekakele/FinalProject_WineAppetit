@@ -67,6 +67,8 @@ struct Constants {
         static let lightGreen = UIColor(hex: "#cfe1b9")
         static let darkGreen = UIColor(hex: "#132a13")
         static let burgundy = UIColor(hex: "#540804")
+        
+        static let lightGray = UIColor(hex: "#F7F7F7")
     }
     
     // MARK: - SwiftUI

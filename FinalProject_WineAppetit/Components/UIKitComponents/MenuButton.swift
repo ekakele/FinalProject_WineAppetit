@@ -7,26 +7,32 @@
 
 import UIKit
 
-class MenuButton: UIButton {
+final class MenuButton: UIButton {
     // MARK: - Inits
     init(
         title: String,
         titleColor: UIColor = .label,
-        fontSize: CGFloat = 14,
-        cornerRadius: CGFloat = 8,
-        height: CGFloat = 40,
-        backgroundColor: UIColor = .systemPink.withAlphaComponent(0.3)
+        fontSize: CGFloat = 12,
+        cornerRadius: CGFloat = 11,
+        width: CGFloat = 76,
+        height: CGFloat = 34,
+        backgroundColor: UIColor = Constants.AppUIColor.lightGray
     ) {
         super.init(frame: .zero)
         
         self.setTitle(title, for: .normal)
         self.setTitleColor(titleColor, for: .normal)
-        self.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
+        self.titleLabel?.font = UIFont.systemFont(ofSize: fontSize, weight: .light)
         self.layer.cornerRadius = cornerRadius
-        self.heightAnchor.constraint(equalToConstant: height).isActive = true
         self.backgroundColor = backgroundColor
-        
         self.showsMenuAsPrimaryAction = true
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOpacity = 0.2
+        self.layer.shadowOffset = CGSize(width: 0, height: 1)
+        self.layer.shadowRadius = 1
+        self.layer.masksToBounds = false
+        self.widthAnchor.constraint(equalToConstant: width).isActive = true
+        self.heightAnchor.constraint(equalToConstant: height).isActive = true
         self.translatesAutoresizingMaskIntoConstraints = false
     }
     
