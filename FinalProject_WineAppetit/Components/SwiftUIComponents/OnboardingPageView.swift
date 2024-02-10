@@ -17,7 +17,7 @@ struct OnboardingPageView: View {
             imageView
             informationStackView
         }
-        .padding(.horizontal, 50)
+        .padding(.horizontal, 40)
     }
     
     // MARK: - Components
@@ -46,7 +46,7 @@ struct OnboardingPageView: View {
     
     private var pageTitleView: some View {
         Text(page.title)
-            .font(.title)
+            .font(.system(size: 20, weight: .bold))
     }
     
     private var imageView: some View {

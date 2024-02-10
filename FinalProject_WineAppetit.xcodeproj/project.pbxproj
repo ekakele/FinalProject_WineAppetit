@@ -33,6 +33,8 @@
 		B5304D1A2B77A7CD00932B45 /* MoveButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5304D192B77A7CD00932B45 /* MoveButtonView.swift */; };
 		B5304D1C2B77A91400932B45 /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5304D1B2B77A91400932B45 /* OnboardingPageView.swift */; };
 		B5304D202B77AC5C00932B45 /* OnboardingTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5304D1F2B77AC5C00932B45 /* OnboardingTabView.swift */; };
+		B5304D222B77ACD400932B45 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5304D212B77ACD400932B45 /* OnboardingView.swift */; };
+		B5304D242B77AFCC00932B45 /* TextButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5304D232B77AFCC00932B45 /* TextButtonView.swift */; };
 		B531DB852B6B80BC00BDCDBA /* FloatingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531DB842B6B80BC00BDCDBA /* FloatingButtonView.swift */; };
 		B531DB892B6B9A9E00BDCDBA /* WineListViewControllerRepresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531DB882B6B9A9E00BDCDBA /* WineListViewControllerRepresentableView.swift */; };
 		B531DB8D2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531DB8C2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift */; };
@@ -92,6 +94,8 @@
 		B5304D192B77A7CD00932B45 /* MoveButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveButtonView.swift; sourceTree = "<group>"; };
 		B5304D1B2B77A91400932B45 /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 		B5304D1F2B77AC5C00932B45 /* OnboardingTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTabView.swift; sourceTree = "<group>"; };
+		B5304D212B77ACD400932B45 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		B5304D232B77AFCC00932B45 /* TextButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButtonView.swift; sourceTree = "<group>"; };
 		B531DB842B6B80BC00BDCDBA /* FloatingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButtonView.swift; sourceTree = "<group>"; };
 		B531DB882B6B9A9E00BDCDBA /* WineListViewControllerRepresentableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineListViewControllerRepresentableView.swift; sourceTree = "<group>"; };
 		B531DB8C2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineDetailsViewControllerRepresentableView.swift; sourceTree = "<group>"; };
@@ -316,6 +320,7 @@
 			children = (
 				B5304D1F2B77AC5C00932B45 /* OnboardingTabView.swift */,
 				B5304D1B2B77A91400932B45 /* OnboardingPageView.swift */,
+				B5304D232B77AFCC00932B45 /* TextButtonView.swift */,
 				B5304D192B77A7CD00932B45 /* MoveButtonView.swift */,
 				B5304D172B77A6E000932B45 /* ProgressIndicatorView.swift */,
 				B5304D152B77A5F900932B45 /* RectangleView.swift */,
@@ -369,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				B5304D0F2B77A11100932B45 /* OnboardingViewModel.swift */,
+				B5304D212B77ACD400932B45 /* OnboardingView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -475,6 +481,7 @@
 				B531DB852B6B80BC00BDCDBA /* FloatingButtonView.swift in Sources */,
 				B50550E02B6040610040CA56 /* ShortInfoStackView.swift in Sources */,
 				B5304D102B77A11100932B45 /* OnboardingViewModel.swift in Sources */,
+				B5304D242B77AFCC00932B45 /* TextButtonView.swift in Sources */,
 				B53F4D0C2B720C390032AED5 /* WineRandomizerViewModel.swift in Sources */,
 				B58E60692B63B032000458BD /* IconView.swift in Sources */,
 				B58E60502B622DD2000458BD /* UIColor+Hex.swift in Sources */,
@@ -487,6 +494,7 @@
 				B50550AB2B5E41290040CA56 /* SceneDelegate.swift in Sources */,
 				B56CED662B6AAB1E00F2F6EC /* MyWineLibraryView.swift in Sources */,
 				B56CED6E2B6AAE0400F2F6EC /* ItemCellView.swift in Sources */,
+				B5304D222B77ACD400932B45 /* OnboardingView.swift in Sources */,
 				B5304D0E2B779F4F00932B45 /* OnboardingData.swift in Sources */,
 				B51764822B6D8CB9000DF5E8 /* SpinTheBottleViewController.swift in Sources */,
 				B5B05E9B2B67E36E00EFDDA1 /* CalorieCounterViewController.swift in Sources */,
