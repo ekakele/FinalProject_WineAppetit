@@ -13,20 +13,40 @@ protocol WineCalories {
     var calories: Int { get }
 }
 
+protocol DropdownOption: CaseIterable, RawRepresentable where RawValue == String {}
+
 // MARK: - Enums
-enum WineType: String, CaseIterable {
+enum WineType: String, DropdownOption {
     case red = "Red"
     case white = "White"
     case rose = "Rose"
 }
 
-enum WineCategory: String, CaseIterable {
+enum WineCategory: String, DropdownOption {
     case dry = "Dry"
     case semiDry = "Semi-Dry"
     case sweet = "Sweet"
     case semiSweet = "Semi-Sweet"
     case fortified = "Fortified"
     case sparkling = "Sparkling"
+}
+
+enum WineTechnology: String, DropdownOption {
+    case classic = "Classic"
+    case petnat = "Petnat"
+    case qvevri = "Qvevri"
+    case sparkling = "Sparkling"
+}
+
+enum WineRegion: String, DropdownOption {
+    case adjara = "Adjara"
+    case imereti = "Imereti"
+    case kakheti = "Kakheti"
+    case kartli = "Kartli"
+    case lechkhumi = "Lechkhumi"
+    case racha = "Racha"
+    case samegrelo = "Samegrelo"
+    case guria = "Guria"
 }
 
 // MARK: - Extension

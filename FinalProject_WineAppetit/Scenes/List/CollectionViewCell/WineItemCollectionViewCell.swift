@@ -115,7 +115,7 @@ final class WineItemCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        activityIndicator.show()
+        //        activityIndicator.show()
         
         itemImageView.image = nil
         titleLabel.text = nil
@@ -132,7 +132,8 @@ final class WineItemCollectionViewCell: UICollectionViewCell {
         
         activityIndicator.show()
         
-        displayImage(for: wine)
+        //        displayImage(for: wine)
+        setupItemImageView(for: wine)
         titleLabel.text = wine.title
         categoryLabel.text = wine.categoriesList.first
         subcategoryLabel.text = wine.categoriesList[1]
@@ -154,7 +155,9 @@ final class WineItemCollectionViewCell: UICollectionViewCell {
     
     private func setupActivityIndicator() {
         activityIndicator.frame = contentView.bounds
+        contentView.bringSubviewToFront(activityIndicator)
         activityIndicator.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        activityIndicator.show()
     }
     
     private func addSubviews() {
@@ -226,30 +229,11 @@ final class WineItemCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    private func displayImage(for wine: Wine) {
-        if let imageURL = wine.image, !imageURL.isEmpty {
-            loadAndCashImage(from: imageURL)
-        } else {
-            itemImageView.image = UIImage(named: "noImage")
-        }
-    }
-    
-    private func loadAndCashImage(from urlString: String) {
-        Task { [weak self] in
-            do {
-                let image = try await ImageLoader.shared.fetchImage(with: urlString)
-                DispatchQueue.main.async {
-                    if let image = image {
-                        self?.activityIndicator.hide()
-                        self?.itemImageView.image = image
-                    }
-                }
-            } catch {
-                DispatchQueue.main.async {
-                    self?.activityIndicator.hide()
-                    print("Error fetching images: \(error)")
-                }
-            }
-        }
+    private func setupItemImageView(for wine: Wine) {
+        ImageLoader.shared.displayImage(
+            from: wine.image,
+            in: itemImageView,
+            indicator: activityIndicator
+        )
     }
 }

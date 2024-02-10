@@ -13,7 +13,7 @@ final class ShortInfoStackView: UIStackView {
         arrangedSubviews: [UIView],
         axis: NSLayoutConstraint.Axis = .vertical,
         distribution: UIStackView.Distribution = .equalSpacing,
-        stackAlignment: UIStackView.Alignment? = nil,
+        stackAlignment: UIStackView.Alignment? = .center,
         stackSpacing: CGFloat? = nil
     ) {
         super.init(frame: .zero)
@@ -23,6 +23,7 @@ final class ShortInfoStackView: UIStackView {
         self.distribution = distribution
         self.alignment = stackAlignment ?? .fill
         self.spacing = stackSpacing ?? 0
+        self.translatesAutoresizingMaskIntoConstraints = false
     }
     
     required init(coder: NSCoder) {

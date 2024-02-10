@@ -66,7 +66,7 @@ final class DefaultWineDetailsViewModel: WineDetailsViewModel {
     private func loadImage(from urlString: String) {
         Task {
             do {
-                let image = try await ImageLoader.shared.fetchImage(with: urlString)
+                let image = try await ImageLoader.shared.fetchAndCacheImage(with: urlString)
                 DispatchQueue.main.async {
                     self.delegate?.wineImageFetched(image ?? UIImage(named: "noImage") ?? UIImage())
                 }

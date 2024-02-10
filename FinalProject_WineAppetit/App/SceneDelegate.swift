@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        let hostingController = UIHostingController(rootView: MyWineLibraryView(viewModel: MyWineLibraryViewModel()))
         
         window = UIWindow(windowScene: windowScene)
-//        window?.rootViewController = UINavigationController(rootViewController: TabBarController())
+//        window?.rootViewController = UINavigationController(rootViewController: WineRandomizerViewController())
         window?.rootViewController = TabBarController()
         window?.makeKeyAndVisible()
 

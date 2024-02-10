@@ -45,12 +45,11 @@ final class ActivityIndicator: UIView {
     
     // MARK: - Methods
     func show() {
-        superview?.bringSubviewToFront(self)
         isHidden = false
         activityIndicator.startAnimating()
     }
     
     func hide() {
-        removeFromSuperview()
+        isHidden = true
     }
 }
