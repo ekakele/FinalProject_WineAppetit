@@ -29,6 +29,7 @@
 		B5304D122B77A4A600932B45 /* View+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5304D112B77A4A600932B45 /* View+CornerRadius.swift */; };
 		B5304D142B77A4E400932B45 /* CornerRadiusStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5304D132B77A4E400932B45 /* CornerRadiusStyle.swift */; };
 		B5304D162B77A5F900932B45 /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5304D152B77A5F900932B45 /* RectangleView.swift */; };
+		B5304D182B77A6E000932B45 /* ProgressIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5304D172B77A6E000932B45 /* ProgressIndicatorView.swift */; };
 		B531DB852B6B80BC00BDCDBA /* FloatingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531DB842B6B80BC00BDCDBA /* FloatingButtonView.swift */; };
 		B531DB892B6B9A9E00BDCDBA /* WineListViewControllerRepresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531DB882B6B9A9E00BDCDBA /* WineListViewControllerRepresentableView.swift */; };
 		B531DB8D2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531DB8C2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift */; };
@@ -84,6 +85,7 @@
 		B5304D112B77A4A600932B45 /* View+CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+CornerRadius.swift"; sourceTree = "<group>"; };
 		B5304D132B77A4E400932B45 /* CornerRadiusStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyle.swift; sourceTree = "<group>"; };
 		B5304D152B77A5F900932B45 /* RectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
+		B5304D172B77A6E000932B45 /* ProgressIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicatorView.swift; sourceTree = "<group>"; };
 		B531DB842B6B80BC00BDCDBA /* FloatingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButtonView.swift; sourceTree = "<group>"; };
 		B531DB882B6B9A9E00BDCDBA /* WineListViewControllerRepresentableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineListViewControllerRepresentableView.swift; sourceTree = "<group>"; };
 		B531DB8C2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineDetailsViewControllerRepresentableView.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 		B56CED6A2B6AABFC00F2F6EC /* SwiftUIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				B5304D172B77A6E000932B45 /* ProgressIndicatorView.swift */,
 				B5304D152B77A5F900932B45 /* RectangleView.swift */,
 				B56CED712B6AB56700F2F6EC /* HorizontalScrollView.swift */,
 				B56CED6D2B6AAE0400F2F6EC /* ItemCellView.swift */,
@@ -438,6 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5304D182B77A6E000932B45 /* ProgressIndicatorView.swift in Sources */,
 				B50550C82B5FC9910040CA56 /* WineItemCollectionViewCell.swift in Sources */,
 				B50550CD2B5FCC150040CA56 /* Wine.swift in Sources */,
 				B53B28D02B6FC350006CC480 /* WineRandomizerViewController.swift in Sources */,
