@@ -31,9 +31,9 @@ struct OnboardingPageView: View {
     
     private var pageDescriptionView: some View {
         Text(page.description)
-            .font(.body)
+            .font(.system(size: 15))
             .foregroundColor(Constants.AppColor.textColor)
-            .lineSpacing(5)
+            .lineSpacing(4)
     }
     
     private var dividerView: some View {

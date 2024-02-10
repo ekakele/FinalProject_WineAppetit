@@ -17,10 +17,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
 //        let hostingController = UIHostingController(rootView: MyWineLibraryView(viewModel: MyWineLibraryViewModel()))
-        
+        let hostingController = UIHostingController(rootView: OnboardingView(viewModel: OnboardingViewModel()))
+
         window = UIWindow(windowScene: windowScene)
 //        window?.rootViewController = UINavigationController(rootViewController: WineRandomizerViewController())
-        window?.rootViewController = TabBarController()
+//        window?.rootViewController = TabBarController()
+        window?.rootViewController = hostingController
         window?.makeKeyAndVisible()
 
     }
