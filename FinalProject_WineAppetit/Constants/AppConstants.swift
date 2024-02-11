@@ -76,5 +76,9 @@ struct Constants {
         static let greenBackground = Color(hex: 0x344E41)
         static let darkGreen = Color(hex: 0x283618)
         static let lightGreen = Color(hex: 0xcfe1b9)
+        
+        static let burgundy = Color(hex: 0x8B112E)
+        static let shadeBackground = Color(hex: 0xFF003D).opacity(0.2)
+        static let textColor = Color(hex: 0x545454)
     }
 }
