@@ -15,22 +15,30 @@ struct OnboardingView: View {
     // MARK: - Body
     var body: some View {
         if viewModel.userPassedOnboarding() {
-            TabBarControllerRepresentableView()
+            setupTabBarView
         } else {
-            
-            ZStack {
-                Color.white.ignoresSafeArea()
-                
-                setupRectangleView
-                informationStackView
-            }
-            .fullScreenCover(isPresented: $navigateToTabBar) {
-                TabBarControllerRepresentableView()
-            }
+            setupOnboardingView
+                .fullScreenCover(isPresented: $navigateToTabBar) {
+                    TabBarControllerRepresentableView()
+                }
         }
     }
     
     // MARK: - Components
+    private var setupTabBarView: some View {
+        TabBarControllerRepresentableView()
+            .ignoresSafeArea()
+    }
+    
+    private var setupOnboardingView: some View {
+        ZStack {
+            Color.white.ignoresSafeArea()
+            
+            setupRectangleView
+            informationStackView
+        }
+    }
+    
     private var informationStackView: some View {
         VStack {
             setupSkipButtonView
