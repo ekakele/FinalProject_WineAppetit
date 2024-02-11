@@ -10,6 +10,7 @@ import SwiftUI
 struct TextButtonView: View {
     // MARK: - Properties
     let title: String
+    let textColor: Color
     let fontSize: CGFloat
     let fontWeight: Font.Weight
     var action: () -> Void
@@ -18,7 +19,7 @@ struct TextButtonView: View {
     var body: some View {
         Button(action: action) {
             Text(title)
-                .foregroundColor(Constants.AppColor.textColor)
+                .foregroundColor(textColor)
                 .font(.system(size: fontSize, weight: fontWeight))
         }
         .frame(maxWidth: .infinity, alignment: .trailing)
@@ -26,5 +27,5 @@ struct TextButtonView: View {
 }
 
 #Preview {
-    TextButtonView(title: "Skip", fontSize: 16, fontWeight: .regular, action: {})
+    TextButtonView(title: "Skip", textColor: Constants.AppColor.textColor, fontSize: 16, fontWeight: .regular, action: {})
 }

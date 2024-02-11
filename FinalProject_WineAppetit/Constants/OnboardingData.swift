@@ -12,12 +12,12 @@ struct OnboardingData {
         Onboarding(
             imageName: "onboardingOne",
             title: "Welcome to WineAppétit!",
-            description: "Your guide to the ideal wine selection and enhanced enjoyment."
+            description: "Your ultimate companion for exploring and selecting the perfect wine, enhancing your experience of wine enjoyment."
         ),
         Onboarding(
             imageName: "onboardingTwo",
             title: "Discover and Search Wines",
-            description: "Explore a wide selection of Georgian wines and gain detailed insights into each distinct selection."
+            description: "Explore a wide range of Georgian wines, where each bottle is accompanied by detailed information that highlights the distinct characteristics of each selection."
         ),
         Onboarding(
             imageName: "onboardingThree",
@@ -32,12 +32,12 @@ struct OnboardingData {
         Onboarding(
             imageName: "onboardingFive",
             title: "Calorie Tracking Made Easy",
-            description: "Easily track the calories per glass, combining wine enjoyment with mindful consumption."
+            description: "Easily track the calorie content per glass, combining wine enjoyment with mindful consumption."
         ),
         Onboarding(
             imageName: "onboardingSix",
             title: "Game for Social Gatherings",
-            description: "Transform your wine gatherings with a digital twist on the combination of popular social games 'Truth or Dare' and 'Spin the Bottle'."
+            description: "Spice up your wine gatherings with a playful combination of popular social games like 'Truth or Dare' and 'Spin the Bottle', guaranteeing a memorable experience for all."
         ),
     ]
 }

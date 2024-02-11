@@ -15,17 +15,17 @@ struct OnboardingView: View {
     // MARK: - Body
     var body: some View {
         if viewModel.userPassedOnboarding() {
-            setupTabBarView
+            TabBarRepresentableView
         } else {
             setupOnboardingView
                 .fullScreenCover(isPresented: $navigateToTabBar) {
-                    TabBarControllerRepresentableView()
+                    TabBarRepresentableView
                 }
         }
     }
     
     // MARK: - Components
-    private var setupTabBarView: some View {
+    private var TabBarRepresentableView: some View {
         TabBarControllerRepresentableView()
             .ignoresSafeArea()
     }
@@ -74,9 +74,10 @@ struct OnboardingView: View {
     
     private var setupGetStartedButtonView: some View {
         TextButtonView(
-            title: "Get Started",
+            title: "Get Started", 
+            textColor:  Constants.AppColor.burgundy,
             fontSize: 16,
-            fontWeight: .bold,
+            fontWeight: .regular,
             action: {
                 navigateToTabBar.toggle()
                 viewModel.saveOnboardingPassStatus(value: true)
@@ -86,14 +87,17 @@ struct OnboardingView: View {
     
     private var setupSkipButtonView: some View {
         TextButtonView(
-            title: "Skip",
+            title: "Skip", 
+            textColor: Constants.AppColor.textColor,
             fontSize: 16,
             fontWeight: .light,
             action: {
                 navigateToTabBar.toggle()
                 viewModel.saveOnboardingPassStatus(value: true)
             }
-        ).padding(.horizontal, 30)
+        )
+        .padding(.trailing, 30)
+        .padding(.top, 10)
     }
     
     private var setupProgressIndicatorView: some View {
