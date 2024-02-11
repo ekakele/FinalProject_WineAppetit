@@ -14,14 +14,19 @@ struct OnboardingView: View {
     
     // MARK: - Body
     var body: some View {
-        ZStack {
-            Color.white.ignoresSafeArea()
-            
-            setupRectangleView
-            informationStackView
-        }
-        .fullScreenCover(isPresented: $navigateToTabBar) {
+        if viewModel.userPassedOnboarding() {
             TabBarControllerRepresentableView()
+        } else {
+            
+            ZStack {
+                Color.white.ignoresSafeArea()
+                
+                setupRectangleView
+                informationStackView
+            }
+            .fullScreenCover(isPresented: $navigateToTabBar) {
+                TabBarControllerRepresentableView()
+            }
         }
     }
     
@@ -66,6 +71,7 @@ struct OnboardingView: View {
             fontWeight: .bold,
             action: {
                 navigateToTabBar.toggle()
+                viewModel.saveOnboardingPassStatus(value: true)
             }
         )
     }
@@ -77,6 +83,7 @@ struct OnboardingView: View {
             fontWeight: .light,
             action: {
                 navigateToTabBar.toggle()
+                viewModel.saveOnboardingPassStatus(value: true)
             }
         ).padding(.horizontal, 30)
     }

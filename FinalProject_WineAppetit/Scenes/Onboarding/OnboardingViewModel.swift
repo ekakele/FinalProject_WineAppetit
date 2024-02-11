@@ -14,6 +14,14 @@ final class OnboardingViewModel: ObservableObject {
     @Published var onboardingProgress: CGFloat = 0
     
     // MARK: - Methods
+    func saveOnboardingPassStatus(value: Bool) {
+        UserPreferencesManager.shared.saveOnboardingPassStatus(value: value)
+    }
+    
+    func userPassedOnboarding() -> Bool {
+        UserPreferencesManager.shared.getOnboardingPassStatus()
+    }
+        
     func updateProgressIndicator() {
         withAnimation {
             onboardingProgress = CGFloat(currentPageIndex + 1) / CGFloat(onboardingPages.count)

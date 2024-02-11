@@ -376,8 +376,8 @@
 		B5BCAFFC2B779388002A1FB8 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				B5304D0F2B77A11100932B45 /* OnboardingViewModel.swift */,
 				B5304D212B77ACD400932B45 /* OnboardingView.swift */,
+				B5304D0F2B77A11100932B45 /* OnboardingViewModel.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
