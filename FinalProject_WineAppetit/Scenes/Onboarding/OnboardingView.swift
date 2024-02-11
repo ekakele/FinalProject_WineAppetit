@@ -10,6 +10,7 @@ import SwiftUI
 struct OnboardingView: View {
     // MARK: - Properties
     @ObservedObject var viewModel: OnboardingViewModel
+    @State private var navigateToTabBar = false
     
     // MARK: - Body
     var body: some View {
@@ -18,6 +19,9 @@ struct OnboardingView: View {
             
             setupRectangleView
             informationStackView
+        }
+        .fullScreenCover(isPresented: $navigateToTabBar) {
+            TabBarControllerRepresentableView()
         }
     }
     
@@ -61,7 +65,7 @@ struct OnboardingView: View {
             fontSize: 16,
             fontWeight: .bold,
             action: {
-                viewModel.skipOnboarding()
+                navigateToTabBar.toggle()
             }
         )
     }
@@ -72,7 +76,7 @@ struct OnboardingView: View {
             fontSize: 16,
             fontWeight: .light,
             action: {
-                viewModel.skipOnboarding()
+                navigateToTabBar.toggle()
             }
         ).padding(.horizontal, 30)
     }

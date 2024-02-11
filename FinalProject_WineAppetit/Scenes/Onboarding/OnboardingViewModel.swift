@@ -35,8 +35,4 @@ final class OnboardingViewModel: ObservableObject {
             }
         }
     }
-    
-    func skipOnboarding() {
-        currentPageIndex = onboardingPages.count - 1
-    }
 }
