@@ -12,6 +12,7 @@ final class MyWineLibraryViewModel: ObservableObject {
     // MARK: - Init
     @Published var favoritedWines: [Wine] = []
     private let baseURL = Constants.API.wineApiBaseURL
+    private let APIKey = Constants.API.wineApiKey
     
     // MARK: - Init
     init() {
@@ -31,7 +32,7 @@ final class MyWineLibraryViewModel: ObservableObject {
     
     // MARK: - Private Methods
     private func fetchWines() {
-        let endpoint = "api/wines?page=1"
+        let endpoint = "api/wines?apiKey=\(APIKey)"
         let favoriteWineIDList = UserPreferencesManager.shared.getFavoriteWineList().map { String($0) }.joined(separator: ",")
         let queryString = "&ids=" + favoriteWineIDList
         let urlString = baseURL + endpoint + queryString

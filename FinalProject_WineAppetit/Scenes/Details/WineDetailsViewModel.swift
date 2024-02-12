@@ -26,6 +26,7 @@ final class DefaultWineDetailsViewModel: WineDetailsViewModel {
     private var wineID: Int
     weak var delegate: WineDetailsViewModelDelegate?
     private let baseURL = Constants.API.wineApiBaseURL
+    private let APIKey = Constants.API.wineApiKey
     
     // MARK: - Init
     init(wineID: Int) {
@@ -49,7 +50,9 @@ final class DefaultWineDetailsViewModel: WineDetailsViewModel {
     private func fetchWineDetails() {
         let endpoint = "api/wines/"
         let idString = String(wineID)
-        let urlString = baseURL + endpoint + idString
+        let APIKeyString = "?apiKey=\(APIKey)"
+        let urlString = baseURL + endpoint + idString + APIKeyString
+        print(urlString)
         
         GenericNetworkManager.shared.fetchData(with: urlString) { [weak self] (result: Result<WineDetailsData, Error>) in
             switch result {

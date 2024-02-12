@@ -19,6 +19,7 @@ final class WineListViewModel {
     private var wines: [Wine]?
     weak var delegate: WineListViewModelDelegate?
     private let baseURL = Constants.API.wineApiBaseURL
+    private let APIKey = Constants.API.wineApiKey
     
     // MARK: - ViewLifeCycle
     func viewDidLoad() {
@@ -37,7 +38,7 @@ final class WineListViewModel {
     }
     // MARK: - Private Methods
     private func fetchWines(with query: String?) {
-        let endpoint = "api/wines?page=1"
+        let endpoint = "api/wines?apiKey=\(APIKey)"
         var queryString = ""
         if let query = query, !query.isEmpty {
             queryString = "&q=\(query)"

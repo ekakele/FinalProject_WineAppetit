@@ -12,6 +12,7 @@ final class WineRandomizerViewModel {
     private var wines: [Wine]?
     weak var delegate: WineRandomizerViewModelDelegate?
     private let baseURL = Constants.API.wineApiBaseURL
+    private let APIKey = Constants.API.wineApiKey
     
     // MARK: - ViewLifeCycle
     func viewDidLoad() {
@@ -31,7 +32,7 @@ final class WineRandomizerViewModel {
     
     // MARK: - Private Methods
     private func fetchWines(with category: String?, _ subCategory: String?, _ technology: String?, _ region: String?) {
-        let endpoint = "api/wines?page=1"
+        let endpoint = "api/wines?apiKey=\(APIKey)"
         var queryString = ""
         
         queryString += addParameter(parameterName: "category", category)
