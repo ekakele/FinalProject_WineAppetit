@@ -152,10 +152,21 @@ final class WineRandomizerViewController: UIViewController {
     private func setupRandomizeButtonAction() {
         randomizeButton.addAction(
             UIAction(handler: { [weak self] _ in
+                self?.animateRandomizeButton()
                 self?.filterWines()
             }),
             for: .touchUpInside
         )
+    }
+    
+    private func animateRandomizeButton() {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.randomizeButton.transform = .identity
+        }, completion: { _ in
+            UIView.animate(withDuration: 0.2) {
+                self.randomizeButton.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+            }
+        })
     }
     
     private func filterWines() {
