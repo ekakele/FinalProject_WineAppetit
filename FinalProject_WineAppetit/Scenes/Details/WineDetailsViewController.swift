@@ -134,7 +134,7 @@ final class WineDetailsViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         
         viewModel.delegate = self
-        hidesBottomBarWhenPushed = true
+        //        hidesBottomBarWhenPushed = true
     }
     
     required init?(coder: NSCoder) {
@@ -143,6 +143,7 @@ final class WineDetailsViewController: UIViewController {
     
     
     // MARK: - LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -151,6 +152,17 @@ final class WineDetailsViewController: UIViewController {
         setupNavigationBar()
         setupAddButtonAction()
         setupUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.extendedLayoutIncludesOpaqueBars = true
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     // MARK: - Private Methods
