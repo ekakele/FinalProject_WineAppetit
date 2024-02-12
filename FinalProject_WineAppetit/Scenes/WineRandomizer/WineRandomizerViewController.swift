@@ -79,7 +79,7 @@ final class WineRandomizerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupNavigationTitle()
+        setupNavigationBarTitle()
         setupPickerViewTapRecognizer()
         setupViewModel()
         setupButtonActions()
@@ -89,14 +89,8 @@ final class WineRandomizerViewController: UIViewController {
     }
     
     // MARK: - Private Methods
-    private func setupNavigationTitle() {
-        navigationItem.title = "Random Wine Select"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        if #available(iOS 17.0, *) {
-            navigationItem.largeTitleDisplayMode = .inline
-        } else {
-            navigationItem.largeTitleDisplayMode = .automatic
-        }
+    private func setupNavigationBarTitle() {
+        NavigationBarManager.setupNavigationBar(for: self, title: "Random Wine Select")
     }
     
     private func setupPickerViewTapRecognizer() {

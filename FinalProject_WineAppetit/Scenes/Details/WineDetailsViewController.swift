@@ -147,7 +147,7 @@ final class WineDetailsViewController: UIViewController {
         
         viewModel.viewDidLoad()
         
-        setupNavigationBar()
+        setupNavigationBarTitle()
         setupAddButtonAction()
         setupUI()
     }
@@ -164,14 +164,8 @@ final class WineDetailsViewController: UIViewController {
     }
     
     // MARK: - Private Methods
-    private func setupNavigationBar() {
-        navigationItem.title = "Wine Details"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        if #available(iOS 17.0, *) {
-            navigationItem.largeTitleDisplayMode = .inline
-        } else {
-            navigationItem.largeTitleDisplayMode = .automatic
-        }
+    private func setupNavigationBarTitle() {
+        NavigationBarManager.setupNavigationBar(for: self, title: "Wine Details")
     }
     
     private func setupAddButtonAction() {

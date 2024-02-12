@@ -41,6 +41,7 @@
 		B531DB8D2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531DB8C2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift */; };
 		B53B28D02B6FC350006CC480 /* WineRandomizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53B28CF2B6FC350006CC480 /* WineRandomizerViewController.swift */; };
 		B53F4D0C2B720C390032AED5 /* WineRandomizerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53F4D0B2B720C390032AED5 /* WineRandomizerViewModel.swift */; };
+		B54F09962B7A5BA800E85445 /* NavigationBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F09952B7A5BA800E85445 /* NavigationBarManager.swift */; };
 		B5517D2C2B61775C004A4961 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5517D2B2B61775C004A4961 /* ActivityIndicator.swift */; };
 		B56CED632B6AA84E00F2F6EC /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56CED622B6AA84E00F2F6EC /* Color+Hex.swift */; };
 		B56CED662B6AAB1E00F2F6EC /* MyWineLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56CED652B6AAB1E00F2F6EC /* MyWineLibraryView.swift */; };
@@ -103,6 +104,7 @@
 		B531DB8C2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineDetailsViewControllerRepresentableView.swift; sourceTree = "<group>"; };
 		B53B28CF2B6FC350006CC480 /* WineRandomizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineRandomizerViewController.swift; sourceTree = "<group>"; };
 		B53F4D0B2B720C390032AED5 /* WineRandomizerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineRandomizerViewModel.swift; sourceTree = "<group>"; };
+		B54F09952B7A5BA800E85445 /* NavigationBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarManager.swift; sourceTree = "<group>"; };
 		B5517D2B2B61775C004A4961 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		B56CED622B6AA84E00F2F6EC /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		B56CED652B6AAB1E00F2F6EC /* MyWineLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWineLibraryView.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				B50550DD2B6039FC0040CA56 /* ImageLoader.swift */,
 				B58E60552B62AF16000458BD /* UserPreferencesManager.swift */,
 				B5304D132B77A4E400932B45 /* CornerRadiusStyle.swift */,
+				B54F09952B7A5BA800E85445 /* NavigationBarManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				B50550A92B5E41290040CA56 /* AppDelegate.swift in Sources */,
 				B5304D0C2B779EC200932B45 /* Onboarding.swift in Sources */,
 				B56CED6C2B6AAC3900F2F6EC /* ShelfTitleView.swift in Sources */,
+				B54F09962B7A5BA800E85445 /* NavigationBarManager.swift in Sources */,
 				B50550AB2B5E41290040CA56 /* SceneDelegate.swift in Sources */,
 				B56CED662B6AAB1E00F2F6EC /* MyWineLibraryView.swift in Sources */,
 				B56CED6E2B6AAE0400F2F6EC /* ItemCellView.swift in Sources */,
