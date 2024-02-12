@@ -16,7 +16,7 @@
 		B50550CB2B5FCA160040CA56 /* GenericNetworkManager in Frameworks */ = {isa = PBXBuildFile; productRef = B50550CA2B5FCA160040CA56 /* GenericNetworkManager */; };
 		B50550CD2B5FCC150040CA56 /* Wine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550CC2B5FCC150040CA56 /* Wine.swift */; };
 		B50550CF2B5FDABC0040CA56 /* WineListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550CE2B5FDABC0040CA56 /* WineListViewModel.swift */; };
-		B50550D22B5FE0840040CA56 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550D12B5FE0840040CA56 /* CustomSearchBar.swift */; };
+		B50550D22B5FE0840040CA56 /* CustomSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550D12B5FE0840040CA56 /* CustomSearchController.swift */; };
 		B50550D82B6013810040CA56 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550D72B6013810040CA56 /* AppConstants.swift */; };
 		B50550DE2B6039FC0040CA56 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550DD2B6039FC0040CA56 /* ImageLoader.swift */; };
 		B50550E02B6040610040CA56 /* ShortInfoStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550DF2B6040610040CA56 /* ShortInfoStackView.swift */; };
@@ -78,7 +78,7 @@
 		B50550C72B5FC9910040CA56 /* WineItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		B50550CC2B5FCC150040CA56 /* Wine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wine.swift; sourceTree = "<group>"; };
 		B50550CE2B5FDABC0040CA56 /* WineListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineListViewModel.swift; sourceTree = "<group>"; };
-		B50550D12B5FE0840040CA56 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
+		B50550D12B5FE0840040CA56 /* CustomSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchController.swift; sourceTree = "<group>"; };
 		B50550D72B6013810040CA56 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		B50550DD2B6039FC0040CA56 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		B50550DF2B6040610040CA56 /* ShortInfoStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortInfoStackView.swift; sourceTree = "<group>"; };
@@ -304,7 +304,7 @@
 				B5517D2B2B61775C004A4961 /* ActivityIndicator.swift */,
 				B50550E12B6040C00040CA56 /* CustomLabel.swift */,
 				B50550DF2B6040610040CA56 /* ShortInfoStackView.swift */,
-				B50550D12B5FE0840040CA56 /* CustomSearchBar.swift */,
+				B50550D12B5FE0840040CA56 /* CustomSearchController.swift */,
 			);
 			path = UIKitComponents;
 			sourceTree = "<group>";
@@ -465,7 +465,7 @@
 				B50550AD2B5E41290040CA56 /* WineListViewController.swift in Sources */,
 				B5517D2C2B61775C004A4961 /* ActivityIndicator.swift in Sources */,
 				B50550D82B6013810040CA56 /* AppConstants.swift in Sources */,
-				B50550D22B5FE0840040CA56 /* CustomSearchBar.swift in Sources */,
+				B50550D22B5FE0840040CA56 /* CustomSearchController.swift in Sources */,
 				B5B17D532B713E9800734CB0 /* MenuButton.swift in Sources */,
 				B58E60752B645B91000458BD /* WineDetailsViewModel.swift in Sources */,
 				B50550DE2B6039FC0040CA56 /* ImageLoader.swift in Sources */,

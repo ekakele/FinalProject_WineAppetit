@@ -1,5 +1,5 @@
 //
-//  CustomSearchBarViewController.swift
+//  CustomSearchController.swift
 //  FinalProject_WineAppetit
 //
 //  Created by Eka Kelenjeridze on 23.01.24.
@@ -7,13 +7,13 @@
 
 import UIKit
 
-protocol SearchBarDelegate: AnyObject {
+protocol CustomSearchControllerDelegate: AnyObject {
     func searchBarDidSearch(with text: String)
 }
 
-final class CustomSearchBar: UISearchController, UISearchResultsUpdating {
+final class CustomSearchController: UISearchController {
     // MARK: - Properties
-    weak var searchBarDelegate: SearchBarDelegate?
+    weak var searchControllerDelegate: CustomSearchControllerDelegate?
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -39,12 +39,14 @@ final class CustomSearchBar: UISearchController, UISearchResultsUpdating {
         searchBar.placeholder = placeholder
         definesPresentationContext = true
     }
-    
-    // MARK: - Methods
+}
+
+// MARK: - UISearchResultsUpdating Extension
+extension CustomSearchController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        searchBarDelegate?.searchBarDidSearch(with: searchController.searchBar.text ?? "")
-        guard let text = searchController.searchBar.text, !text.isEmpty else {
+        guard let searchText = searchController.searchBar.text, !searchText.isEmpty else {
             return
         }
+        searchControllerDelegate?.searchBarDidSearch(with: searchText)
     }
 }

@@ -28,7 +28,7 @@ final class WineListViewController: UIViewController {
         return label
     }()
     
-    private let searchBar = CustomSearchBar(placeholder: "Search for a wine")
+    private let searchBar = CustomSearchController(placeholder: "Search for a wine")
     private let activityIndicator = ActivityIndicator()
     private var wines = [Wine]()
     private let viewModel = WineListViewModel()
@@ -55,7 +55,7 @@ final class WineListViewController: UIViewController {
     }
     
     private func setupSearchBar() {
-        searchBar.searchBarDelegate = self
+        searchBar.searchControllerDelegate = self
         navigationItem.searchController = searchBar
     }
     
@@ -189,8 +189,8 @@ extension WineListViewController: WineListViewModelDelegate {
     }
 }
 
-// MARK: - CustomSearchBar
-extension WineListViewController: SearchBarDelegate {
+// MARK: - CustomSearchController
+extension WineListViewController: CustomSearchControllerDelegate {
     func searchBarDidSearch(with text: String) {
         viewModel.searchWines(with: text)
     }
