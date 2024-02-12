@@ -19,7 +19,7 @@ final class SpinTheBottleViewModel {
     // MARK: - Properties
     private var lastRotation: CGFloat = 0.0
     private var angularVelocity: CGFloat = 0.0
-    private var remainingQuestions: [String] = SpinTheBottleGameQuestions.questionsArray
+    private var remainingQuestions: [String] = SpinTheBottleGameData.questionsArray
     weak var delegate: SpinTheBottleViewModelDelegate?
     
     // MARK: - Methods
@@ -63,7 +63,7 @@ final class SpinTheBottleViewModel {
     
     private func presentRandomQuestion() {
         if remainingQuestions.isEmpty {
-            remainingQuestions = SpinTheBottleGameQuestions.questionsArray
+            remainingQuestions = SpinTheBottleGameData.questionsArray
         }
         
         let randomIndex = Int.random(in: 0..<remainingQuestions.count)
