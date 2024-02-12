@@ -9,22 +9,17 @@ import UIKit
 import SwiftUI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    
     var window: UIWindow?
-    
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-//        let hostingController = UIHostingController(rootView: MyWineLibraryView(viewModel: MyWineLibraryViewModel()))
-        let hostingController = UIHostingController(rootView: OnboardingView(viewModel: OnboardingViewModel()))
-
+        let onboardingView = OnboardingView(viewModel: OnboardingViewModel())
+        let hostingController = UIHostingController(rootView: onboardingView)
+        
         window = UIWindow(windowScene: windowScene)
-//        window?.rootViewController = UINavigationController(rootViewController: WineRandomizerViewController())
-//        window?.rootViewController = TabBarController()
         window?.rootViewController = hostingController
         window?.makeKeyAndVisible()
-
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

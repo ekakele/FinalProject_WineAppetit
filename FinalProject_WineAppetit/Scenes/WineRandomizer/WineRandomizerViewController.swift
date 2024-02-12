@@ -79,7 +79,7 @@ final class WineRandomizerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupNavigationTitle()
+        setupNavigationBarTitle()
         setupPickerViewTapRecognizer()
         setupViewModel()
         setupButtonActions()
@@ -89,14 +89,8 @@ final class WineRandomizerViewController: UIViewController {
     }
     
     // MARK: - Private Methods
-    private func setupNavigationTitle() {
-        navigationItem.title = "Random Wine Select"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        if #available(iOS 17.0, *) {
-            navigationItem.largeTitleDisplayMode = .inline
-        } else {
-            navigationItem.largeTitleDisplayMode = .automatic
-        }
+    private func setupNavigationBarTitle() {
+        NavigationBarManager.setupNavigationBar(for: self, title: "Random Wine Select")
     }
     
     private func setupPickerViewTapRecognizer() {
@@ -158,10 +152,21 @@ final class WineRandomizerViewController: UIViewController {
     private func setupRandomizeButtonAction() {
         randomizeButton.addAction(
             UIAction(handler: { [weak self] _ in
+                self?.animateRandomizeButton()
                 self?.filterWines()
             }),
             for: .touchUpInside
         )
+    }
+    
+    private func animateRandomizeButton() {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.randomizeButton.transform = .identity
+        }, completion: { _ in
+            UIView.animate(withDuration: 0.2) {
+                self.randomizeButton.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+            }
+        })
     }
     
     private func filterWines() {
@@ -345,7 +350,7 @@ extension WineRandomizerViewController: WineRandomizerViewModelDelegate {
         if maxRow >= 0 {
             let selectedWine = wines[randomRow]
             titleLabel.text = selectedWine.title
-            brandLabel.text = "Produced by \(selectedWine.brand ?? "N/A")"
+            brandLabel.text = "Produced by \(selectedWine.brand ?? Constants.AppTextInfo.notApplicable)"
         }
     }
 }

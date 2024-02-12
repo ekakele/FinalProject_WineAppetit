@@ -28,9 +28,8 @@ final class WineListViewController: UIViewController {
         return label
     }()
     
-    private let searchBar = CustomSearchBar(placeholder: "Search for a wine")
+    private let searchBar = CustomSearchController(placeholder: "Search for a wine")
     private let activityIndicator = ActivityIndicator()
-    
     private var wines = [Wine]()
     private let viewModel = WineListViewModel()
     
@@ -38,25 +37,19 @@ final class WineListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupNavigationBar()
+        setupNavigationBarTitle()
         setupSearchBar()
         setupViewModel()
         setupUI()
     }
     
     // MARK: - Private Methods
-    private func setupNavigationBar() {
-        navigationItem.title = "Georgian Wines"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        if #available(iOS 17.0, *) {
-            navigationItem.largeTitleDisplayMode = .inline
-        } else {
-            navigationItem.largeTitleDisplayMode = .automatic
-        }
+    private func setupNavigationBarTitle() {
+        NavigationBarManager.setupNavigationBar(for: self, title: "Georgian Wines")
     }
     
     private func setupSearchBar() {
-        searchBar.searchBarDelegate = self
+        searchBar.searchControllerDelegate = self
         navigationItem.searchController = searchBar
     }
     
@@ -142,9 +135,15 @@ extension WineListViewController: UICollectionViewDelegate {
 extension WineListViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = Int((view.frame.width - 48) / 2)
-        let height = 180
-        return CGSize(width: width, height: height)
+        let inset: CGFloat = 16
+        let spacing: CGFloat = 16
+        let numberOfItemsPerRow: CGFloat = 2
+        let totalSpacing = (numberOfItemsPerRow - 1) * spacing
+        let availableWidth = collectionView.bounds.width - inset * 2 - totalSpacing
+        let itemWidth = availableWidth / numberOfItemsPerRow
+        let itemHeight: CGFloat = 180
+        
+        return CGSize(width: itemWidth, height: itemHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -175,7 +174,7 @@ extension WineListViewController: WineListViewModelDelegate {
         DispatchQueue.main.async {
             self.activityIndicator.hide()
         }
-        print("error")
+        print(error)
     }
     
     func navigateToWineDetails(with wineID: Int) {
@@ -184,9 +183,13 @@ extension WineListViewController: WineListViewModelDelegate {
     }
 }
 
-// MARK: - CustomSearchBar
-extension WineListViewController: SearchBarDelegate {
+// MARK: - CustomSearchController
+extension WineListViewController: CustomSearchControllerDelegate {
     func searchBarDidSearch(with text: String) {
         viewModel.searchWines(with: text)
+    }
+    
+    func searchBarDidCancel() {
+        viewModel.viewDidLoad()
     }
 }

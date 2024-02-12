@@ -16,13 +16,13 @@
 		B50550CB2B5FCA160040CA56 /* GenericNetworkManager in Frameworks */ = {isa = PBXBuildFile; productRef = B50550CA2B5FCA160040CA56 /* GenericNetworkManager */; };
 		B50550CD2B5FCC150040CA56 /* Wine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550CC2B5FCC150040CA56 /* Wine.swift */; };
 		B50550CF2B5FDABC0040CA56 /* WineListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550CE2B5FDABC0040CA56 /* WineListViewModel.swift */; };
-		B50550D22B5FE0840040CA56 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550D12B5FE0840040CA56 /* CustomSearchBar.swift */; };
+		B50550D22B5FE0840040CA56 /* CustomSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550D12B5FE0840040CA56 /* CustomSearchController.swift */; };
 		B50550D82B6013810040CA56 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550D72B6013810040CA56 /* AppConstants.swift */; };
 		B50550DE2B6039FC0040CA56 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550DD2B6039FC0040CA56 /* ImageLoader.swift */; };
 		B50550E02B6040610040CA56 /* ShortInfoStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550DF2B6040610040CA56 /* ShortInfoStackView.swift */; };
 		B50550E22B6040C00040CA56 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50550E12B6040C00040CA56 /* CustomLabel.swift */; };
 		B51764822B6D8CB9000DF5E8 /* SpinTheBottleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51764812B6D8CB9000DF5E8 /* SpinTheBottleViewController.swift */; };
-		B51764842B6DB553000DF5E8 /* SpinTheBottleGameQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51764832B6DB553000DF5E8 /* SpinTheBottleGameQuestions.swift */; };
+		B51764842B6DB553000DF5E8 /* SpinTheBottleGameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51764832B6DB553000DF5E8 /* SpinTheBottleGameData.swift */; };
 		B5304D0C2B779EC200932B45 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5304D0B2B779EC200932B45 /* Onboarding.swift */; };
 		B5304D0E2B779F4F00932B45 /* OnboardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5304D0D2B779F4F00932B45 /* OnboardingData.swift */; };
 		B5304D102B77A11100932B45 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5304D0F2B77A11100932B45 /* OnboardingViewModel.swift */; };
@@ -41,6 +41,7 @@
 		B531DB8D2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531DB8C2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift */; };
 		B53B28D02B6FC350006CC480 /* WineRandomizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53B28CF2B6FC350006CC480 /* WineRandomizerViewController.swift */; };
 		B53F4D0C2B720C390032AED5 /* WineRandomizerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53F4D0B2B720C390032AED5 /* WineRandomizerViewModel.swift */; };
+		B54F09962B7A5BA800E85445 /* NavigationBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54F09952B7A5BA800E85445 /* NavigationBarManager.swift */; };
 		B5517D2C2B61775C004A4961 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5517D2B2B61775C004A4961 /* ActivityIndicator.swift */; };
 		B56CED632B6AA84E00F2F6EC /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56CED622B6AA84E00F2F6EC /* Color+Hex.swift */; };
 		B56CED662B6AAB1E00F2F6EC /* MyWineLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56CED652B6AAB1E00F2F6EC /* MyWineLibraryView.swift */; };
@@ -78,13 +79,13 @@
 		B50550C72B5FC9910040CA56 /* WineItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		B50550CC2B5FCC150040CA56 /* Wine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wine.swift; sourceTree = "<group>"; };
 		B50550CE2B5FDABC0040CA56 /* WineListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineListViewModel.swift; sourceTree = "<group>"; };
-		B50550D12B5FE0840040CA56 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
+		B50550D12B5FE0840040CA56 /* CustomSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchController.swift; sourceTree = "<group>"; };
 		B50550D72B6013810040CA56 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		B50550DD2B6039FC0040CA56 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		B50550DF2B6040610040CA56 /* ShortInfoStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortInfoStackView.swift; sourceTree = "<group>"; };
 		B50550E12B6040C00040CA56 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		B51764812B6D8CB9000DF5E8 /* SpinTheBottleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinTheBottleViewController.swift; sourceTree = "<group>"; };
-		B51764832B6DB553000DF5E8 /* SpinTheBottleGameQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinTheBottleGameQuestions.swift; sourceTree = "<group>"; };
+		B51764832B6DB553000DF5E8 /* SpinTheBottleGameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinTheBottleGameData.swift; sourceTree = "<group>"; };
 		B5304D0B2B779EC200932B45 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		B5304D0D2B779F4F00932B45 /* OnboardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingData.swift; sourceTree = "<group>"; };
 		B5304D0F2B77A11100932B45 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
@@ -103,6 +104,7 @@
 		B531DB8C2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineDetailsViewControllerRepresentableView.swift; sourceTree = "<group>"; };
 		B53B28CF2B6FC350006CC480 /* WineRandomizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineRandomizerViewController.swift; sourceTree = "<group>"; };
 		B53F4D0B2B720C390032AED5 /* WineRandomizerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineRandomizerViewModel.swift; sourceTree = "<group>"; };
+		B54F09952B7A5BA800E85445 /* NavigationBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarManager.swift; sourceTree = "<group>"; };
 		B5517D2B2B61775C004A4961 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		B56CED622B6AA84E00F2F6EC /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		B56CED652B6AAB1E00F2F6EC /* MyWineLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWineLibraryView.swift; sourceTree = "<group>"; };
@@ -161,7 +163,6 @@
 			isa = PBXGroup;
 			children = (
 				B50550BC2B5E41770040CA56 /* App */,
-				B50550BE2B5E41930040CA56 /* NetworkManager */,
 				B50550BF2B5E419A0040CA56 /* Models */,
 				B50550C02B5E41BD0040CA56 /* Scenes */,
 				B50550D02B5FE04E0040CA56 /* Components */,
@@ -186,18 +187,11 @@
 		B50550BD2B5E417F0040CA56 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B50550B12B5E412B0040CA56 /* Assets.xcassets */,
-				B58EDED52B6E34CB0063D46D /* popSound.mp3 */,
+				B54F09982B7A67D100E85445 /* Images */,
+				B54F09972B7A67BD00E85445 /* Audio */,
 				B50550B32B5E412B0040CA56 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		B50550BE2B5E41930040CA56 /* NetworkManager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 		B50550BF2B5E419A0040CA56 /* Models */ = {
@@ -216,11 +210,11 @@
 				B5BCAFFC2B779388002A1FB8 /* Onboarding */,
 				B58EDED92B6ED5A70063D46D /* TabBarController */,
 				B50550C52B5FC90E0040CA56 /* List */,
+				B53B28CE2B6FC30A006CC480 /* WineRandomizer */,
 				B58E60572B62E853000458BD /* Details */,
 				B56CED642B6AAAFB00F2F6EC /* MyWineLibrary */,
 				B5B05E992B67E34E00EFDDA1 /* CalorieCounter */,
 				B51764802B6D8C6C000DF5E8 /* SpinTheBottle */,
-				B53B28CE2B6FC30A006CC480 /* WineRandomizer */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -255,10 +249,10 @@
 		B50550D62B6013730040CA56 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				B50550D72B6013810040CA56 /* AppConstants.swift */,
-				B5B05E9E2B67E58000EFDDA1 /* WineData.swift */,
-				B51764832B6DB553000DF5E8 /* SpinTheBottleGameQuestions.swift */,
 				B5304D0D2B779F4F00932B45 /* OnboardingData.swift */,
+				B5B05E9E2B67E58000EFDDA1 /* WineData.swift */,
+				B51764832B6DB553000DF5E8 /* SpinTheBottleGameData.swift */,
+				B50550D72B6013810040CA56 /* AppConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -269,6 +263,7 @@
 				B50550DD2B6039FC0040CA56 /* ImageLoader.swift */,
 				B58E60552B62AF16000458BD /* UserPreferencesManager.swift */,
 				B5304D132B77A4E400932B45 /* CornerRadiusStyle.swift */,
+				B54F09952B7A5BA800E85445 /* NavigationBarManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -289,6 +284,22 @@
 				B53F4D0B2B720C390032AED5 /* WineRandomizerViewModel.swift */,
 			);
 			path = WineRandomizer;
+			sourceTree = "<group>";
+		};
+		B54F09972B7A67BD00E85445 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				B58EDED52B6E34CB0063D46D /* popSound.mp3 */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		B54F09982B7A67D100E85445 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B50550B12B5E412B0040CA56 /* Assets.xcassets */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		B56CED642B6AAAFB00F2F6EC /* MyWineLibrary */ = {
@@ -312,7 +323,7 @@
 				B5517D2B2B61775C004A4961 /* ActivityIndicator.swift */,
 				B50550E12B6040C00040CA56 /* CustomLabel.swift */,
 				B50550DF2B6040610040CA56 /* ShortInfoStackView.swift */,
-				B50550D12B5FE0840040CA56 /* CustomSearchBar.swift */,
+				B50550D12B5FE0840040CA56 /* CustomSearchController.swift */,
 			);
 			path = UIKitComponents;
 			sourceTree = "<group>";
@@ -473,7 +484,7 @@
 				B50550AD2B5E41290040CA56 /* WineListViewController.swift in Sources */,
 				B5517D2C2B61775C004A4961 /* ActivityIndicator.swift in Sources */,
 				B50550D82B6013810040CA56 /* AppConstants.swift in Sources */,
-				B50550D22B5FE0840040CA56 /* CustomSearchBar.swift in Sources */,
+				B50550D22B5FE0840040CA56 /* CustomSearchController.swift in Sources */,
 				B5B17D532B713E9800734CB0 /* MenuButton.swift in Sources */,
 				B58E60752B645B91000458BD /* WineDetailsViewModel.swift in Sources */,
 				B50550DE2B6039FC0040CA56 /* ImageLoader.swift in Sources */,
@@ -495,6 +506,7 @@
 				B50550A92B5E41290040CA56 /* AppDelegate.swift in Sources */,
 				B5304D0C2B779EC200932B45 /* Onboarding.swift in Sources */,
 				B56CED6C2B6AAC3900F2F6EC /* ShelfTitleView.swift in Sources */,
+				B54F09962B7A5BA800E85445 /* NavigationBarManager.swift in Sources */,
 				B50550AB2B5E41290040CA56 /* SceneDelegate.swift in Sources */,
 				B56CED662B6AAB1E00F2F6EC /* MyWineLibraryView.swift in Sources */,
 				B56CED6E2B6AAE0400F2F6EC /* ItemCellView.swift in Sources */,
@@ -506,7 +518,7 @@
 				B50550CF2B5FDABC0040CA56 /* WineListViewModel.swift in Sources */,
 				B58EDEDB2B6ED5BD0063D46D /* TabBarController.swift in Sources */,
 				B5816D4A2B6518C000550FE9 /* WineDetails.swift in Sources */,
-				B51764842B6DB553000DF5E8 /* SpinTheBottleGameQuestions.swift in Sources */,
+				B51764842B6DB553000DF5E8 /* SpinTheBottleGameData.swift in Sources */,
 				B58E60712B63C072000458BD /* WineDetailsViewController.swift in Sources */,
 				B58EDED82B6EA1DF0063D46D /* SpinTheBottleViewModel.swift in Sources */,
 				B531DB8D2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift in Sources */,
@@ -661,8 +673,8 @@
 				INFOPLIST_FILE = FinalProject_WineAppetit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -689,8 +701,8 @@
 				INFOPLIST_FILE = FinalProject_WineAppetit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -12,72 +12,74 @@ final class TabBarController: UITabBarController {
     // MARK: - Properties
     private let wineListViewController = WineListViewController()
     private let wineRandomizerViewController = WineRandomizerViewController()
+    private let myWineLibraryView = MyWineLibraryView(viewModel: MyWineLibraryViewModel())
     private let calorieCounterViewController = CalorieCounterViewController()
     private let spinTheBottleViewController = SpinTheBottleViewController()
-    private let myWineLibraryView = MyWineLibraryView(viewModel: MyWineLibraryViewModel())
- 
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
         
-        setupTabBarInitialUI()
-        setupTabBar()
+        tabBarInitialConfiguration()
+        setupViewControllers()
     }
     
     // MARK: - Private Methods
-    private func setupTabBarInitialUI() {
-        tabBar.backgroundColor = .systemBackground
-        tabBar.tintColor = Constants.AppUIColor.redFill
+    private func tabBarInitialConfiguration() {
+        configureTabBar(
+            backgroundColor: .systemBackground,
+            tintColor: Constants.AppUIColor.redFill,
+            unselectedItemTintColor: nil,
+            isTranslucent: false
+        )
     }
     
-    private func setupTabBar() {
-        let wineListNavigationController = UINavigationController(rootViewController: wineListViewController)
-        let wineListTab =  createTabBarItem(
-            viewController: wineListNavigationController,
-            title: "Wines",
-            icon: UIImage(systemName: "list.dash")
-        )
-        
-        let wineRandomizerNavigationController = UINavigationController(rootViewController: wineRandomizerViewController)
-        let wineRandomizerTab =  createTabBarItem(
-            viewController: wineRandomizerNavigationController,
-            title: "Randomizer",
-            icon: UIImage(systemName: "arcade.stick.and.arrow.up.and.arrow.down")
-        )
-        
-        let myWineLibraryHostingController = UIHostingController(rootView: myWineLibraryView)
-        let myWineLibraryTab =  createTabBarItem(
-            viewController: myWineLibraryHostingController,
-            title: "My Wine Library",
-            icon: UIImage(systemName: "books.vertical.fill")
-        )
-        
-        let calorieCounterTab =  createTabBarItem(
-            viewController: calorieCounterViewController,
-            title: "Track Calories",
-            icon: UIImage(systemName: "figure.yoga")
-        )
-        
-        let spinTheBottleTab =  createTabBarItem(
-            viewController: spinTheBottleViewController,
-            title: "Game",
-            icon: UIImage(systemName: "gamecontroller")
-        )
-        
-        self.setViewControllers([
-            wineListTab,
-            wineRandomizerTab,
-            myWineLibraryTab,
-            calorieCounterTab,
-            spinTheBottleTab
-        ], animated: true)
+    private func setupViewControllers() {
+        let viewControllers = [
+            createNavigationController(
+                for: wineListViewController,
+                title: "Wines",
+                icon: "list.dash"
+            ),
+            
+            createNavigationController(
+                for: wineRandomizerViewController,
+                title: "Randomizer",
+                icon: "arcade.stick.and.arrow.up.and.arrow.down"
+            ),
+            
+            createHostingController(
+                for: myWineLibraryView,
+                title: "My Wine Library",
+                icon: "books.vertical.fill"
+            ),
+            
+            createNavigationController(
+                for: calorieCounterViewController,
+                title: "Calorie Tracker",
+                icon: "figure.yoga"
+            ),
+            
+            createNavigationController(
+                for: spinTheBottleViewController,
+                title:  "Game",
+                icon: "gamecontroller"
+            )
+        ]
+        self.setViewControllers(viewControllers, animated: true)
+    }
+
+    private func createNavigationController(for rootViewController: UIViewController, title: String, icon: String) -> UINavigationController {
+        let navigationController = UINavigationController(rootViewController: rootViewController)
+        navigationController.tabBarItem = UITabBarItem(title: title, image: UIImage(systemName: icon), selectedImage: nil)
+        return navigationController
     }
     
-    private func createTabBarItem(viewController: UIViewController, title: String, icon: UIImage?) -> UIViewController {
-        viewController.tabBarItem.title = title
-        viewController.tabBarItem.image = icon
-        return viewController
+    private func createHostingController<T: View>(for rootView: T, title: String, icon: String) -> UIHostingController<T> {
+        let hostingController = UIHostingController(rootView: rootView)
+        hostingController.tabBarItem = UITabBarItem(title: title, image: UIImage(systemName: icon), selectedImage: nil)
+        return hostingController
     }
 }
 
@@ -88,23 +90,48 @@ extension TabBarController: UITabBarControllerDelegate {
     }
     
     private func updateTabBarBackground(for viewController: UIViewController) {
-        if viewController == wineListViewController ||
-               viewController is UINavigationController && (viewController as! UINavigationController).viewControllers.first is WineListViewController ||
-               viewController == wineRandomizerViewController ||
-               viewController is UINavigationController && (viewController as! UINavigationController).viewControllers.first is WineRandomizerViewController {
-            tabBar.backgroundColor = .systemBackground
-            tabBar.tintColor = Constants.AppUIColor.redFill
-            tabBar.unselectedItemTintColor = nil
-        } else if viewController == calorieCounterViewController || (viewController as? UINavigationController)?.viewControllers.first is CalorieCounterViewController {
-            tabBar.backgroundColor = .clear
-            tabBar.isTranslucent = true
-            tabBar.tintColor = Constants.AppUIColor.redFill
-            tabBar.unselectedItemTintColor = Constants.AppUIColor.burgundy.withAlphaComponent(0.5)
+        let isWineViewController = isViewControllerOfType(viewController, type: WineListViewController.self) || isViewControllerOfType(viewController, type: WineRandomizerViewController.self)
+        
+        let isCalorieCounterViewController = isViewControllerOfType(viewController, type: CalorieCounterViewController.self)
+        
+        if isWineViewController {
+            configureTabBar(
+                backgroundColor: .systemBackground,
+                tintColor: Constants.AppUIColor.redFill,
+                unselectedItemTintColor: nil,
+                isTranslucent: false
+            )
+        } else if isCalorieCounterViewController {
+            configureTabBar(
+                backgroundColor: .clear,
+                tintColor: Constants.AppUIColor.redFill,
+                unselectedItemTintColor: Constants.AppUIColor.burgundy.withAlphaComponent(0.5),
+                isTranslucent: true
+            )
         } else {
-            tabBar.backgroundColor = .clear
-            tabBar.isTranslucent = true
-            tabBar.tintColor = Constants.AppUIColor.lightGreen
-            tabBar.unselectedItemTintColor = Constants.AppUIColor.darkGreen
+            configureTabBar(
+                backgroundColor: .clear,
+                tintColor: Constants.AppUIColor.lightGreen,
+                unselectedItemTintColor: Constants.AppUIColor.darkGreen,
+                isTranslucent: true
+            )
         }
+    }
+
+    private func configureTabBar(backgroundColor: UIColor, tintColor: UIColor, unselectedItemTintColor: UIColor?, isTranslucent: Bool) {
+        tabBar.backgroundColor = backgroundColor
+        tabBar.tintColor = tintColor
+        tabBar.unselectedItemTintColor = unselectedItemTintColor
+        tabBar.isTranslucent = isTranslucent
+    }
+    
+    private func isViewControllerOfType<T: UIViewController>(_ viewController: UIViewController, type: T.Type) -> Bool {
+        if viewController is T {
+            return true
+        } else if let navigationController = viewController as? UINavigationController,
+                  navigationController.viewControllers.first is T {
+            return true
+        }
+        return false
     }
 }

@@ -13,7 +13,7 @@ struct Constants {
     struct API {
         static let wineApiBaseURL = "https://api.openwine.space/"
         static let wineApiEndpoint = "api/wines?page=1"
-        static let wineApiKey = "" //TODO: - add key to API
+        static let wineApiKey = "I1OlqZqktc4uiojE6TRpvbzm3gylR1"
     }
     
     struct AppTextInfo {

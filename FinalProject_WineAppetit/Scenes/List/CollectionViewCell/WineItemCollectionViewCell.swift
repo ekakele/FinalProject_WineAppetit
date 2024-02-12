@@ -9,8 +9,6 @@ import UIKit
 
 final class WineItemCollectionViewCell: UICollectionViewCell {
     // MARK: - Properties
-    static let identifier = "ItemCollectionViewCell"
-    
     private lazy var cellStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [itemImageView, infoStackView])
         stackView.axis = .vertical
@@ -97,6 +95,7 @@ final class WineItemCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
+    static let identifier = "ItemCollectionViewCell"
     private let activityIndicator = ActivityIndicator()
     private var wine: Wine?
     
@@ -115,8 +114,6 @@ final class WineItemCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        //        activityIndicator.show()
-        
         itemImageView.image = nil
         titleLabel.text = nil
         categoryLabel.text = nil
@@ -132,7 +129,6 @@ final class WineItemCollectionViewCell: UICollectionViewCell {
         
         activityIndicator.show()
         
-        //        displayImage(for: wine)
         setupItemImageView(for: wine)
         titleLabel.text = wine.title
         categoryLabel.text = wine.categoriesList.first
@@ -161,14 +157,13 @@ final class WineItemCollectionViewCell: UICollectionViewCell {
     }
     
     private func addSubviews() {
-        addSubview(activityIndicator)
-        addSubview(cellStackView)
-        
         cellStackView.addSubview(vintageYearLabel)
         cellStackView.addSubview(addToFavoritesButton)
         cellStackView.addSubview(shadeView)
         cellStackView.sendSubviewToBack(shadeView)
         
+        addSubview(activityIndicator)
+        addSubview(cellStackView)
     }
     
     private func setupShadeConstraints() {

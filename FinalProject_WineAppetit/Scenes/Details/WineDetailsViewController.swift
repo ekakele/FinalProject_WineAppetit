@@ -134,34 +134,38 @@ final class WineDetailsViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         
         viewModel.delegate = self
-        hidesBottomBarWhenPushed = true
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     // MARK: - LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         viewModel.viewDidLoad()
         
-        setupNavigationBar()
+        setupNavigationBarTitle()
         setupAddButtonAction()
         setupUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.extendedLayoutIncludesOpaqueBars = true
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     // MARK: - Private Methods
-    private func setupNavigationBar() {
-        navigationItem.title = "Wine Details"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        if #available(iOS 17.0, *) {
-            navigationItem.largeTitleDisplayMode = .inline
-        } else {
-            navigationItem.largeTitleDisplayMode = .automatic
-        }
+    private func setupNavigationBarTitle() {
+        NavigationBarManager.setupNavigationBar(for: self, title: "Wine Details")
     }
     
     private func setupAddButtonAction() {
