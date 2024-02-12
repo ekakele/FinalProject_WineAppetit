@@ -30,7 +30,6 @@ final class WineListViewController: UIViewController {
     
     private let searchBar = CustomSearchBar(placeholder: "Search for a wine")
     private let activityIndicator = ActivityIndicator()
-    
     private var wines = [Wine]()
     private let viewModel = WineListViewModel()
     
@@ -142,9 +141,15 @@ extension WineListViewController: UICollectionViewDelegate {
 extension WineListViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = Int((view.frame.width - 48) / 2)
-        let height = 180
-        return CGSize(width: width, height: height)
+        let inset: CGFloat = 16
+        let spacing: CGFloat = 16
+        let numberOfItemsPerRow: CGFloat = 2
+        let totalSpacing = (numberOfItemsPerRow - 1) * spacing
+        let availableWidth = collectionView.bounds.width - inset * 2 - totalSpacing
+        let itemWidth = availableWidth / numberOfItemsPerRow
+        let itemHeight: CGFloat = 180
+        
+        return CGSize(width: itemWidth, height: itemHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -175,7 +180,7 @@ extension WineListViewController: WineListViewModelDelegate {
         DispatchQueue.main.async {
             self.activityIndicator.hide()
         }
-        print("error")
+        print(error)
     }
     
     func navigateToWineDetails(with wineID: Int) {
