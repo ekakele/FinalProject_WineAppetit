@@ -208,11 +208,11 @@
 				B5BCAFFC2B779388002A1FB8 /* Onboarding */,
 				B58EDED92B6ED5A70063D46D /* TabBarController */,
 				B50550C52B5FC90E0040CA56 /* List */,
+				B53B28CE2B6FC30A006CC480 /* WineRandomizer */,
 				B58E60572B62E853000458BD /* Details */,
 				B56CED642B6AAAFB00F2F6EC /* MyWineLibrary */,
 				B5B05E992B67E34E00EFDDA1 /* CalorieCounter */,
 				B51764802B6D8C6C000DF5E8 /* SpinTheBottle */,
-				B53B28CE2B6FC30A006CC480 /* WineRandomizer */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
