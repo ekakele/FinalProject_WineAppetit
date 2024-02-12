@@ -75,7 +75,6 @@ final class DefaultWineDetailsViewModel: WineDetailsViewModel {
                 }
             } catch {
                 self.delegate?.showError(error)
-                print("Error loading image: \(error)")
             }
         }
     }
