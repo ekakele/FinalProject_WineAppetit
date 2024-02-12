@@ -171,7 +171,6 @@ final class CalorieCounterViewController: UIViewController {
         return glassNumber * calorieInfo.calories
     }
     
-    // MARK: - UI Setup
     private func setupUI() {
         setupBackground()
         addSubviews()
@@ -195,13 +194,13 @@ final class CalorieCounterViewController: UIViewController {
             backgroundImage.topAnchor.constraint(equalTo: view.topAnchor),
             backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
     
     private func setupGradientBackground() {
         view.layer.insertSublayer(gradientLayer, at: 0)
-        gradientLayer.frame = view.frame //view VS bounds??
+        gradientLayer.frame = view.frame
         
         updateBackgroundForWineType()
     }
@@ -230,7 +229,7 @@ final class CalorieCounterViewController: UIViewController {
     private func setupCounterStackViewConstraints() {
         NSLayoutConstraint.activate([
             counterStackView.leadingAnchor.constraint(equalTo: mainStackView.leadingAnchor, constant: 100),
-            counterStackView.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor, constant: -100),
+            counterStackView.trailingAnchor.constraint(equalTo: mainStackView.trailingAnchor, constant: -100)
         ])
     }
     
@@ -244,13 +243,9 @@ final class CalorieCounterViewController: UIViewController {
     }
 }
 
-
-//1 glass = 148ml
 // MARK: - UIPickerView DataSource
 extension CalorieCounterViewController: UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        2
-    }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int { 2 }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if component == 0 {
@@ -299,7 +294,7 @@ extension CalorieCounterViewController: UIPickerViewDelegate {
     }
 }
 
-// MARK: - CalorieCounterViewModelDelegate Methods
+// MARK: - CalorieCounterViewModelDelegate
 extension CalorieCounterViewController: CalorieCounterViewModelDelegate {
     func didUpdateGlassNumber(_ viewModel: CalorieCounterViewModel) {
         updateLabels()
