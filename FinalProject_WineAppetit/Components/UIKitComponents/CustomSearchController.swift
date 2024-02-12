@@ -9,6 +9,7 @@ import UIKit
 
 protocol CustomSearchControllerDelegate: AnyObject {
     func searchBarDidSearch(with text: String)
+    func searchBarDidCancel()
 }
 
 final class CustomSearchController: UISearchController {
@@ -38,15 +39,24 @@ final class CustomSearchController: UISearchController {
         
         searchBar.placeholder = placeholder
         definesPresentationContext = true
+        
+        searchBar.delegate = self
     }
 }
 
-// MARK: - UISearchResultsUpdating Extension
+// MARK: - UISearchResultsUpdating
 extension CustomSearchController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text, !searchText.isEmpty else {
             return
         }
         searchControllerDelegate?.searchBarDidSearch(with: searchText)
+    }
+}
+
+// MARK: - UISearchBarDelegate
+extension CustomSearchController: UISearchBarDelegate {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchControllerDelegate?.searchBarDidCancel()
     }
 }

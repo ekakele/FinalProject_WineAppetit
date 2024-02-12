@@ -188,4 +188,8 @@ extension WineListViewController: CustomSearchControllerDelegate {
     func searchBarDidSearch(with text: String) {
         viewModel.searchWines(with: text)
     }
+    
+    func searchBarDidCancel() {
+        viewModel.viewDidLoad()
+    }
 }
