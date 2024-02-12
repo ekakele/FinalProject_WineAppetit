@@ -59,4 +59,10 @@ extension CustomSearchController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchControllerDelegate?.searchBarDidCancel()
     }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            searchControllerDelegate?.searchBarDidCancel()
+        }
+    }
 }
