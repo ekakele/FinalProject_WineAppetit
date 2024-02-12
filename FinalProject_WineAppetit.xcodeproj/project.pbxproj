@@ -187,8 +187,8 @@
 		B50550BD2B5E417F0040CA56 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B50550B12B5E412B0040CA56 /* Assets.xcassets */,
-				B58EDED52B6E34CB0063D46D /* popSound.mp3 */,
+				B54F09982B7A67D100E85445 /* Images */,
+				B54F09972B7A67BD00E85445 /* Audio */,
 				B50550B32B5E412B0040CA56 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
@@ -249,10 +249,10 @@
 		B50550D62B6013730040CA56 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				B50550D72B6013810040CA56 /* AppConstants.swift */,
+				B5304D0D2B779F4F00932B45 /* OnboardingData.swift */,
 				B5B05E9E2B67E58000EFDDA1 /* WineData.swift */,
 				B51764832B6DB553000DF5E8 /* SpinTheBottleGameData.swift */,
-				B5304D0D2B779F4F00932B45 /* OnboardingData.swift */,
+				B50550D72B6013810040CA56 /* AppConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -284,6 +284,22 @@
 				B53F4D0B2B720C390032AED5 /* WineRandomizerViewModel.swift */,
 			);
 			path = WineRandomizer;
+			sourceTree = "<group>";
+		};
+		B54F09972B7A67BD00E85445 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				B58EDED52B6E34CB0063D46D /* popSound.mp3 */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		B54F09982B7A67D100E85445 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B50550B12B5E412B0040CA56 /* Assets.xcassets */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		B56CED642B6AAAFB00F2F6EC /* MyWineLibrary */ = {
