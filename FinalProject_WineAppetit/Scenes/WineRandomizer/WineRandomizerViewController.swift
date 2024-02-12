@@ -350,7 +350,7 @@ extension WineRandomizerViewController: WineRandomizerViewModelDelegate {
         if maxRow >= 0 {
             let selectedWine = wines[randomRow]
             titleLabel.text = selectedWine.title
-            brandLabel.text = "Produced by \(selectedWine.brand ?? "N/A")"
+            brandLabel.text = "Produced by \(selectedWine.brand ?? Constants.AppTextInfo.notApplicable)"
         }
     }
 }
