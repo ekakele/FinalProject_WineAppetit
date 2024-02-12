@@ -161,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				B50550BC2B5E41770040CA56 /* App */,
-				B50550BE2B5E41930040CA56 /* NetworkManager */,
 				B50550BF2B5E419A0040CA56 /* Models */,
 				B50550C02B5E41BD0040CA56 /* Scenes */,
 				B50550D02B5FE04E0040CA56 /* Components */,
@@ -191,13 +190,6 @@
 				B50550B32B5E412B0040CA56 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		B50550BE2B5E41930040CA56 /* NetworkManager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 		B50550BF2B5E419A0040CA56 /* Models */ = {
