@@ -27,8 +27,10 @@ struct MyWineLibraryView: View {
                 .allowsHitTesting(zoomedWineID != nil)
             
             scrollingSectionAndButtonView
-                .padding(.top, 10)
                 .allowsHitTesting(zoomedWineID == nil)
+        }
+        .onAppear {
+            viewModel.refreshData()
         }
     }
     
@@ -38,6 +40,7 @@ struct MyWineLibraryView: View {
             generateSectionStackView()
             setupFloatingButtonView
         }
+        .padding(.top, 10)
     }
     
     private var setupFloatingButtonView: some View {
