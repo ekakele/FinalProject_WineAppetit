@@ -64,6 +64,8 @@
 		B5A2E4D52B8D2ECE00633464 /* AVCaptureSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A2E4D42B8D2ECE00633464 /* AVCaptureSessionManager.swift */; };
 		B5A2E4D82B8D2F1700633464 /* BarcodeScannerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A2E4D72B8D2F1700633464 /* BarcodeScannerUIView.swift */; };
 		B5A2E4DA2B8D2F9F00633464 /* BarcodeScannerViewRepresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A2E4D92B8D2F9F00633464 /* BarcodeScannerViewRepresentableView.swift */; };
+		B5A2E4DC2B8D309100633464 /* BarcodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A2E4DB2B8D309100633464 /* BarcodeScannerView.swift */; };
+		B5A2E4DE2B8D31A200633464 /* ScanningLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A2E4DD2B8D31A200633464 /* ScanningLineView.swift */; };
 		B5B05E9B2B67E36E00EFDDA1 /* CalorieCounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B05E9A2B67E36E00EFDDA1 /* CalorieCounterViewController.swift */; };
 		B5B05E9D2B67E38100EFDDA1 /* CalorieCounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B05E9C2B67E38100EFDDA1 /* CalorieCounterViewModel.swift */; };
 		B5B05E9F2B67E58000EFDDA1 /* WineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B05E9E2B67E58000EFDDA1 /* WineData.swift */; };
@@ -130,6 +132,8 @@
 		B5A2E4D42B8D2ECE00633464 /* AVCaptureSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureSessionManager.swift; sourceTree = "<group>"; };
 		B5A2E4D72B8D2F1700633464 /* BarcodeScannerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerUIView.swift; sourceTree = "<group>"; };
 		B5A2E4D92B8D2F9F00633464 /* BarcodeScannerViewRepresentableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerViewRepresentableView.swift; sourceTree = "<group>"; };
+		B5A2E4DB2B8D309100633464 /* BarcodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerView.swift; sourceTree = "<group>"; };
+		B5A2E4DD2B8D31A200633464 /* ScanningLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningLineView.swift; sourceTree = "<group>"; };
 		B5B05E9A2B67E36E00EFDDA1 /* CalorieCounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieCounterViewController.swift; sourceTree = "<group>"; };
 		B5B05E9C2B67E38100EFDDA1 /* CalorieCounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieCounterViewModel.swift; sourceTree = "<group>"; };
 		B5B05E9E2B67E58000EFDDA1 /* WineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineData.swift; sourceTree = "<group>"; };
@@ -349,6 +353,7 @@
 				B56CED6D2B6AAE0400F2F6EC /* ItemCellView.swift */,
 				B56CED6B2B6AAC3900F2F6EC /* ShelfTitleView.swift */,
 				B531DB842B6B80BC00BDCDBA /* FloatingButtonView.swift */,
+				B5A2E4DD2B8D31A200633464 /* ScanningLineView.swift */,
 				B5304D252B7840C000932B45 /* TabBarControllerRepresentableView.swift */,
 				B531DB882B6B9A9E00BDCDBA /* WineListViewControllerRepresentableView.swift */,
 				B531DB8C2B6C292E00BDCDBA /* WineDetailsViewControllerRepresentableView.swift */,
@@ -388,6 +393,7 @@
 			isa = PBXGroup;
 			children = (
 				B5A2E4D72B8D2F1700633464 /* BarcodeScannerUIView.swift */,
+				B5A2E4DB2B8D309100633464 /* BarcodeScannerView.swift */,
 			);
 			path = Scanner;
 			sourceTree = "<group>";
@@ -520,8 +526,10 @@
 				B58E60502B622DD2000458BD /* UIColor+Hex.swift in Sources */,
 				B5304D162B77A5F900932B45 /* RectangleView.swift in Sources */,
 				B56CED722B6AB56700F2F6EC /* HorizontalScrollView.swift in Sources */,
+				B5A2E4DE2B8D31A200633464 /* ScanningLineView.swift in Sources */,
 				B5304D122B77A4A600932B45 /* View+CornerRadius.swift in Sources */,
 				B50550A92B5E41290040CA56 /* AppDelegate.swift in Sources */,
+				B5A2E4DC2B8D309100633464 /* BarcodeScannerView.swift in Sources */,
 				B5304D0C2B779EC200932B45 /* Onboarding.swift in Sources */,
 				B56CED6C2B6AAC3900F2F6EC /* ShelfTitleView.swift in Sources */,
 				B54F09962B7A5BA800E85445 /* NavigationBarManager.swift in Sources */,
