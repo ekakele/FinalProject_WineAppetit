@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 final class WineListViewController: UIViewController {
     // MARK: - Properties
@@ -28,15 +29,17 @@ final class WineListViewController: UIViewController {
         return label
     }()
     
-    private let searchBar = CustomSearchController(placeholder: "Search for a wine")
     private let activityIndicator = ActivityIndicator()
+    private let searchBar = CustomSearchController(placeholder: "Search for a wine")
     private var wines = [Wine]()
     private let viewModel = WineListViewModel()
+    private var floatingButtonHostingController: UIHostingController<FloatingButtonView>?
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupFloatingButton()
         setupNavigationBarTitle()
         setupSearchBar()
         setupViewModel()
@@ -44,6 +47,21 @@ final class WineListViewController: UIViewController {
     }
     
     // MARK: - Private Methods
+    private func setupFloatingButton() {
+        let floatingButtonView = FloatingButtonView(
+            backgroundColor: .white,
+            foregroundColor: .secondary,
+            buttonIcon: "barcode.viewfinder",
+            action: { /*[weak self] in*/
+                print("Floating Button Tapped")
+            }, isPresentingWineListView: .constant(false)
+        )
+        
+        let hostingController = UIHostingController(rootView: floatingButtonView)
+        hostingController.view.backgroundColor = .clear
+        self.floatingButtonHostingController = hostingController
+    }
+    
     private func setupNavigationBarTitle() {
         NavigationBarManager.setupNavigationBar(for: self, title: "Georgian Wines")
     }
@@ -62,6 +80,7 @@ final class WineListViewController: UIViewController {
         setupActivityIndicator()
         setupBackground()
         addSubviews()
+        setupFloatingButtonConstraints()
         setupWineCollectionView()
         setupNoResultsLabelConstraints()
         setupWineCollectionViewConstraints()
@@ -79,6 +98,21 @@ final class WineListViewController: UIViewController {
         view.addSubview(activityIndicator)
         view.addSubview(noResultsLabel)
         view.addSubview(wineCollectionView)
+        
+        if let buttonView = floatingButtonHostingController?.view {
+            view.addSubview(buttonView)
+            view.bringSubviewToFront(buttonView)
+        }
+    }
+    
+    private func setupFloatingButtonConstraints() {
+        if let buttonView = floatingButtonHostingController?.view {
+            buttonView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                buttonView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+                buttonView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            ])
+        }
     }
     
     private func setupNoResultsLabelConstraints() {
