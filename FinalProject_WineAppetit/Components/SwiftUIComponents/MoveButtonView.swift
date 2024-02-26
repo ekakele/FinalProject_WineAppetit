@@ -9,8 +9,8 @@ import SwiftUI
 
 struct MoveButtonView: View {
     // MARK: - Properties
-    var iconImage: String
-    var action: () -> Void
+    let iconImage: String
+    let action: () -> Void
     
     // MARK: - Body
     var body: some View {

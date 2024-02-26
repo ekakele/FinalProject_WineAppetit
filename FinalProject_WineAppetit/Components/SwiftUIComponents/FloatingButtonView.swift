@@ -9,10 +9,10 @@ import SwiftUI
 
 struct FloatingButtonView: View {
     // MARK: - Properties
-    var backgroundColor: Color
-    var foregroundColor: Color
-    var buttonIcon: String
-    var action: () -> Void
+    let backgroundColor: Color
+    let foregroundColor: Color
+    let buttonIcon: String
+    let action: () -> Void
     @Binding var isPresentingWineListView: Bool
     
     // MARK: - Body

@@ -13,7 +13,7 @@ struct TextButtonView: View {
     let textColor: Color
     let fontSize: CGFloat
     let fontWeight: Font.Weight
-    var action: () -> Void
+    let action: () -> Void
     
     // MARK: - Body
     var body: some View {
