@@ -38,8 +38,6 @@ struct FloatingButtonView: View {
             .padding()
             .background(backgroundColor)
             .foregroundColor(foregroundColor)
-//            .background(Constants.AppColor.lightGreen)
-//            .foregroundColor(Constants.AppColor.greenBackground)
             .clipShape(Circle())
             .shadow(color: .black, radius: 4, x: 0.1, y: 0.1)
     }
