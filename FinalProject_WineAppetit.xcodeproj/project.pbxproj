@@ -62,6 +62,7 @@
 		B58EDED82B6EA1DF0063D46D /* SpinTheBottleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58EDED72B6EA1DF0063D46D /* SpinTheBottleViewModel.swift */; };
 		B58EDEDB2B6ED5BD0063D46D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58EDEDA2B6ED5BD0063D46D /* TabBarController.swift */; };
 		B5A2E4D52B8D2ECE00633464 /* AVCaptureSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A2E4D42B8D2ECE00633464 /* AVCaptureSessionManager.swift */; };
+		B5A2E4D82B8D2F1700633464 /* BarcodeScannerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A2E4D72B8D2F1700633464 /* BarcodeScannerUIView.swift */; };
 		B5B05E9B2B67E36E00EFDDA1 /* CalorieCounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B05E9A2B67E36E00EFDDA1 /* CalorieCounterViewController.swift */; };
 		B5B05E9D2B67E38100EFDDA1 /* CalorieCounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B05E9C2B67E38100EFDDA1 /* CalorieCounterViewModel.swift */; };
 		B5B05E9F2B67E58000EFDDA1 /* WineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B05E9E2B67E58000EFDDA1 /* WineData.swift */; };
@@ -126,6 +127,7 @@
 		B58EDED72B6EA1DF0063D46D /* SpinTheBottleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinTheBottleViewModel.swift; sourceTree = "<group>"; };
 		B58EDEDA2B6ED5BD0063D46D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		B5A2E4D42B8D2ECE00633464 /* AVCaptureSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureSessionManager.swift; sourceTree = "<group>"; };
+		B5A2E4D72B8D2F1700633464 /* BarcodeScannerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerUIView.swift; sourceTree = "<group>"; };
 		B5B05E9A2B67E36E00EFDDA1 /* CalorieCounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieCounterViewController.swift; sourceTree = "<group>"; };
 		B5B05E9C2B67E38100EFDDA1 /* CalorieCounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieCounterViewModel.swift; sourceTree = "<group>"; };
 		B5B05E9E2B67E58000EFDDA1 /* WineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineData.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				B50550BC2B5E41770040CA56 /* App */,
 				B50550BF2B5E419A0040CA56 /* Models */,
 				B50550C02B5E41BD0040CA56 /* Scenes */,
+				B5A2E4D62B8D2F0500633464 /* Scanner */,
 				B50550D02B5FE04E0040CA56 /* Components */,
 				B50550DC2B60397D0040CA56 /* Utils */,
 				B58E604E2B622DB4000458BD /* Extensions */,
@@ -378,6 +381,14 @@
 			path = TabBarController;
 			sourceTree = "<group>";
 		};
+		B5A2E4D62B8D2F0500633464 /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				B5A2E4D72B8D2F1700633464 /* BarcodeScannerUIView.swift */,
+			);
+			path = Scanner;
+			sourceTree = "<group>";
+		};
 		B5B05E992B67E34E00EFDDA1 /* CalorieCounter */ = {
 			isa = PBXGroup;
 			children = (
@@ -510,6 +521,7 @@
 				B5304D0C2B779EC200932B45 /* Onboarding.swift in Sources */,
 				B56CED6C2B6AAC3900F2F6EC /* ShelfTitleView.swift in Sources */,
 				B54F09962B7A5BA800E85445 /* NavigationBarManager.swift in Sources */,
+				B5A2E4D82B8D2F1700633464 /* BarcodeScannerUIView.swift in Sources */,
 				B50550AB2B5E41290040CA56 /* SceneDelegate.swift in Sources */,
 				B56CED662B6AAB1E00F2F6EC /* MyWineLibraryView.swift in Sources */,
 				B56CED6E2B6AAE0400F2F6EC /* ItemCellView.swift in Sources */,
