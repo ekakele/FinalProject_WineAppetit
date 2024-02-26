@@ -13,7 +13,7 @@ final class UserPreferencesManager {
     private let defaults = UserDefaults.standard
     
     private let favoritedWineListKey = "favoriteWines"
-    private let onboardingPassStatusKey = "isOnboardingPassed"
+    private let onboardingPassStatusKey = "isOnboardingPassed98"
     
     // MARK: - OnboardingPassStatus Set/Get Methods
     func getOnboardingPassStatus() -> Bool {

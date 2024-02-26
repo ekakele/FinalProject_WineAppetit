@@ -16,6 +16,7 @@ struct BarcodeScannerView: View {
     @State private var scannedBarcode: String = ""
     @State private var navigateToWineView = false
     
+    // MARK: - Body
     var body: some View {
         VStack {
             Text("Scan Wine Bottle's Barcode")
@@ -24,7 +25,6 @@ struct BarcodeScannerView: View {
                 .padding()
             
             BarcodeScannerViewRepresentableView(currentPosition: $currentPosition, scanningState: $scanningState) { barcode in
-                // Handle the scanned barcode
                 print("Scanned barcode: \(barcode)")
                 scannedBarcode = barcode
                 showAlert = true
@@ -51,7 +51,11 @@ struct BarcodeScannerView: View {
                 )
             }
             .sheet(isPresented: $navigateToWineView) {
-//               //TODO: - Navigate to Details page
+                WineDetailsViewControllerRepresentableView(
+                    wineID: Int(scannedBarcode) ?? 0, 
+                    isBarcode: true
+                )
+                    .edgesIgnoringSafeArea(.all)
             }
             Spacer()
         }

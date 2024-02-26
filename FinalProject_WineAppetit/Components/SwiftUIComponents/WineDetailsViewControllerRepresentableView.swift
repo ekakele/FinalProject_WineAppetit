@@ -10,6 +10,7 @@ import SwiftUI
 struct WineDetailsViewControllerRepresentableView:  UIViewControllerRepresentable {
     // MARK: - Properties
     var wineID: Int
+    var isBarcode: Bool = false
     
     // MARK: - Methods
     func makeUIViewController(context: Context) -> UIViewController {
