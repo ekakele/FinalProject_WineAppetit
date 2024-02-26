@@ -30,8 +30,9 @@ final class DefaultWineDetailsViewModel: WineDetailsViewModel {
     private let APIKey = Constants.API.wineApiKey
     
     // MARK: - Init
-    init(wineID: Int) {
+    init(wineID: Int, isBarcode: Bool) {
         self.wineID = wineID
+        self.isBarcode = isBarcode
     }
     
     // MARK: - ViewLifeCycle

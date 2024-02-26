@@ -32,6 +32,19 @@ final class BarcodeScannerUIView: UIView {
         setup()
     }
     
+    //MARK: - Override the layerClass
+    override class var layerClass: AnyClass  {
+        return AVCaptureVideoPreviewLayer.self
+    }
+    
+    override var layer: AVCaptureVideoPreviewLayer {
+        return super.layer as! AVCaptureVideoPreviewLayer
+    }
+    
+    var isRunning: Bool {
+        return captureSession?.isRunning ?? false
+    }
+    
     // MARK: - Methods
     func updateCamera(with position: AVCaptureDevice.Position) {
         guard let captureSession = captureSession else { return }
@@ -61,11 +74,7 @@ final class BarcodeScannerUIView: UIView {
         DispatchQueue.global().async {
             self.captureSession?.stopRunning()
             self.captureSession = nil
-            guard let previewLayer = self.layer as? AVCaptureVideoPreviewLayer else {
-                print("Failed to cast layer as AVCaptureVideoPreviewLayer")
-                return
-            }
-            previewLayer.session = self.captureSession
+            self.layer.session = nil
             DispatchQueue.main.async {
                 self.delegate?.barcodeScanningDidStop()
             }
@@ -81,7 +90,6 @@ final class BarcodeScannerUIView: UIView {
     
     private func setupCaptureSession() {
         let captureSession = AVCaptureSession()
-        captureSession.startRunning()
         
         guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else {
             scanningDidFail()
@@ -114,19 +122,18 @@ final class BarcodeScannerUIView: UIView {
         
         self.captureSession = captureSession
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-            self.layer.opacity = 0
-            if let previewLayer = self.layer as? AVCaptureVideoPreviewLayer {
-                previewLayer.session = self.captureSession
-                previewLayer.videoGravity = .resizeAspectFill
-            } else {
-                print("Failed to cast layer as AVCaptureVideoPreviewLayer")
-                return
-            }
+        DispatchQueue.global(qos: .userInitiated).async {
+            captureSession.startRunning()
             
-            UIView.animate(withDuration: self.cameraLoadingDelay) {
-                self.layer.opacity = 1
-                self.delegate?.cameraLoaded()
+            DispatchQueue.main.async {
+                self.layer.opacity = 0
+                self.layer.session = self.captureSession
+                self.layer.videoGravity = .resizeAspectFill
+                
+                UIView.animate(withDuration: self.cameraLoadingDelay) {
+                    self.layer.opacity = 1
+                    self.delegate?.cameraLoaded()
+                }
             }
         }
     }

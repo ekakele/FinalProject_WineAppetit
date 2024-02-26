@@ -129,8 +129,8 @@ final class WineDetailsViewController: UIViewController {
     private var isFavorited: Bool = false
     
     // MARK: - Inits
-    init(wineID: Int) {
-        viewModel = DefaultWineDetailsViewModel(wineID: wineID)
+    init(wineID: Int, isBarcode: Bool = false) {
+        viewModel = DefaultWineDetailsViewModel(wineID: wineID, isBarcode: isBarcode)
         super.init(nibName: nil, bundle: nil)
         
         viewModel.delegate = self
