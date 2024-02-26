@@ -50,12 +50,16 @@ final class WineListViewController: UIViewController {
     private func setupFloatingButton() {
         let floatingButtonView = FloatingButtonView(
             backgroundColor: .white,
-            foregroundColor: .secondary, 
+            foregroundColor: .secondary,
             shadowColor: .secondary,
             buttonIcon: "barcode.viewfinder",
-            action: { /*[weak self] in*/
-                print("Floating Button Tapped")
-            }, isPresentingWineListView: .constant(false)
+            action: { [weak self] in
+                guard let self = self else { return }
+                let barcodeScannerView = BarcodeScannerView()
+                let hostingController = UIHostingController(rootView: barcodeScannerView)
+                self.navigationController?.present(hostingController, animated: true, completion: nil)
+            },
+            isPresentingWineListView: .constant(false)
         )
         
         let hostingController = UIHostingController(rootView: floatingButtonView)
