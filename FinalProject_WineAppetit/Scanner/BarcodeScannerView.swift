@@ -44,7 +44,7 @@ struct BarcodeScannerView: View {
                 Alert(
                     title: Text("Scanned Barcode"),
                     message: Text(scannedBarcode),
-                    primaryButton: .default(Text("See Wine"), action: {
+                    primaryButton: .default(Text("See Wine Details"), action: {
                         navigateToWineView = true
                     }),
                     secondaryButton: .cancel(Text("Cancel")) {                    }
