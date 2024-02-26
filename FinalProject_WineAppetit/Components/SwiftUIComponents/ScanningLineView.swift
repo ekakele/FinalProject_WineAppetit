@@ -29,10 +29,10 @@ struct ScanningLineView: View {
     // MARK: - Components
     private var rectangleView: some View {
         Rectangle()
-            .fill(Color.red)
+            .fill(Constants.AppColor.burgundy)
             .frame(height: 2)
             .opacity(0.8)
-            .shadow(color: .red, radius: 5)
+            .shadow(color: Constants.AppColor.burgundy, radius: 5)
     }
 }
 
