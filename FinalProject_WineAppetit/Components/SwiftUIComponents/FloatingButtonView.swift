@@ -9,6 +9,8 @@ import SwiftUI
 
 struct FloatingButtonView: View {
     // MARK: - Properties
+    var backgroundColor: Color
+    var foregroundColor: Color
     var buttonIcon: String
     var action: () -> Void
     @Binding var isPresentingWineListView: Bool
@@ -34,13 +36,15 @@ struct FloatingButtonView: View {
             .frame(width: 16, height: 16)
             .font(.largeTitle.weight(.bold))
             .padding()
-            .background(Constants.AppColor.lightGreen)
-            .foregroundColor(Constants.AppColor.greenBackground)
+            .background(backgroundColor)
+            .foregroundColor(foregroundColor)
+//            .background(Constants.AppColor.lightGreen)
+//            .foregroundColor(Constants.AppColor.greenBackground)
             .clipShape(Circle())
             .shadow(color: .black, radius: 4, x: 0.1, y: 0.1)
     }
 }
 
 #Preview {
-    FloatingButtonView(buttonIcon: "plus", action: {}, isPresentingWineListView: .constant(false))
+    FloatingButtonView(backgroundColor: Constants.AppColor.lightGreen, foregroundColor: Constants.AppColor.greenBackground, buttonIcon: "plus", action: {}, isPresentingWineListView: .constant(false))
 }
