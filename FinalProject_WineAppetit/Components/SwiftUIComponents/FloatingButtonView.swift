@@ -11,6 +11,7 @@ struct FloatingButtonView: View {
     // MARK: - Properties
     let backgroundColor: Color
     let foregroundColor: Color
+    let shadowColor: Color
     let buttonIcon: String
     let action: () -> Void
     @Binding var isPresentingWineListView: Bool
@@ -39,10 +40,17 @@ struct FloatingButtonView: View {
             .background(backgroundColor)
             .foregroundColor(foregroundColor)
             .clipShape(Circle())
-            .shadow(color: .black, radius: 4, x: 0.1, y: 0.1)
+            .shadow(color: shadowColor, radius: 3, x: 0.1, y: 0.1)
     }
 }
 
 #Preview {
-    FloatingButtonView(backgroundColor: Constants.AppColor.lightGreen, foregroundColor: Constants.AppColor.greenBackground, buttonIcon: "plus", action: {}, isPresentingWineListView: .constant(false))
+    FloatingButtonView(
+        backgroundColor: Constants.AppColor.lightGreen,
+        foregroundColor: Constants.AppColor.greenBackground,
+        shadowColor: .black, 
+        buttonIcon: "plus",
+        action: {},
+        isPresentingWineListView: .constant(false)
+    )
 }

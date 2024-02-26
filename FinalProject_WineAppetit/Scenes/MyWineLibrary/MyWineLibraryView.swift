@@ -46,7 +46,8 @@ struct MyWineLibraryView: View {
     private var setupFloatingButtonView: some View {
         FloatingButtonView(
             backgroundColor: Constants.AppColor.lightGreen,
-            foregroundColor: Constants.AppColor.greenBackground,
+            foregroundColor: Constants.AppColor.greenBackground, 
+            shadowColor: .black,
             buttonIcon: "plus",
             action: { isPresentingWineListView.toggle() }, 
             isPresentingWineListView: $isPresentingWineListView

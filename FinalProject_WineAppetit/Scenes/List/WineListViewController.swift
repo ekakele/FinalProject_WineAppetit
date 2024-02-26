@@ -50,7 +50,8 @@ final class WineListViewController: UIViewController {
     private func setupFloatingButton() {
         let floatingButtonView = FloatingButtonView(
             backgroundColor: .white,
-            foregroundColor: .secondary,
+            foregroundColor: .secondary, 
+            shadowColor: .secondary,
             buttonIcon: "barcode.viewfinder",
             action: { /*[weak self] in*/
                 print("Floating Button Tapped")
