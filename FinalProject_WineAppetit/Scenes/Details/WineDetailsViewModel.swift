@@ -52,7 +52,6 @@ final class DefaultWineDetailsViewModel: WineDetailsViewModel {
         let idString = String(wineID)
         let APIKeyString = "?apiKey=\(APIKey)"
         let urlString = baseURL + endpoint + idString + APIKeyString
-        print(urlString)
         
         GenericNetworkManager.shared.fetchData(with: urlString) { [weak self] (result: Result<WineDetailsData, Error>) in
             switch result {

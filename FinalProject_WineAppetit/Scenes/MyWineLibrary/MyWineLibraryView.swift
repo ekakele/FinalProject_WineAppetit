@@ -48,7 +48,8 @@ struct MyWineLibraryView: View {
             backgroundColor: Constants.AppColor.lightGreen,
             foregroundColor: Constants.AppColor.greenBackground,
             buttonIcon: "plus",
-            action: { isPresentingWineListView.toggle() }, isPresentingWineListView: $isPresentingWineListView
+            action: { isPresentingWineListView.toggle() }, 
+            isPresentingWineListView: $isPresentingWineListView
         )
         .sheet(
             isPresented: $isPresentingWineListView,
