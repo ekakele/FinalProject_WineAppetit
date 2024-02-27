@@ -18,27 +18,23 @@ struct BarcodeScannerView: View {
     // MARK: - Body
     var body: some View {
         VStack {
-            Text("Scan Wine Bottle's Barcode")
-                .font(.system(size: 24))
-                .bold()
-                .padding()
-            
-            BarcodeScannerViewRepresentableView(/*currentPosition: $currentPosition,*/ scanningState: $scanningState) { barcode in
-                print("Scanned barcode: \(barcode)")
-                scannedBarcode = barcode
-                showAlert = true
-                scanningState = .closed
+            setupTitleView
+            setupNavigateToDetailsView
+            Spacer()
+        }
+        .padding(.top, 50)
+    }
+    
+    // MARK: - Components
+    private var setupNavigateToDetailsView: some View {
+        setupBarcodeScannerAlertView
+            .sheet(isPresented: $navigateToWineView) {
+                wineDetailsRepresentableView
             }
-            .frame(width: 300, height: 400)
-            .overlay(
-                ScanningLineView()
-                    .frame(width: 300, height: 400)
-            )
-            .cornerRadius(12)
-            .overlay(
-                RoundedRectangle(cornerRadius: 12)
-                    .stroke(.gray, lineWidth: 2)
-            )
+    }
+    
+    private var setupBarcodeScannerAlertView: some View {
+        setupBarcodeScannerView
             .alert(isPresented: $showAlert) {
                 Alert(
                     title: Text("Scanned Barcode"),
@@ -46,20 +42,49 @@ struct BarcodeScannerView: View {
                     primaryButton: .default(Text("See Wine Details"), action: {
                         navigateToWineView = true
                     }),
-                    secondaryButton: .cancel(Text("Cancel")) {                    }
+                    secondaryButton: .cancel(Text("Cancel"))
                 )
             }
-            .sheet(isPresented: $navigateToWineView) {
-                WineDetailsViewControllerRepresentableView(
-                    wineID: Int(scannedBarcode) ?? 0, 
-                    isBarcode: true
-                )
-                    .edgesIgnoringSafeArea(.all)
-            }
-            Spacer()
+    }
+    
+    private var setupBarcodeScannerView: some View {
+        BarcodeScannerViewRepresentableView(scanningState: $scanningState) { barcode in
+            print("Scanned barcode: \(barcode)")
+            scannedBarcode = barcode
+            showAlert = true
+            scanningState = .closed
         }
-        .padding(.top, 50)
-        
+        .frame(width: 300, height: 400)
+        .overlay(
+            ScanningLineView()
+                .frame(width: 300, height: 400)
+        )
+        .cornerRadius(12)
+        .overlay(
+            roundedRectangleView
+        )
+    }
+    
+    private var wineDetailsRepresentableView: some View {
+        WineDetailsViewControllerRepresentableView(
+            wineID: Int(scannedBarcode) ?? 0,
+            isBarcode: true
+        )
+        .edgesIgnoringSafeArea(.all)
+    }
+    
+    private var roundedRectangleView: some View {
+        RoundedRectangle(cornerRadius: 12)
+            .stroke(Constants.AppColor.textColor, lineWidth: 2)
+    }
+    
+    private var setupTitleView: some View {
+        MainTitleView(
+            title: "Scan Wine Bottle's Barcode",
+            textSize: 24,
+            textWeight: .bold,
+            textColor: Constants.AppColor.textColor
+        )
     }
 }
 
