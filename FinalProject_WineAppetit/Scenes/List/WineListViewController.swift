@@ -55,16 +55,23 @@ final class WineListViewController: UIViewController {
             buttonIcon: "barcode.viewfinder",
             action: { [weak self] in
                 guard let self = self else { return }
-                let barcodeScannerView = BarcodeScannerView()
-                let hostingController = UIHostingController(rootView: barcodeScannerView)
-                self.navigationController?.present(hostingController, animated: true, completion: nil)
+                self.navigateToBarcodeScannerView()
             },
             isPresentingWineListView: .constant(false)
         )
-        
-        let hostingController = UIHostingController(rootView: floatingButtonView)
+        configureHostingController(for: floatingButtonView)
+    }
+    
+    private func navigateToBarcodeScannerView() {
+        let barcodeScannerView = BarcodeScannerView()
+        let hostingController = UIHostingController(rootView: barcodeScannerView)
+        navigationController?.present(hostingController, animated: true, completion: nil)
+    }
+    
+    private func configureHostingController(for rootView: FloatingButtonView) {
+        let hostingController = UIHostingController(rootView: rootView)
         hostingController.view.backgroundColor = .clear
-        self.floatingButtonHostingController = hostingController
+        floatingButtonHostingController = hostingController
     }
     
     private func setupNavigationBarTitle() {

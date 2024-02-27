@@ -175,7 +175,6 @@
 				B50550BC2B5E41770040CA56 /* App */,
 				B50550BF2B5E419A0040CA56 /* Models */,
 				B50550C02B5E41BD0040CA56 /* Scenes */,
-				B5A2E4D62B8D2F0500633464 /* Scanner */,
 				B50550D02B5FE04E0040CA56 /* Components */,
 				B50550DC2B60397D0040CA56 /* Utils */,
 				B58E604E2B622DB4000458BD /* Extensions */,
@@ -221,8 +220,9 @@
 				B5BCAFFC2B779388002A1FB8 /* Onboarding */,
 				B58EDED92B6ED5A70063D46D /* TabBarController */,
 				B50550C52B5FC90E0040CA56 /* List */,
-				B53B28CE2B6FC30A006CC480 /* WineRandomizer */,
 				B58E60572B62E853000458BD /* Details */,
+				B5A2E4D62B8D2F0500633464 /* BarcodeScanner */,
+				B53B28CE2B6FC30A006CC480 /* WineRandomizer */,
 				B56CED642B6AAAFB00F2F6EC /* MyWineLibrary */,
 				B5B05E992B67E34E00EFDDA1 /* CalorieCounter */,
 				B51764802B6D8C6C000DF5E8 /* SpinTheBottle */,
@@ -389,13 +389,13 @@
 			path = TabBarController;
 			sourceTree = "<group>";
 		};
-		B5A2E4D62B8D2F0500633464 /* Scanner */ = {
+		B5A2E4D62B8D2F0500633464 /* BarcodeScanner */ = {
 			isa = PBXGroup;
 			children = (
 				B5A2E4D72B8D2F1700633464 /* BarcodeScannerUIView.swift */,
 				B5A2E4DB2B8D309100633464 /* BarcodeScannerView.swift */,
 			);
-			path = Scanner;
+			path = BarcodeScanner;
 			sourceTree = "<group>";
 		};
 		B5B05E992B67E34E00EFDDA1 /* CalorieCounter */ = {
