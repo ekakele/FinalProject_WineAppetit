@@ -10,7 +10,6 @@ import AVFoundation
 
 struct BarcodeScannerView: View {
     // MARK: - Properties
-    @State private var currentPosition: AVCaptureDevice.Position = .back
     @State private var scanningState: BarcodeScannerViewRepresentableView.ScanningState = .cameraLoading
     @State private var showAlert = false
     @State private var scannedBarcode: String = ""
@@ -24,7 +23,7 @@ struct BarcodeScannerView: View {
                 .bold()
                 .padding()
             
-            BarcodeScannerViewRepresentableView(currentPosition: $currentPosition, scanningState: $scanningState) { barcode in
+            BarcodeScannerViewRepresentableView(/*currentPosition: $currentPosition,*/ scanningState: $scanningState) { barcode in
                 print("Scanned barcode: \(barcode)")
                 scannedBarcode = barcode
                 showAlert = true

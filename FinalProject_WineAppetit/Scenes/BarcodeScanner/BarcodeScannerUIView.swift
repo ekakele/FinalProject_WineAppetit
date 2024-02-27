@@ -8,162 +8,109 @@
 import UIKit
 import AVFoundation
 
-protocol BarcodeScannerUIViewDelegate: AnyObject {
-    func barcodeScanningDidFail()
-    func barcodeScanningSucceededWithCode(_ barcode: String)
-    func barcodeScanningDidStop()
-    func cameraLoaded()
-    func cameraUnloaded()
-}
-
 final class BarcodeScannerUIView: UIView {
     // MARK: - Properties
-    weak var delegate: BarcodeScannerUIViewDelegate?
-    private let cameraLoadingDelay: Double = 0.5
-    var captureSession: AVCaptureSession?
+    weak var delegate: BarcodeScannerManagerDelegate?
+    private var barcodeScannerManager: BarcodeScannerManager?
+    private var previewLayer: AVCaptureVideoPreviewLayer {
+        return layer as! AVCaptureVideoPreviewLayer
+    }
     
     // MARK: - LifeCycle
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setup()
-    }
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
+        commonInit()
     }
     
-    //MARK: - Override the layerClass
-    override class var layerClass: AnyClass  {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+    }
+    
+    override class var layerClass: AnyClass {
         return AVCaptureVideoPreviewLayer.self
     }
     
-    override var layer: AVCaptureVideoPreviewLayer {
-        return super.layer as! AVCaptureVideoPreviewLayer
-    }
-    
-    var isRunning: Bool {
-        return captureSession?.isRunning ?? false
-    }
-    
     // MARK: - Methods
-    func updateCamera(with position: AVCaptureDevice.Position) {
-        guard let captureSession = captureSession else { return }
-        guard let currentCameraInput = captureSession.inputs.first as? AVCaptureDeviceInput else { return }
-        guard currentCameraInput.device.position != position else { return }
-        
-        captureSession.beginConfiguration()
-        captureSession.removeInput(currentCameraInput)
-        
-        guard let newCamera = cameraWithPosition(position: position) else { return }
-        
-        do {
-            let newVideoInput = try AVCaptureDeviceInput(device: newCamera)
-            captureSession.addInput(newVideoInput)
-            captureSession.commitConfiguration()
-        } catch {
-            print("Error updating camera input: \(error)")
-        }
+    func startScanning() {
+        barcodeScannerManager?.startScanning()
+    }
+    
+    func stopScanning() {
+        barcodeScannerManager?.stopScanning()
     }
     
     // MARK: - Private Methods
-    private func startScanning() {
-        captureSession?.startRunning()
+    private func commonInit() {
+        barcodeScannerManager = BarcodeScannerManager()
+        barcodeScannerManager?.delegate = self
+        setupView()
     }
     
-    private func stopScanning() {
-        DispatchQueue.global().async {
-            self.captureSession?.stopRunning()
-            self.captureSession = nil
-            self.layer.session = nil
-            DispatchQueue.main.async {
-                self.delegate?.barcodeScanningDidStop()
-            }
-        }
-    }
-    
-    private func setup() {
+    private func setupView() {
         self.clipsToBounds = true
-        setupCaptureSession()
-        self.layer.backgroundColor = UIColor.clear.cgColor
         backgroundColor = .clear
+        
+        barcodeScannerManager = BarcodeScannerManager()
+        barcodeScannerManager?.delegate = self
+        
+        setupPreviewLayer()
     }
     
-    private func setupCaptureSession() {
-        let captureSession = AVCaptureSession()
+    private func setupPreviewLayer() {
+        guard let captureSession = barcodeScannerManager?.captureSession else { return }
         
-        guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else {
-            scanningDidFail()
-            return
-        }
+        previewLayer.session = captureSession
+        previewLayer.videoGravity = .resizeAspectFill
+        previewLayer.backgroundColor = UIColor.clear.cgColor
         
-        do {
-            let videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
-            if captureSession.canAddInput(videoInput) {
-                captureSession.addInput(videoInput)
-            } else {
-                scanningDidFail()
-                return
-            }
-        } catch {
-            print("Error setting up video input: \(error)")
-            scanningDidFail()
-            return
-        }
-        
-        let metadataOutput = AVCaptureMetadataOutput()
-        if captureSession.canAddOutput(metadataOutput) {
-            captureSession.addOutput(metadataOutput)
-            metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-            metadataOutput.metadataObjectTypes = [.ean8, .ean13, .pdf417]
-        } else {
-            scanningDidFail()
-            return
-        }
-        
-        self.captureSession = captureSession
-        
-        DispatchQueue.global(qos: .userInitiated).async {
-            captureSession.startRunning()
-            
-            DispatchQueue.main.async {
-                self.layer.opacity = 0
-                self.layer.session = self.captureSession
-                self.layer.videoGravity = .resizeAspectFill
-                
-                UIView.animate(withDuration: self.cameraLoadingDelay) {
-                    self.layer.opacity = 1
-                    self.delegate?.cameraLoaded()
-                }
-            }
-        }
-    }
-    
-    private func scanningDidFail() {
-        delegate?.barcodeScanningDidFail()
-        captureSession = nil
-    }
-    
-    private func found(code: String) {
-        delegate?.barcodeScanningSucceededWithCode(code)
-    }
-    
-    private func cameraWithPosition(position: AVCaptureDevice.Position) -> AVCaptureDevice? {
-        let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: position)
-        return discoverySession.devices.first { $0.position == position }
+        barcodeScannerManager?.startScanning()
     }
 }
 
-// MARK: - AVCaptureMetadataOutputObjects Delegate
-extension BarcodeScannerUIView: AVCaptureMetadataOutputObjectsDelegate {
+// MARK: - BarcodeScannerManagerDelegate
+extension BarcodeScannerUIView: BarcodeScannerManagerDelegate {
+    func barcodeScanningDidFail() {
+        delegate?.barcodeScanningDidFail()
+    }
     
-    func metadataOutput(_ output: AVCaptureMetadataOutput,
-                        didOutput metadataObjects: [AVMetadataObject],
-                        from connection: AVCaptureConnection) {
-        
-        guard let metadataObject = metadataObjects.first,
-              let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject,
-              let stringValue = readableObject.stringValue else { return }
-        
-        found(code: stringValue)
+    func barcodeScanningSucceededWithCode(_ barcode: String) {
+        delegate?.barcodeScanningSucceededWithCode(barcode)
+    }
+    
+    func barcodeScanningDidStop() {
+        delegate?.barcodeScanningDidStop()
+    }
+    
+    func cameraLoaded() {
+        delegate?.cameraLoaded()
     }
 }
+
+//extension BarcodeScannerUIView {
+//    func updateCamera(with position: AVCaptureDevice.Position) {
+//        guard let session = barcodeScannerManager?.captureSession else { return }
+//
+//        // Begin configuration changes.
+//        session.beginConfiguration()
+//
+//        // Remove existing input.
+//        if let currentInput = session.inputs.compactMap({ $0 as? AVCaptureDeviceInput }).first {
+//            session.removeInput(currentInput)
+//        }
+//
+//        // Find a new device with the desired position.
+//        if let newDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: position),
+//           let newInput = try? AVCaptureDeviceInput(device: newDevice) {
+//            if session.canAddInput(newInput) {
+//                session.addInput(newInput)
+//            }
+//        }
+//
+//        // Commit configuration changes.
+//        session.commitConfiguration()
+//
+//        // Optionally, restart scanning if it was previously active.
+//        startScanning()
+//    }
+//}

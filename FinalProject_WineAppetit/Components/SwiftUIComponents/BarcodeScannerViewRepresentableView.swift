@@ -19,12 +19,28 @@ struct BarcodeScannerViewRepresentableView: UIViewRepresentable {
     }
     
     // MARK: - Properties
-    @Binding var currentPosition: AVCaptureDevice.Position
     @Binding var scanningState: ScanningState
     let onBarcodeScanned: (String) -> ()
     
+    // MARK: - UIViewRepresentable Methods
+    func makeUIView(context: Context) -> BarcodeScannerUIView {
+        let view = BarcodeScannerUIView(frame: .zero)
+        view.delegate = context.coordinator
+        view.backgroundColor = .clear
+        return view
+    }
+    
+    func updateUIView(_ uiView: BarcodeScannerUIView, context: Context) {
+        //                uiView.updateCamera(with: currentPosition)
+        //        uiView.backgroundColor = .clear
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        return Coordinator(scanningState: $scanningState, onBarcodeScanned: onBarcodeScanned)
+    }
+    
     // MARK: - Coordinator
-    final class Coordinator: NSObject, BarcodeScannerUIViewDelegate {
+    class Coordinator: NSObject, BarcodeScannerManagerDelegate {
         // MARK: - Properties
         @Binding var scanningState: ScanningState
         let onBarcodeScanned: (String) -> ()
@@ -37,52 +53,36 @@ struct BarcodeScannerViewRepresentableView: UIViewRepresentable {
         
         // MARK: - Methods
         func barcodeScanningDidFail() {
-            print("Failed to scan barcode.")
+            DispatchQueue.main.async {
+                self.scanningState = .failure
+                print("Failed to scan barcode.")
+            }
         }
         
         func barcodeScanningDidStop() {
-            print("Stopped scanning barcode.")
+            DispatchQueue.main.async {
+                self.scanningState = .closed
+                print("Stopped scanning barcode.")
+            }
         }
         
         func barcodeScanningSucceededWithCode(_ barcode: String) {
-            onBarcodeScanned(barcode)
+            DispatchQueue.main.async {
+                self.onBarcodeScanned(barcode)
+            }
         }
         
         func cameraLoaded() {
-            withAnimation {
-                scanningState = .cameraLoaded
+            DispatchQueue.main.async {
+                self.scanningState = .cameraLoaded
             }
         }
-        
-        func cameraUnloaded() {
-            withAnimation {
-                scanningState = .cameraLoading
-            }
-        }
-    }
-    
-    // MARK: - UIViewRepresentable Methods
-    func makeCoordinator() -> Coordinator {
-        return Coordinator(scanningState: $scanningState, onBarcodeScanned: onBarcodeScanned)
-    }
-    
-    func makeUIView(context: Context) -> BarcodeScannerUIView {
-        let view = BarcodeScannerUIView(frame: .zero)
-        view.delegate = context.coordinator
-        view.backgroundColor = .clear
-        return view
-    }
-    
-    func updateUIView(_ uiView: BarcodeScannerUIView, context: Context) {
-        uiView.updateCamera(with: currentPosition)
-        uiView.backgroundColor = .clear
     }
 }
 
 
 #Preview {
     BarcodeScannerViewRepresentableView(
-        currentPosition: Binding.constant(AVCaptureDevice.Position.back),
         scanningState: Binding.constant(BarcodeScannerViewRepresentableView.ScanningState.cameraLoading),
         onBarcodeScanned: {_ in }
     )
