@@ -8,24 +8,36 @@
 import AVFoundation
 
 final class AVCaptureSessionManager {
-    static func setupSession(delegate: AVCaptureMetadataOutputObjectsDelegate) -> AVCaptureSession? {
-        let captureSession = AVCaptureSession()
+    // MARK: - Properties
+    let captureSession: AVCaptureSession
+    
+    // MARK: - Init
+    init(delegate: AVCaptureMetadataOutputObjectsDelegate) {
+        self.captureSession = AVCaptureSession()
+        setupVideoInput()
+        setupMetadataOutput(delegate: delegate)
+        startCaptureSession()
+    }
+    
+    // MARK: - Private Methods
+    private func setupVideoInput() {
+        guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else {
+            fatalError("Failed to get video capture device")
+        }
         
-        guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else { return nil }
-        let videoInput: AVCaptureDeviceInput
         do {
-            videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
-        } catch let error {
-            print(error)
-            return nil
+            let videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
+            if captureSession.canAddInput(videoInput) {
+                captureSession.addInput(videoInput)
+            } else {
+                fatalError("Failed to add video input to capture session")
+            }
+        } catch {
+            fatalError("Failed to create video input: \(error)")
         }
-        
-        if captureSession.canAddInput(videoInput) {
-            captureSession.addInput(videoInput)
-        } else {
-            return nil
-        }
-        
+    }
+    
+    private func setupMetadataOutput(delegate: AVCaptureMetadataOutputObjectsDelegate) {
         let metadataOutput = AVCaptureMetadataOutput()
         
         if captureSession.canAddOutput(metadataOutput) {
@@ -34,10 +46,11 @@ final class AVCaptureSessionManager {
             metadataOutput.setMetadataObjectsDelegate(delegate, queue: DispatchQueue.main)
             metadataOutput.metadataObjectTypes = [.ean8, .ean13, .pdf417]
         } else {
-            return nil
+            fatalError("Failed to add metadata output to capture session")
         }
-        
+    }
+    
+    private func startCaptureSession() {
         captureSession.startRunning()
-        return captureSession
     }
 }
