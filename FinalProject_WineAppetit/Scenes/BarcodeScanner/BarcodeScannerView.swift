@@ -83,7 +83,7 @@ struct BarcodeScannerView: View {
             title: "Scan Wine Bottle's Barcode",
             textSize: 24,
             textWeight: .bold,
-            textColor: Constants.AppColor.textColor
+            textColor: .primary
         )
     }
 }
