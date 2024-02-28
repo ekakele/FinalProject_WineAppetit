@@ -25,21 +25,6 @@ final class BarcodeScannerManager: NSObject {
         setupCaptureSession()
     }
     
-    // MARK: - Methods
-    func startScanning() {
-        DispatchQueue.global(qos: .userInitiated).async {
-            self.captureSession?.startRunning()
-            DispatchQueue.main.async {
-                self.delegate?.cameraLoaded()
-            }
-        }
-    }
-    
-    func stopScanning() {
-        captureSession?.stopRunning()
-        delegate?.barcodeScanningDidStop()
-    }
-    
     // MARK: - Private Methods
     private func setupCaptureSession() {
         captureSession = AVCaptureSession()
@@ -82,6 +67,21 @@ final class BarcodeScannerManager: NSObject {
         } else {
             return false
         }
+    }
+    
+    // MARK: - Methods
+    func startScanning() {
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.captureSession?.startRunning()
+            DispatchQueue.main.async {
+                self.delegate?.cameraLoaded()
+            }
+        }
+    }
+    
+    func stopScanning() {
+        captureSession?.stopRunning()
+        delegate?.barcodeScanningDidStop()
     }
 }
 

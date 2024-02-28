@@ -27,7 +27,6 @@ final class BarcodeScannerUIView: UIView {
         commonInit()
     }
     
-    
     // MARK: - PreviewLayer Config
     override class var layerClass: AnyClass {
         return AVCaptureVideoPreviewLayer.self
@@ -52,10 +51,6 @@ final class BarcodeScannerUIView: UIView {
     private func setupView() {
         self.clipsToBounds = true
         backgroundColor = .clear
-        
-        barcodeScannerManager = BarcodeScannerManager()
-        barcodeScannerManager?.delegate = self
-        
         setupPreviewLayer()
     }
     
