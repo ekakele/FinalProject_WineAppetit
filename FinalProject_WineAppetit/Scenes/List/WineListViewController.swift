@@ -19,21 +19,12 @@ final class WineListViewController: UIViewController {
         return collectionView
     }()
     
-    private let noResultsLabel: UILabel = {
-        let label = UILabel()
-        label.text = "No results found"
-        label.textColor = .secondaryLabel
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.isHidden = true
-        return label
-    }()
-    
     private let activityIndicator = ActivityIndicator()
     private let searchBar = CustomSearchController(placeholder: "Search for a wine")
     private var wines = [Wine]()
     private let viewModel = WineListViewModel()
     private var floatingButtonHostingController: UIHostingController<FloatingButtonView>?
+    private let noResultFoundStackView = NoResultFoundStackView()
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -93,8 +84,8 @@ final class WineListViewController: UIViewController {
         setupBackground()
         addSubviews()
         setupFloatingButtonConstraints()
+        setupNoResultFoundStackView()
         setupWineCollectionView()
-        setupNoResultsLabelConstraints()
         setupWineCollectionViewConstraints()
     }
     
@@ -108,7 +99,7 @@ final class WineListViewController: UIViewController {
     
     private func addSubviews() {
         view.addSubview(activityIndicator)
-        view.addSubview(noResultsLabel)
+        view.addSubview(noResultFoundStackView)
         view.addSubview(wineCollectionView)
         
         if let buttonView = floatingButtonHostingController?.view {
@@ -127,10 +118,12 @@ final class WineListViewController: UIViewController {
         }
     }
     
-    private func setupNoResultsLabelConstraints() {
+    private func setupNoResultFoundStackView() {
+        noResultFoundStackView.isHidden = true
+        noResultFoundStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            noResultsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            noResultsLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            noResultFoundStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            noResultFoundStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
     
@@ -212,7 +205,7 @@ extension WineListViewController: WineListViewModelDelegate {
         DispatchQueue.main.async {
             self.activityIndicator.hide()
             self.wineCollectionView.reloadData()
-            self.noResultsLabel.isHidden = !wines.isEmpty
+            self.noResultFoundStackView.isHidden = !wines.isEmpty
         }
     }
     

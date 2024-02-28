@@ -72,6 +72,7 @@
 		B5B05E9F2B67E58000EFDDA1 /* WineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B05E9E2B67E58000EFDDA1 /* WineData.swift */; };
 		B5B05EA12B67E85500EFDDA1 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B05EA02B67E85500EFDDA1 /* IconButton.swift */; };
 		B5B17D532B713E9800734CB0 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B17D522B713E9800734CB0 /* MenuButton.swift */; };
+		B5F4F2052B8F52E300FA2D9A /* NoResultFoundStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4F2042B8F52E300FA2D9A /* NoResultFoundStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -141,6 +142,7 @@
 		B5B05E9E2B67E58000EFDDA1 /* WineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineData.swift; sourceTree = "<group>"; };
 		B5B05EA02B67E85500EFDDA1 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
 		B5B17D522B713E9800734CB0 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		B5F4F2042B8F52E300FA2D9A /* NoResultFoundStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoResultFoundStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,6 +333,7 @@
 				B5B17D522B713E9800734CB0 /* MenuButton.swift */,
 				B5B05EA02B67E85500EFDDA1 /* IconButton.swift */,
 				B58E606A2B63B441000458BD /* OrganolepticIconStackView.swift */,
+				B5F4F2042B8F52E300FA2D9A /* NoResultFoundStackView.swift */,
 				B58E60682B63B032000458BD /* IconView.swift */,
 				B58E60642B638CE7000458BD /* InfographicIcon.swift */,
 				B58E60662B638D7F000458BD /* IconLabelStackView.swift */,
@@ -540,6 +543,7 @@
 				B5A2E4D82B8D2F1700633464 /* BarcodeScannerUIView.swift in Sources */,
 				B50550AB2B5E41290040CA56 /* SceneDelegate.swift in Sources */,
 				B56CED662B6AAB1E00F2F6EC /* MyWineLibraryView.swift in Sources */,
+				B5F4F2052B8F52E300FA2D9A /* NoResultFoundStackView.swift in Sources */,
 				B56CED6E2B6AAE0400F2F6EC /* ItemCellView.swift in Sources */,
 				B5304D222B77ACD400932B45 /* OnboardingView.swift in Sources */,
 				B5304D0E2B779F4F00932B45 /* OnboardingData.swift in Sources */,
