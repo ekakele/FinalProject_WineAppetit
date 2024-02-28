@@ -122,6 +122,12 @@
 |:----:|
 | <img src="https://api.openwine.space/storage/screens/opt/spin.png" alt="Spin The Bottle" width="250"> |
 
+7. **Search Wines via Barcode Scanner** - Simplify the wine search process by scanning a wine bottle's barcode to access its detailed information in case the wine is available in our assortment.
+
+| Barcode Scanner 1 | Barcode Scanner 2 |
+|:------------------:|:------------------:|
+| <img src="https://i.ibb.co/fSBvtwP/found-trimmed.gif" alt="Calories Counter 1" width="250"> | <img src="https://i.ibb.co/gth5zH2/not-Found-trimmed.gif" alt="Calories Counter 2" width="250"> |
+
 <br />
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
