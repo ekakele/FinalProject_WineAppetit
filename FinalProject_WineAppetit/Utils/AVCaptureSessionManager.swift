@@ -19,6 +19,7 @@ final class BarcodeScannerManager: NSObject {
     var captureSession: AVCaptureSession?
     weak var delegate: BarcodeScannerManagerDelegate?
     
+    // MARK: - Inits
     override init() {
         super.init()
         setupCaptureSession()
@@ -55,8 +56,8 @@ final class BarcodeScannerManager: NSObject {
     
     private func setupVideoInput(for captureSession: AVCaptureSession) -> Bool {
         guard let videoCaptureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) else {
-                    return false
-                }
+            return false
+        }
         
         do {
             let videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)

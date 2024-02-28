@@ -31,8 +31,6 @@ struct BarcodeScannerViewRepresentableView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: BarcodeScannerUIView, context: Context) {
-        //                uiView.updateCamera(with: currentPosition)
-        //        uiView.backgroundColor = .clear
     }
     
     func makeCoordinator() -> Coordinator {

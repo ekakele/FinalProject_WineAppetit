@@ -27,6 +27,8 @@ final class BarcodeScannerUIView: UIView {
         commonInit()
     }
     
+    
+    // MARK: - PreviewLayer Config
     override class var layerClass: AnyClass {
         return AVCaptureVideoPreviewLayer.self
     }
@@ -86,31 +88,3 @@ extension BarcodeScannerUIView: BarcodeScannerManagerDelegate {
         delegate?.cameraLoaded()
     }
 }
-
-//extension BarcodeScannerUIView {
-//    func updateCamera(with position: AVCaptureDevice.Position) {
-//        guard let session = barcodeScannerManager?.captureSession else { return }
-//
-//        // Begin configuration changes.
-//        session.beginConfiguration()
-//
-//        // Remove existing input.
-//        if let currentInput = session.inputs.compactMap({ $0 as? AVCaptureDeviceInput }).first {
-//            session.removeInput(currentInput)
-//        }
-//
-//        // Find a new device with the desired position.
-//        if let newDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: position),
-//           let newInput = try? AVCaptureDeviceInput(device: newDevice) {
-//            if session.canAddInput(newInput) {
-//                session.addInput(newInput)
-//            }
-//        }
-//
-//        // Commit configuration changes.
-//        session.commitConfiguration()
-//
-//        // Optionally, restart scanning if it was previously active.
-//        startScanning()
-//    }
-//}
