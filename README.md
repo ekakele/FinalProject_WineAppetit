@@ -120,7 +120,7 @@
 
 | Spin The Bottle |
 |:----:|
-| <img src="https://api.openwine.space/storage/screens/opt/spin.png" alt="Spin The Bottle" width="250"> |
+| <img src="https://i.ibb.co/bFQyy33/spinner.gif" alt="Spin The Bottle" width="250"> |
 
 7. **Search Wines via Barcode Scanner** - Simplify the wine search process by scanning a wine bottle's barcode to access its detailed information in case the wine is available in our assortment.
 
