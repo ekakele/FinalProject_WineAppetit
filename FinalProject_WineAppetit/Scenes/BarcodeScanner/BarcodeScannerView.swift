@@ -12,7 +12,7 @@ struct BarcodeScannerView: View {
     // MARK: - Properties
     @State private var scanningState: BarcodeScannerViewRepresentableView.ScanningState = .cameraLoading
     @State private var showAlert = false
-    @State private var scannedBarcode: String = ""
+    @State private var scannedBarcode = ""
     @State private var navigateToWineView = false
     
     // MARK: - Body
@@ -38,11 +38,11 @@ struct BarcodeScannerView: View {
             .alert(isPresented: $showAlert) {
                 Alert(
                     title: Text("Scanned Barcode"),
-                    message: Text(scannedBarcode),
-                    primaryButton: .default(Text("See Wine Details"), action: {
+                    message: Text("The scanned barcode is: \(scannedBarcode). Click 'Continue' to see if detailed information is available for the scanned item in our wine assortment."),
+                    primaryButton: .default(Text("Continue"), action: {
                         navigateToWineView = true
                     }),
-                    secondaryButton: .cancel(Text("Cancel"))
+                    secondaryButton: .cancel()
                 )
             }
     }
