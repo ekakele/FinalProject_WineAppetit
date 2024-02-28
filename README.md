@@ -9,13 +9,17 @@
 
 <h3 align="center">WineAppétit</h3>
 
-  <p align="center">
-    Welcome to WineAppétit! <br /> your ultimate companion for exploring and selecting the perfect wine. Enhance your wine enjoyment experience with our app that simplifies the wine selection process, allows for easy management of your wine library, and integrates social games for your gatherings.
+  <p align="left">
+    Welcome to WineAppétit! Your ultimate companion for exploring and selecting the perfect wine. Enhance your wine enjoyment experience with our app that simplifies the wine selection process, allows for easy management of your wine library, and integrates social games for your gatherings.
     <br />
-    <a href="https://github.com/ekakele/FinalProject_WineAppetit/issues">Report Bug</a>
+  </p>
+  
+  <p align="center">
+  <a href="https://github.com/ekakele/FinalProject_WineAppetit/issues">Report Bug</a>
     ·
     <a href="https://github.com/ekakele/FinalProject_WineAppetit/issues">Request Feature</a>
   </p>
+  
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -25,7 +29,10 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+      <li><a href="#key-functionalities">Key Functionalities</a></li>
+      <li><a href="#technical-features">Technical Features</a></li>
+      <li><a href="#scenes">Scenes</a></li>
+      <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
     <li>
@@ -45,8 +52,29 @@
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
+<h3>Key Functionalities:</h3>
+<ul>
+  <li>Making API network calls</li>
+  <li>Storing user preferences using UserDefaults</li>
+  <li>Ensuring information flow via Delegate Pattern</li>
+  <li>Caching images</li>
+  <li>Searching for wines</li>
+  <li>Marking wines as favorites</li>
+  <li>Randomizing items based on filter options</li>
+  <li>Scanning barcodes</li>
+</ul>
 
-WineAppétit offers a range of features designed to enhance your wine exploration and enjoyment:
+
+<h3>Technical Features:</h3>
+<ul>
+  <li>Minimum deployment target: iOS 15.0</li>
+  <li>Frameworks: 70% UIKit | 30% SwiftUI</li>
+  <li>Architectural Pattern: MVVM</li>
+  <li>Package Dependency: NetworkManager</li>
+  <li>Design approach: Modular and scalable</li>
+</ul>
+
+<h3>Scenes:</h3>
 
 1. **Welcome to WineAppétit!** - Start your journey with an introduction to our app, designed to be your ultimate
    companion in wine exploration.
@@ -118,13 +146,13 @@ WineAppétit is built using a combination of modern and robust technologies:
 
 To get a local copy up and running follow these simple steps:
 
-### Prerequisites
+<h3>Prerequisites:</h3>
 
 + Xcode 15.0 or later
 + iOS 15.0 or later
 + OS X v14.10 or later
 
-### Installation
+<h3>Installation:</h3>
 
 _Below is an example of how you can instruct your audience on installing and setting up your app._
 
@@ -143,29 +171,31 @@ _Below is an example of how you can instruct your audience on installing and set
 
 ## Roadmap
 
-#### Phase 1
+#### Phase 1 - Initial Features
 
 | # | Scenes                        | Framework | Done | Category    | Priority | # of Scenes |
 |---|-------------------------------|-----------|:----:|-------------|----------|-------------|
 | 1 | Onboarding | SwiftUI   |  ✅    | Supplementary | Low      | 6           |
-| 2 | Filter, finder & wine randomizer   | UIKit     | ✅   | Fundamental | High     | 1           |
+| 2 | Wine Selection Randomizer   | UIKit     | ✅   | Fundamental | High     | 1           |
 | 3 | Wine Details                   | UIKit     | ✅   | Essential   | Medium   | 1           |
 | 4 | Wine List            | UIKit     | ✅   | Fundamental | High     | 1           |
 | 5 | My Wine library               | SwiftUI   | ✅   | Essential   | Medium   | 1           |
-| 6 | "Spin The Bottle" Game          | UIKit     | ✅   | Essential   | Medium   | 1           |
+| 6 | Game: Spin The Bottle         | UIKit     | ✅   | Essential   | Medium   | 1           |
 | 7 | Calorie Tracker               | UIKit     | ✅   | Essential   | Medium   | 1           |
 
-#### Phase 2 - Pending Items
+#### Phase 2 - Additional Features
 
-| # | Scenes                          | Framework | Done | Category      | Priority | # of Scenes |
-|---|---------------------------------|-----------|------|---------------|----------|-------------|
-| 1 | Test: How Drunk You Are?         |           |      | Supplementary | Low      | 1           |
-| 2 | Game: Should I Drink More Or Not?|           |      | Supplementary | Low      | 1           |
-| 3 | Facts                            |           |      | Supplementary | Low      | 1           |
-| 4 | Wine-Food Pairing                |           |      | Supplementary | Low      | 1           |
-| 5 | Cheers Wishes Helper             |           |      | Supplementary | Low      | 1           |
-| 6 | Express Guide For A Date         |           |      | Supplementary | Low      | 1           |
-| 7 | Wine Glossary                    |           |      | Supplementary | Low      | 1           |
+| # | Scenes                          | Framework    | Done | Category      | Priority | # of Scenes |
+|---|---------------------------------|--------------|------|---------------|----------|-------------|
+| 8 | Barcode Scanner                  | UIKit/SwiftUI| ✅   | Supplementary | Medium   | 1           |
+| 9 | Test: How Drunk You Are?         |              |      | Supplementary | Low      | 1           |
+| 10 | Game: Drink Dilemma |              |      | Supplementary | Low      | 1           |
+| 11 | Interesting Facts                            |              |      | Supplementary | Low      | 1           |
+| 12 | Wine-Food Pairing                |              |      | Supplementary | Medium      | 1           |
+| 13 | Cheers Wishes Helper             |              |      | Supplementary | Low      | 1           |
+| 14 | Express Guide For A Date         |              |      | Supplementary | Medium      | 1           |
+| 15 | Wine Glossary                    |              |      | Supplementary | Low      | 1           |
+
 
 <!-- CONTACT -->
 
