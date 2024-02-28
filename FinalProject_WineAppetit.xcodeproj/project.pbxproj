@@ -62,7 +62,7 @@
 		B58EDED62B6E34CC0063D46D /* popSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B58EDED52B6E34CB0063D46D /* popSound.mp3 */; };
 		B58EDED82B6EA1DF0063D46D /* SpinTheBottleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58EDED72B6EA1DF0063D46D /* SpinTheBottleViewModel.swift */; };
 		B58EDEDB2B6ED5BD0063D46D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58EDEDA2B6ED5BD0063D46D /* TabBarController.swift */; };
-		B5A2E4D52B8D2ECE00633464 /* AVCaptureSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A2E4D42B8D2ECE00633464 /* AVCaptureSessionManager.swift */; };
+		B5A2E4D52B8D2ECE00633464 /* BarcodeScannerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A2E4D42B8D2ECE00633464 /* BarcodeScannerManager.swift */; };
 		B5A2E4D82B8D2F1700633464 /* BarcodeScannerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A2E4D72B8D2F1700633464 /* BarcodeScannerUIView.swift */; };
 		B5A2E4DA2B8D2F9F00633464 /* BarcodeScannerViewRepresentableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A2E4D92B8D2F9F00633464 /* BarcodeScannerViewRepresentableView.swift */; };
 		B5A2E4DC2B8D309100633464 /* BarcodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A2E4DB2B8D309100633464 /* BarcodeScannerView.swift */; };
@@ -132,7 +132,7 @@
 		B58EDED52B6E34CB0063D46D /* popSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = popSound.mp3; sourceTree = "<group>"; };
 		B58EDED72B6EA1DF0063D46D /* SpinTheBottleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinTheBottleViewModel.swift; sourceTree = "<group>"; };
 		B58EDEDA2B6ED5BD0063D46D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		B5A2E4D42B8D2ECE00633464 /* AVCaptureSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureSessionManager.swift; sourceTree = "<group>"; };
+		B5A2E4D42B8D2ECE00633464 /* BarcodeScannerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerManager.swift; sourceTree = "<group>"; };
 		B5A2E4D72B8D2F1700633464 /* BarcodeScannerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerUIView.swift; sourceTree = "<group>"; };
 		B5A2E4D92B8D2F9F00633464 /* BarcodeScannerViewRepresentableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerViewRepresentableView.swift; sourceTree = "<group>"; };
 		B5A2E4DB2B8D309100633464 /* BarcodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerView.swift; sourceTree = "<group>"; };
@@ -279,7 +279,7 @@
 				B58E60552B62AF16000458BD /* UserPreferencesManager.swift */,
 				B5304D132B77A4E400932B45 /* CornerRadiusStyle.swift */,
 				B54F09952B7A5BA800E85445 /* NavigationBarManager.swift */,
-				B5A2E4D42B8D2ECE00633464 /* AVCaptureSessionManager.swift */,
+				B5A2E4D42B8D2ECE00633464 /* BarcodeScannerManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -547,7 +547,7 @@
 				B56CED6E2B6AAE0400F2F6EC /* ItemCellView.swift in Sources */,
 				B5304D222B77ACD400932B45 /* OnboardingView.swift in Sources */,
 				B5304D0E2B779F4F00932B45 /* OnboardingData.swift in Sources */,
-				B5A2E4D52B8D2ECE00633464 /* AVCaptureSessionManager.swift in Sources */,
+				B5A2E4D52B8D2ECE00633464 /* BarcodeScannerManager.swift in Sources */,
 				B51764822B6D8CB9000DF5E8 /* SpinTheBottleViewController.swift in Sources */,
 				B5B05E9B2B67E36E00EFDDA1 /* CalorieCounterViewController.swift in Sources */,
 				B56CED682B6AAB4400F2F6EC /* MyWineLibraryViewModel.swift in Sources */,

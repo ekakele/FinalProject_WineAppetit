@@ -1,5 +1,5 @@
 //
-//  AVCaptureSessionManager.swift
+//  BarcodeScannerManager.swift
 //  FinalProject_WineAppetit
 //
 //  Created by Eka Kelenjeridze on 27.02.24.
