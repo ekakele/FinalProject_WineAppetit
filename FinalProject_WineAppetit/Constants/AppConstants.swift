@@ -27,6 +27,7 @@ struct Constants {
         static let calorieCounterBackground = UIImage(named: "wineGlasses")
         static let bottleBackground = UIImage(named: "bottleBackground")
         static let wineBottle = UIImage(named: "wineBottle")
+        static let noResult = UIImage(named: "corkscrew")
     }
     
     struct AppUIFont {

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TabBarControllerRepresentableView: UIViewControllerRepresentable {
-    
+    // MARK: - Methods
     func makeUIViewController(context: Context) -> TabBarController {
         return TabBarController()
     }

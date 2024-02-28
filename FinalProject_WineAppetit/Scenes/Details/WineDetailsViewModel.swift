@@ -24,13 +24,15 @@ protocol WineDetailsViewModel {
 final class DefaultWineDetailsViewModel: WineDetailsViewModel {
     // MARK: - Properties
     private var wineID: Int
+    private var isBarcode: Bool = false
     weak var delegate: WineDetailsViewModelDelegate?
     private let baseURL = Constants.API.wineApiBaseURL
     private let APIKey = Constants.API.wineApiKey
     
     // MARK: - Init
-    init(wineID: Int) {
+    init(wineID: Int, isBarcode: Bool) {
         self.wineID = wineID
+        self.isBarcode = isBarcode
     }
     
     // MARK: - ViewLifeCycle
@@ -51,8 +53,7 @@ final class DefaultWineDetailsViewModel: WineDetailsViewModel {
         let endpoint = "api/wines/"
         let idString = String(wineID)
         let APIKeyString = "?apiKey=\(APIKey)"
-        let urlString = baseURL + endpoint + idString + APIKeyString
-        print(urlString)
+        let urlString = baseURL + endpoint + (isBarcode ? "barcode/\(idString)" : idString) + APIKeyString
         
         GenericNetworkManager.shared.fetchData(with: urlString) { [weak self] (result: Result<WineDetailsData, Error>) in
             switch result {

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 final class WineListViewController: UIViewController {
     // MARK: - Properties
@@ -18,25 +19,18 @@ final class WineListViewController: UIViewController {
         return collectionView
     }()
     
-    private let noResultsLabel: UILabel = {
-        let label = UILabel()
-        label.text = "No results found"
-        label.textColor = .secondaryLabel
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.isHidden = true
-        return label
-    }()
-    
-    private let searchBar = CustomSearchController(placeholder: "Search for a wine")
     private let activityIndicator = ActivityIndicator()
+    private let searchBar = CustomSearchController(placeholder: "Search for a wine")
     private var wines = [Wine]()
     private let viewModel = WineListViewModel()
+    private var floatingButtonHostingController: UIHostingController<FloatingButtonView>?
+    private let noResultFoundStackView = NoResultFoundStackView()
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupFloatingButton()
         setupNavigationBarTitle()
         setupSearchBar()
         setupViewModel()
@@ -44,6 +38,33 @@ final class WineListViewController: UIViewController {
     }
     
     // MARK: - Private Methods
+    private func setupFloatingButton() {
+        let floatingButtonView = FloatingButtonView(
+            backgroundColor: .white,
+            foregroundColor: .secondary,
+            shadowColor: .secondary,
+            buttonIcon: "barcode.viewfinder",
+            action: { [weak self] in
+                guard let self = self else { return }
+                self.navigateToBarcodeScannerView()
+            },
+            isPresentingWineListView: .constant(false)
+        )
+        configureHostingController(for: floatingButtonView)
+    }
+    
+    private func navigateToBarcodeScannerView() {
+        let barcodeScannerView = BarcodeScannerView()
+        let hostingController = UIHostingController(rootView: barcodeScannerView)
+        navigationController?.present(hostingController, animated: true, completion: nil)
+    }
+    
+    private func configureHostingController(for rootView: FloatingButtonView) {
+        let hostingController = UIHostingController(rootView: rootView)
+        hostingController.view.backgroundColor = .clear
+        floatingButtonHostingController = hostingController
+    }
+    
     private func setupNavigationBarTitle() {
         NavigationBarManager.setupNavigationBar(for: self, title: "Georgian Wines")
     }
@@ -62,8 +83,9 @@ final class WineListViewController: UIViewController {
         setupActivityIndicator()
         setupBackground()
         addSubviews()
+        setupFloatingButtonConstraints()
+        setupNoResultFoundStackView()
         setupWineCollectionView()
-        setupNoResultsLabelConstraints()
         setupWineCollectionViewConstraints()
     }
     
@@ -77,14 +99,31 @@ final class WineListViewController: UIViewController {
     
     private func addSubviews() {
         view.addSubview(activityIndicator)
-        view.addSubview(noResultsLabel)
+        view.addSubview(noResultFoundStackView)
         view.addSubview(wineCollectionView)
+        
+        if let buttonView = floatingButtonHostingController?.view {
+            view.addSubview(buttonView)
+            view.bringSubviewToFront(buttonView)
+        }
     }
     
-    private func setupNoResultsLabelConstraints() {
+    private func setupFloatingButtonConstraints() {
+        if let buttonView = floatingButtonHostingController?.view {
+            buttonView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                buttonView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+                buttonView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            ])
+        }
+    }
+    
+    private func setupNoResultFoundStackView() {
+        noResultFoundStackView.isHidden = true
+        noResultFoundStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            noResultsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            noResultsLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            noResultFoundStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            noResultFoundStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
     
@@ -166,7 +205,7 @@ extension WineListViewController: WineListViewModelDelegate {
         DispatchQueue.main.async {
             self.activityIndicator.hide()
             self.wineCollectionView.reloadData()
-            self.noResultsLabel.isHidden = !wines.isEmpty
+            self.noResultFoundStackView.isHidden = !wines.isEmpty
         }
     }
     

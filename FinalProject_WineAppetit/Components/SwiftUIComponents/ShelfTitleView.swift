@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ShelfTitleView: View {
     // MARK: - Properties
-    var title: String
+    let title: String
     
     // MARK: - Body
     var body: some View {

@@ -10,10 +10,11 @@ import SwiftUI
 struct WineDetailsViewControllerRepresentableView:  UIViewControllerRepresentable {
     // MARK: - Properties
     var wineID: Int
+    var isBarcode: Bool = false
     
     // MARK: - Methods
     func makeUIViewController(context: Context) -> UIViewController {
-        let viewController = WineDetailsViewController(wineID: wineID)
+        let viewController = WineDetailsViewController(wineID: wineID, isBarcode: isBarcode)
         return UINavigationController(rootViewController: viewController)
     }
     

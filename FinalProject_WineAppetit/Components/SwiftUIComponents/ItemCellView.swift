@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ItemCellView: View {
     // MARK: - Properties
-    var image: String
-    var wineID: Int
+    let image: String
+    let wineID: Int
     @State private var isPresentingWineListView = false
     @ObservedObject var viewModel: MyWineLibraryViewModel
     @Binding var zoomedWineID: Int?

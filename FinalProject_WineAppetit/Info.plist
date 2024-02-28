@@ -19,5 +19,7 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Camera access is required for scanning wine bottle&apos;s barcode.</string>
 </dict>
 </plist>

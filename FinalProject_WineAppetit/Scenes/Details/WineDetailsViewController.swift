@@ -13,6 +13,7 @@ final class WineDetailsViewController: UIViewController {
         let stackView = UIStackView(arrangedSubviews: [upperStackView, lowerStackView])
         stackView.axis = .vertical
         stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.isHidden = true
         return stackView
     }()
     
@@ -127,10 +128,11 @@ final class WineDetailsViewController: UIViewController {
     
     private var viewModel: WineDetailsViewModel
     private var isFavorited: Bool = false
+    private let noResultFoundStackView = NoResultFoundStackView()
     
     // MARK: - Inits
-    init(wineID: Int) {
-        viewModel = DefaultWineDetailsViewModel(wineID: wineID)
+    init(wineID: Int, isBarcode: Bool = false) {
+        viewModel = DefaultWineDetailsViewModel(wineID: wineID, isBarcode: isBarcode)
         super.init(nibName: nil, bundle: nil)
         
         viewModel.delegate = self
@@ -184,6 +186,7 @@ final class WineDetailsViewController: UIViewController {
     private func setupUI() {
         setupBackground()
         addSubviews()
+        setupNoResultFoundStackView()
         setupButton()
         setupUpperLowerStackViewConstraints()
         setupMainStackViewConstraints()
@@ -202,7 +205,17 @@ final class WineDetailsViewController: UIViewController {
         lowerStackView.addArrangedSubview(organolepticLabelStackView)
         lowerStackView.addArrangedSubview(addButton)
         
+        view.addSubview(noResultFoundStackView)
         view.addSubview(mainStackView)
+    }
+    
+    private func setupNoResultFoundStackView() {
+        noResultFoundStackView.isHidden = true
+        noResultFoundStackView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            noResultFoundStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            noResultFoundStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
     
     private func setupButton() {
@@ -291,6 +304,8 @@ final class WineDetailsViewController: UIViewController {
 extension WineDetailsViewController: WineDetailsViewModelDelegate {
     func wineDetailsFetched(_ wine: WineDetails) {
         Task {
+            mainStackView.isHidden = false
+            
             //Setup short info
             mainTitleLabel.text = wine.title
             categoryLabel.text = wine.categoriesList.first
@@ -300,15 +315,15 @@ extension WineDetailsViewController: WineDetailsViewModelDelegate {
             //Setup infographics
             createInfographicLabel(
                 text: wine.volume ?? Constants.AppTextInfo.notApplicable,
-                addToStack: volumeInfographicStackView
+                addToStack: self.volumeInfographicStackView
             )
             createInfographicLabel(
                 text: wine.alcohol ?? Constants.AppTextInfo.notApplicable,
-                addToStack: degreeInfographicStackView
+                addToStack: self.degreeInfographicStackView
             )
             createInfographicLabel(
                 text: wine.vintageYear ?? Constants.AppTextInfo.notApplicable,
-                addToStack: yearInfographicStackView
+                addToStack: self.yearInfographicStackView
             )
             
             //Setup description
@@ -328,15 +343,15 @@ extension WineDetailsViewController: WineDetailsViewModelDelegate {
             //Setup organoleptic info
             createOrganolepticInfoLabel(
                 text: wine.color ?? Constants.AppTextInfo.notApplicable,
-                addToStack: organolepticLabelStackView
+                addToStack: self.organolepticLabelStackView
             )
             createOrganolepticInfoLabel(
                 text: wine.aroma?.joined(separator: "\n") ?? Constants.AppTextInfo.notApplicable,
-                addToStack: organolepticLabelStackView
+                addToStack: self.organolepticLabelStackView
             )
             createOrganolepticInfoLabel(
                 text: wine.taste?.joined(separator: "\n") ?? Constants.AppTextInfo.notApplicable,
-                addToStack: organolepticLabelStackView
+                addToStack: self.organolepticLabelStackView
             )
         }
     }
@@ -351,11 +366,14 @@ extension WineDetailsViewController: WineDetailsViewModelDelegate {
         Task {
             self.isFavorited = isFavorited
             let buttonTitle = isFavorited ? "Remove from Library" : "Add to Library"
-            self.addButton.setTitle(buttonTitle, for: .normal)
+            addButton.setTitle(buttonTitle, for: .normal)
         }
     }
     
     func showError(_ error: Error) {
+        Task {
+            noResultFoundStackView.isHidden = false
+        }
         print(error)
     }
 }

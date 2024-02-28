@@ -36,6 +36,7 @@ final class WineListViewModel {
     func searchWines(with query: String? = nil) {
         fetchWines(with: query)
     }
+    
     // MARK: - Private Methods
     private func fetchWines(with query: String?) {
         let endpoint = "api/wines?apiKey=\(APIKey)"
