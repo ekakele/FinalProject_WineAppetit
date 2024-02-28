@@ -49,7 +49,6 @@ struct BarcodeScannerView: View {
     
     private var setupBarcodeScannerView: some View {
         BarcodeScannerViewRepresentableView(scanningState: $scanningState) { barcode in
-            print("Scanned barcode: \(barcode)")
             scannedBarcode = barcode
             showAlert = true
             scanningState = .closed
