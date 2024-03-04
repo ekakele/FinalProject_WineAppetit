@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OnboardingView: View {
     // MARK: - Properties
-    @ObservedObject var viewModel: OnboardingViewModel
+    @StateObject var viewModel: OnboardingViewModel
     @State private var navigateToTabBar = false
     
     // MARK: - Body
