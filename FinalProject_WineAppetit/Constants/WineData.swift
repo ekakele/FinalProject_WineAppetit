@@ -49,7 +49,7 @@ enum WineRegion: String, DropdownOption {
     case guria = "Guria"
 }
 
-// MARK: - Extension
+// MARK: - Extensions
 extension WineType {
     var backgroundColors: [CGColor] {
         switch self {
@@ -63,7 +63,7 @@ extension WineType {
     }
 }
 
-// MARK: - Struct
+// MARK: - Structs
 struct CalorieInfo: WineCalories {
     var category: WineCategory
     var calories: Int
@@ -72,7 +72,7 @@ struct CalorieInfo: WineCalories {
     }
 }
 
-// MARK: - WineCalories Data
+// MARK: - Properties
 let wineCalories: [WineType: [CalorieInfo]] = [
     .red: [
         CalorieInfo(category: .dry, calories: 153),

@@ -83,7 +83,7 @@ class SpinTheBottleViewController: UIViewController {
         
         viewModel.handleBottlePanGesture(touchPoint: touchPoint, centerPoint: centerPoint, state: state)
     }
- 
+    
     private func playSound() {
         let url = Bundle.main.url(forResource: "popSound", withExtension: "mp3")
         player = try! AVAudioPlayer(contentsOf: url!)
@@ -143,7 +143,7 @@ class SpinTheBottleViewController: UIViewController {
     }
 }
 
-// MARK: - SpinTheBottleViewModelDelegate
+// MARK: - SpinTheBottleViewModelDelegate Methods
 extension SpinTheBottleViewController: SpinTheBottleViewModelDelegate {
     func didUpdateBottleRotation(_ rotation: CGFloat) {
         bottleImage.transform = bottleImage.transform.rotated(by: rotation)

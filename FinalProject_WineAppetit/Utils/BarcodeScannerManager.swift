@@ -85,7 +85,7 @@ final class BarcodeScannerManager: NSObject {
     }
 }
 
-// MARK: - AVCaptureMetadataOutputObjects Delegate
+// MARK: - AVCaptureMetadataOutputObjectsDelegate Methods
 extension BarcodeScannerManager: AVCaptureMetadataOutputObjectsDelegate {
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         guard let metadataObject = metadataObjects.first,

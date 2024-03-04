@@ -276,13 +276,13 @@ final class WineRandomizerViewController: UIViewController {
     }
 }
 
-// MARK: - UIPickerViewDelegate
+// MARK: - UIPickerViewDelegate Methods
 extension WineRandomizerViewController : UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int { wines.count }
     func numberOfComponents(in pickerView: UIPickerView) -> Int { 1 }
 }
 
-// MARK: - UIPickerViewDataSource
+// MARK: - UIPickerViewDataSource Methods
 extension WineRandomizerViewController: UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat { 200 }
     
@@ -310,14 +310,14 @@ extension WineRandomizerViewController: UIPickerViewDataSource {
     }
 }
 
-// MARK: - UIGestureRecognizerDelegate
+// MARK: - UIGestureRecognizerDelegate Methods
 extension WineRandomizerViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
 }
 
-// MARK: - WineRandomizerViewModelDelegate
+// MARK: - WineRandomizerViewModelDelegate Methods
 extension WineRandomizerViewController: WineRandomizerViewModelDelegate {
     func didFetchWines(_ wines: [Wine]) {
         self.wines = wines
