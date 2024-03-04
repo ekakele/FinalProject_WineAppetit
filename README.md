@@ -56,7 +56,7 @@
 <ul>
   <li>Making API network calls</li>
   <li>Storing user preferences using UserDefaults</li>
-  <li>Ensuring information flow via Delegate Pattern</li>
+  <li>Implementing communication pattern using delegates and protocols</li>
   <li>Caching images</li>
   <li>Searching for wines</li>
   <li>Marking wines as favorites</li>

@@ -143,7 +143,6 @@ final class WineDetailsViewController: UIViewController {
     }
     
     // MARK: - LifeCycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -301,6 +300,7 @@ final class WineDetailsViewController: UIViewController {
     }
 }
 
+// MARK: - WineDetailsViewModelDelegate Methods
 extension WineDetailsViewController: WineDetailsViewModelDelegate {
     func wineDetailsFetched(_ wine: WineDetails) {
         Task {

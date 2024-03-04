@@ -243,7 +243,7 @@ final class CalorieCounterViewController: UIViewController {
     }
 }
 
-// MARK: - UIPickerView DataSource
+// MARK: - UIPickerViewDataSource Methods
 extension CalorieCounterViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int { 2 }
     
@@ -257,7 +257,7 @@ extension CalorieCounterViewController: UIPickerViewDataSource {
     }
 }
 
-// MARK: - UIPickerView Delegate
+// MARK: - UIPickerViewDelegate Methods
 extension CalorieCounterViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if component == 0 {
@@ -294,7 +294,7 @@ extension CalorieCounterViewController: UIPickerViewDelegate {
     }
 }
 
-// MARK: - CalorieCounterViewModelDelegate
+// MARK: - CalorieCounterViewModelDelegate Methods
 extension CalorieCounterViewController: CalorieCounterViewModelDelegate {
     func didUpdateGlassNumber(_ viewModel: CalorieCounterViewModel) {
         updateLabels()

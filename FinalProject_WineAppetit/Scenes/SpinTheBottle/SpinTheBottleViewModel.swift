@@ -5,12 +5,11 @@
 //  Created by Eka Kelenjeridze on 03.02.24.
 //
 
-import Foundation
 import UIKit
+import AVFoundation
 
 protocol SpinTheBottleViewModelDelegate: AnyObject {
     func didUpdateBottleRotation(_ rotation: CGFloat)
-    func didEndBottleRotation()
     func didUpdateQuestion(_ question: String)
     func shouldShowLabel(_ show: Bool)
 }
@@ -19,7 +18,8 @@ final class SpinTheBottleViewModel {
     // MARK: - Properties
     private var lastRotation: CGFloat = 0.0
     private var angularVelocity: CGFloat = 0.0
-    private var remainingQuestions: [String] = SpinTheBottleGameData.questionsArray
+    private var randomQuestionsArray = GameData.questionsArray.shuffled()
+    private var player: AVAudioPlayer?
     weak var delegate: SpinTheBottleViewModelDelegate?
     
     // MARK: - Methods
@@ -50,27 +50,49 @@ final class SpinTheBottleViewModel {
         Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true) { [weak self] timer in
             guard let self = self else { return }
             
-            self.angularVelocity *= decelerationRate
-            self.delegate?.didUpdateBottleRotation(self.angularVelocity)
+            angularVelocity *= decelerationRate
+            delegate?.didUpdateBottleRotation(angularVelocity)
             
             if abs(self.angularVelocity) < minimumVelocity {
                 timer.invalidate()
-                self.presentRandomQuestion()
-                self.delegate?.didEndBottleRotation()
+                presentRandomQuestion()
+                playSound()
             }
         }
     }
     
     private func presentRandomQuestion() {
-        if remainingQuestions.isEmpty {
-            remainingQuestions = SpinTheBottleGameData.questionsArray
+        if randomQuestionsArray.isEmpty {
+            refillQuestionsArray()
+            presentNextQuestion()
+        } else {
+            presentNextQuestion()
         }
-        
-        let randomIndex = Int.random(in: 0..<remainingQuestions.count)
-        let randomQuestion = remainingQuestions[randomIndex]
-        remainingQuestions.remove(at: randomIndex)
-        
-        delegate?.didUpdateQuestion(randomQuestion)
         delegate?.shouldShowLabel(true)
+    }
+    
+    private func presentNextQuestion() {
+        let question = randomQuestionsArray.removeFirst()
+        delegate?.didUpdateQuestion(question)
+    }
+    
+    private func refillQuestionsArray() {
+        randomQuestionsArray = GameData.questionsArray.shuffled()
+    }
+    
+    private func playSound() {
+        guard let url = Bundle.main.url(
+            forResource: "popSound",
+            withExtension: "mp3"
+        ) else {
+            print("Error: Sound file not found")
+            return
+        }
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.play()
+        } catch {
+            print("Error playing sound: \(error.localizedDescription)")
+        }
     }
 }

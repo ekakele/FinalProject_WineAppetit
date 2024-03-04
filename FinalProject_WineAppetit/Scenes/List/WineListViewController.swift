@@ -163,14 +163,14 @@ extension WineListViewController: UICollectionViewDataSource {
     }
 }
 
-// MARK: - CollectionView Delegate
+// MARK: - CollectionViewDelegate Methods
 extension WineListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.didSelectWine(at: indexPath)
     }
 }
 
-// MARK: - CollectionView DelegateFlowLayout
+// MARK: - CollectionViewDelegateFlowLayout Methods
 extension WineListViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -198,7 +198,7 @@ extension WineListViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-// MARK: - WineListViewModelDelegate
+// MARK: - WineListViewModelDelegate Methods
 extension WineListViewController: WineListViewModelDelegate {
     func winesFetched(_ wines: [Wine]) {
         self.wines = wines
@@ -222,7 +222,7 @@ extension WineListViewController: WineListViewModelDelegate {
     }
 }
 
-// MARK: - CustomSearchController
+// MARK: - CustomSearchControllerDelegate Methods
 extension WineListViewController: CustomSearchControllerDelegate {
     func searchBarDidSearch(with text: String) {
         viewModel.searchWines(with: text)

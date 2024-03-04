@@ -6,11 +6,10 @@
 //
 
 import UIKit
-import AVFoundation
 
-class SpinTheBottleViewController: UIViewController {
+final class SpinTheBottleViewController: UIViewController {
     // MARK: - Properties
-    let backgroundImage: UIImageView = {
+    private let backgroundImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = Constants.AppUIImage.bottleBackground
         imageView.contentMode = .scaleAspectFill
@@ -18,22 +17,20 @@ class SpinTheBottleViewController: UIViewController {
         return imageView
     }()
     
-    let bottleImage: UIImageView = {
+    private let bottleImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = Constants.AppUIImage.wineBottle
         imageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        
         imageView.layer.shadowColor = UIColor.black.cgColor
         imageView.layer.shadowOpacity = 0.5
         imageView.layer.shadowOffset = CGSize(width: 2, height: 2)
         imageView.layer.shadowRadius = 5
-        
         return imageView
     }()
     
-    let questionLabel: UILabel = {
+    private let questionLabel: UILabel = {
         let label = UILabel()
         label.isHidden = true
         label.textColor = .white
@@ -44,7 +41,7 @@ class SpinTheBottleViewController: UIViewController {
         return label
     }()
     
-    let labelBackgroundView: UIVisualEffectView = {
+    private let labelBackgroundView: UIVisualEffectView = {
         let view = UIVisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))
         view.layer.cornerRadius = 12
         view.isHidden = true
@@ -54,7 +51,6 @@ class SpinTheBottleViewController: UIViewController {
     }()
     
     private let viewModel = SpinTheBottleViewModel()
-    private var player: AVAudioPlayer!
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -84,26 +80,10 @@ class SpinTheBottleViewController: UIViewController {
         viewModel.handleBottlePanGesture(touchPoint: touchPoint, centerPoint: centerPoint, state: state)
     }
     
-    private func hideLabelText() {
-        questionLabel.isHidden = true
-        labelBackgroundView.isHidden = true
-    }
-    
-    private func showLabelText() {
-        questionLabel.isHidden = false
-        labelBackgroundView.isHidden = false
-    }
-    
-    private func playSound() {
-        let url = Bundle.main.url(forResource: "popSound", withExtension: "mp3")
-        player = try! AVAudioPlayer(contentsOf: url!)
-        player.play()
-    }
-    
     private func setupUI() {
         addSubviews()
         setupQuestionLabelConstraints()
-        setupLabelViewConstraints()
+        setupLabelBackgroundViewConstraints()
         setupBottleImageConstraints()
         setupBackgroundImageConstraints()
     }
@@ -111,28 +91,26 @@ class SpinTheBottleViewController: UIViewController {
     private func addSubviews() {
         view.addSubview(backgroundImage)
         view.sendSubviewToBack(backgroundImage)
-        
         view.addSubview(bottleImage)
-        
         view.addSubview(labelBackgroundView)
         labelBackgroundView.contentView.addSubview(questionLabel)
     }
     
     private func setupQuestionLabelConstraints() {
         NSLayoutConstraint.activate([
-            questionLabel.leadingAnchor.constraint(equalTo: labelBackgroundView.leadingAnchor, constant: 20),
-            questionLabel.trailingAnchor.constraint(equalTo: labelBackgroundView.trailingAnchor, constant: -20),
-            questionLabel.topAnchor.constraint(equalTo: labelBackgroundView.topAnchor, constant: 20),
-            questionLabel.bottomAnchor.constraint(equalTo: labelBackgroundView.bottomAnchor, constant: -20)
+            questionLabel.leadingAnchor.constraint(equalTo: labelBackgroundView.leadingAnchor, constant: 12),
+            questionLabel.trailingAnchor.constraint(equalTo: labelBackgroundView.trailingAnchor, constant: -12),
+            questionLabel.topAnchor.constraint(equalTo: labelBackgroundView.topAnchor, constant: 12),
+            questionLabel.bottomAnchor.constraint(equalTo: labelBackgroundView.bottomAnchor, constant: -12)
         ])
     }
     
-    private func setupLabelViewConstraints() {
+    private func setupLabelBackgroundViewConstraints() {
         NSLayoutConstraint.activate([
-            questionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            questionLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 260),
-            questionLabel.widthAnchor.constraint(equalToConstant: 300),
-            questionLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 50)
+            labelBackgroundView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            labelBackgroundView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 260),
+            labelBackgroundView.widthAnchor.constraint(equalToConstant: 300),
+            labelBackgroundView.heightAnchor.constraint(greaterThanOrEqualToConstant: 50)
         ])
     }
     
@@ -153,22 +131,24 @@ class SpinTheBottleViewController: UIViewController {
     }
 }
 
-// MARK: - SpinTheBottleViewModelDelegate
+// MARK: - SpinTheBottleViewModelDelegate Methods
 extension SpinTheBottleViewController: SpinTheBottleViewModelDelegate {
     func didUpdateBottleRotation(_ rotation: CGFloat) {
-        bottleImage.transform = bottleImage.transform.rotated(by: rotation)
-    }
-    
-    func didEndBottleRotation() {
-        playSound()
+        DispatchQueue.main.async {
+            self.bottleImage.transform = self.bottleImage.transform.rotated(by: rotation)
+        }
     }
     
     func didUpdateQuestion(_ question: String) {
-        questionLabel.text = question
+        DispatchQueue.main.async {
+            self.questionLabel.text = question
+        }
     }
     
     func shouldShowLabel(_ show: Bool) {
-        questionLabel.isHidden = !show
-        labelBackgroundView.isHidden = !show
+        DispatchQueue.main.async {
+            self.questionLabel.isHidden = !show
+            self.labelBackgroundView.isHidden = !show
+        }
     }
 }

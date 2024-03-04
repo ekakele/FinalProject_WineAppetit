@@ -65,7 +65,7 @@ final class BarcodeScannerUIView: UIView {
     }
 }
 
-// MARK: - BarcodeScannerManagerDelegate
+// MARK: - BarcodeScannerManagerDelegate Methods
 extension BarcodeScannerUIView: BarcodeScannerManagerDelegate {
     func barcodeScanningDidFail() {
         delegate?.barcodeScanningDidFail()
