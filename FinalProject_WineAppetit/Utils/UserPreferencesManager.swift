@@ -15,6 +15,9 @@ final class UserPreferencesManager {
     private let favoritedWineListKey = "favoriteWines"
     private let onboardingPassStatusKey = "isOnboardingPassed"
     
+    // MARK: - Inits
+    private init() {}
+    
     // MARK: - OnboardingPassStatus Set/Get Methods
     func getOnboardingPassStatus() -> Bool {
         return defaults.bool(forKey: onboardingPassStatusKey)
