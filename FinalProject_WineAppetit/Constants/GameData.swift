@@ -1,5 +1,5 @@
 //
-//  SpinTheBottleGameData.swift
+//  GameData.swift
 //  FinalProject_WineAppetit
 //
 //  Created by Eka Kelenjeridze on 03.02.24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SpinTheBottleGameData {
+struct GameData {
     static let questionsArray = [
         "Dare: Do your best dance move",
         "Dare: Mimic the weirdest habit you have",

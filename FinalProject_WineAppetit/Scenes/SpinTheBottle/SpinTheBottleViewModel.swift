@@ -19,7 +19,7 @@ final class SpinTheBottleViewModel {
     // MARK: - Properties
     private var lastRotation: CGFloat = 0.0
     private var angularVelocity: CGFloat = 0.0
-    private var remainingQuestions: [String] = SpinTheBottleGameData.questionsArray
+    private var randomQuestionsArray = GameData.questionsArray.shuffled()
     weak var delegate: SpinTheBottleViewModelDelegate?
     
     // MARK: - Methods
@@ -62,15 +62,20 @@ final class SpinTheBottleViewModel {
     }
     
     private func presentRandomQuestion() {
-        if remainingQuestions.isEmpty {
-            remainingQuestions = SpinTheBottleGameData.questionsArray
+        if randomQuestionsArray.isEmpty {
+            refillQuestionsArray()
+        } else {
+            removeQuestionFromArray()
+            delegate?.shouldShowLabel(true)
         }
-        
-        let randomIndex = Int.random(in: 0..<remainingQuestions.count)
-        let randomQuestion = remainingQuestions[randomIndex]
-        remainingQuestions.remove(at: randomIndex)
-        
-        delegate?.didUpdateQuestion(randomQuestion)
-        delegate?.shouldShowLabel(true)
+    }
+    
+    private func removeQuestionFromArray() {
+        let question = randomQuestionsArray.removeFirst()
+        delegate?.didUpdateQuestion(question)
+    }
+    
+    private func refillQuestionsArray() {
+        randomQuestionsArray = GameData.questionsArray.shuffled()
     }
 }
