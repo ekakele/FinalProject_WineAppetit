@@ -83,17 +83,7 @@ class SpinTheBottleViewController: UIViewController {
         
         viewModel.handleBottlePanGesture(touchPoint: touchPoint, centerPoint: centerPoint, state: state)
     }
-    
-    private func hideLabelText() {
-        questionLabel.isHidden = true
-        labelBackgroundView.isHidden = true
-    }
-    
-    private func showLabelText() {
-        questionLabel.isHidden = false
-        labelBackgroundView.isHidden = false
-    }
-    
+ 
     private func playSound() {
         let url = Bundle.main.url(forResource: "popSound", withExtension: "mp3")
         player = try! AVAudioPlayer(contentsOf: url!)
