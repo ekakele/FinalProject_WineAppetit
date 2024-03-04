@@ -17,12 +17,14 @@ struct BarcodeScannerView: View {
     
     // MARK: - Body
     var body: some View {
-        VStack {
-            setupTitleView
-            setupNavigateToDetailsView
-            Spacer()
+        NavigationView {
+            VStack {
+                setupNavigateToDetailsView
+                Spacer()
+            }
+            .navigationTitle("Scan Wine Barcode")
+            .padding(.top, 40)
         }
-        .padding(.top, 50)
     }
     
     // MARK: - Components
@@ -75,15 +77,6 @@ struct BarcodeScannerView: View {
     private var roundedRectangleView: some View {
         RoundedRectangle(cornerRadius: 12)
             .stroke(Constants.AppColor.textColor, lineWidth: 2)
-    }
-    
-    private var setupTitleView: some View {
-        MainTitleView(
-            title: "Scan Wine Bottle's Barcode",
-            textSize: 24,
-            textWeight: .bold,
-            textColor: .primary
-        )
     }
 }
 
