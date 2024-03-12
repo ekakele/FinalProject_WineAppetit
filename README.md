@@ -88,7 +88,7 @@
 
 | Wine List | Wine Details |
 |:---------:|:------------:|
-| <img src="https://i.ibb.co/2KDw0xr/wineList.png" alt="List" width="250"> | <img src="https://i.ibb.co/wY5yB9x/wine-Details.png" alt="Details" width="250"> |
+| <img src="https://i.ibb.co/3kyHMGV/wine-List-min.png" alt="List" width="250"> | <img src="https://i.ibb.co/wY5yB9x/wine-Details.png" alt="Details" width="250"> |
 
 3. **Simplified Wine Selection** - We make the wine selection process effortless and fun, picking random wines based on
    your preferences with just a few taps.
