@@ -90,30 +90,30 @@
 2. **Discover and Search Wines** - Explore a wide range of Georgian wines, with detailed information highlighting the
    distinct characteristics of each selection.
 
-| Wine List | Wine Details | Wine Search |
-|:---------:|:------------:|:-----------:|
-| <img src="https://api.openwine.space/storage/screens/opt/list.png" alt="List" width="250"> | <img src="https://api.openwine.space/storage/screens/opt/details.png" alt="Details" width="250"> | <img src="https://api.openwine.space/storage/screens/opt/search.png" alt="Search" width="250"> |
+| Wine List | Wine Details |
+|:---------:|:------------:|
+| <img src="https://i.ibb.co/2KDw0xr/wineList.png" alt="List" width="250"> | <img src="https://i.ibb.co/wY5yB9x/wine-Details.png" alt="Details" width="250"> |
 
 3. **Simplified Wine Selection** - We make the wine selection process effortless and fun, picking random wines based on
    your preferences with just a few taps.
 
 | Wine Selection Randomizer |
 |:----:|
-| <img src="https://api.openwine.space/storage/screens/opt/randomizer.png" alt="Randomizer" width="250"> |
+| <img src="https://i.ibb.co/GTXncJy/wine-Randomizer.png" alt="Randomizer" width="250"> |
 
 4. **Build Your Wine Library** - Store your favorite wines and those you're curious to taste on your virtual shelves,
    building your personalized wine history.
 
-| Wine Library 1 | Wine Library 2 | Wine Library 3 |
-|:---------:|:---------:|:---------:|
-| <img src="https://api.openwine.space/storage/screens/opt/library-1.png" alt="Library 1" width="250"> | <img src="https://api.openwine.space/storage/screens/opt/library-2.png" alt="Library 2" width="250"> | <img src="https://api.openwine.space/storage/screens/opt/library-3.png" alt="Library 3" width="250"> |
+| Wine Library 1 | Wine Library 2 |
+|:---------:|:---------:|
+| <img src="https://i.ibb.co/MGsqDT0/wine-Library.png" alt="Library 1" width="250"> | <img src="https://i.ibb.co/fXSBPK8/wine-Library-Zoomed2.png" alt="Library 2" width="250"> |
 
 5. **Calorie Tracking Made Easy** - Track the calorie content per glass for mindful consumption, combining wine
    enjoyment with health awareness.
 
-| Calories Counter 1 | Calories Counter 2 | Calories Counter 3 |
-|:------------------:|:------------------:|:------------------:|
-| <img src="https://api.openwine.space/storage/screens/opt/calories-counter-1.png" alt="Calories Counter 1" width="250"> | <img src="https://api.openwine.space/storage/screens/opt/calories-counter-2.png" alt="Calories Counter 2" width="250"> | <img src="https://api.openwine.space/storage/screens/opt/calories-counter-3.png" alt="Calories Counter 3" width="250"> |
+| Calorie Counter 1 | Calorie Counter 2 | 
+|:------------------:|:------------------:|
+| <img src="https://i.ibb.co/9qTQ5S2/calorie-Counter.png" alt="Calorie Counter 1" width="250"> | <img src="https://i.ibb.co/LzVDm29/calorie-Counter-White.png" alt="Calorie Counter 2" width="250"> |
 
 6. **Game for Social Gatherings** - Enhance your wine gatherings with social games like 'Truth or Dare' and 'Spin the
    Bottle', ensuring a memorable experience for everyone.
