@@ -79,13 +79,9 @@
 1. **Welcome to WineAppétit!** - Start your journey with an introduction to our app, designed to be your ultimate
    companion in wine exploration.
 
-| Onboarding 1 | Onboarding 2 | Onboarding 3 |
-|:------------:|:------------:|:------------:|
-| <img src="https://api.openwine.space/storage/screens/opt/onboarding-1.png" alt="Onboarding 1" width="250"> | <img src="https://api.openwine.space/storage/screens/opt/onboarding-2.png" alt="Onboarding 2" width="250"> | <img src="https://api.openwine.space/storage/screens/opt/onboarding-3.png" alt="Onboarding 3" width="250"> |
-
-| Onboarding 4 | Onboarding 5 | Onboarding 6 |
-|:------------:|:------------:|:------------:|
-| <img src="https://api.openwine.space/storage/screens/opt/onboarding-4.png" alt="Onboarding 4" width="250"> | <img src="https://api.openwine.space/storage/screens/opt/onboarding-5.png" alt="Onboarding 5" width="250"> | <img src="https://api.openwine.space/storage/screens/opt/onboarding-6.png" alt="Onboarding 6" width="250"> |
+| Introduction | 
+|:------------:|
+| <img src="https://i.ibb.co/2PQFgkK/Intro.gif" alt="Intro" width="250"> |
 
 2. **Discover and Search Wines** - Explore a wide range of Georgian wines, with detailed information highlighting the
    distinct characteristics of each selection.
@@ -126,7 +122,7 @@
 
 | Barcode Scanner 1 | Barcode Scanner 2 |
 |:------------------:|:------------------:|
-| <img src="https://i.ibb.co/fSBvtwP/found-trimmed.gif" alt="Calories Counter 1" width="250"> | <img src="https://i.ibb.co/gth5zH2/not-Found-trimmed.gif" alt="Calories Counter 2" width="250"> |
+| <img src="https://i.ibb.co/fSBvtwP/found-trimmed.gif" alt="Barcode Scanner 1" width="250"> | <img src="https://i.ibb.co/gth5zH2/not-Found-trimmed.gif" alt="Barcode Scanner 2" width="250"> |
 
 <br />
 
